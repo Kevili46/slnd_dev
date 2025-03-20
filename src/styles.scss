@@ -25,7 +25,7 @@ p {
     line-height: 1.3em;
 }
 
-.clickable {
+.slnd-nav {
     position: relative;
 
     &::after {
@@ -66,57 +66,5 @@ p {
 
     &:hover {
         color: var(--clr-orange);
-    }
-}
-
-.slnd-btn {
-    position: relative;
-    display: inline-block;
-    font-family: 'Geist';
-    font-weight: 900;
-    color: var(--clr-orange);
-    text-align: center;
-    padding: .3em 0;
-
-    &::after,
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 0;
-        height: 2px;
-        background: var(--clr-grad);
-        transition:
-            left 400ms ease,
-            translate 400ms ease,
-            width 400ms ease;
-    }
-
-    &::after {
-        bottom: 0;
-        left: 0;
-        scale: -1;
-    }
-
-    &::before {
-        translate: -100% 0;
-        top: 0;
-        left: 100%;
-    }
-
-
-
-    &:hover {
-        &::after {
-            width: 20%;
-            left: 100%;
-            translate: -100% 0;
-        }
-
-        &::before {
-            width: 20%;
-            left: 0%;
-            translate: 0 0;
-        }
     }
 }

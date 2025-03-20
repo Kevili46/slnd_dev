@@ -1,0 +1,64 @@
+:host {
+    --time-interact: 400ms;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    margin-left: .5em;
+
+    a {
+        display: inline-block;
+        font-family: 'Geist';
+        font-weight: 900;
+        color: var(--clr-orange);
+        text-transform: lowercase;
+        padding: .5em 0;
+        transition: scale var(--time-interact) ease;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: var(--clr-grad);
+        transition:
+            left var(--time-interact) ease,
+            translate var(--time-interact) ease,
+            width var(--time-interact) ease;
+    }
+
+    &::before {
+        translate: -100% 0;
+        top: 0;
+        left: 100%;
+        transition-delay: 100ms;
+    }
+
+    &::after {
+        bottom: 0;
+        left: 0;
+        scale: -1;
+    }
+
+    &:hover {
+
+        a {
+            scale: 1.04;
+        }
+
+        &::before {
+            width: 1.5em;
+            left: 0%;
+            translate: 0 0;
+        }
+
+        &::after {
+            width: 1.5em;
+            left: 100%;
+            translate: -100% 0;
+        }
+    }
+}

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'slnd-about',
-  imports: [RouterLink],
+  imports: [RouterLink, ButtonComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
