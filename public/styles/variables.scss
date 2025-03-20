@@ -1,0 +1,7 @@
+:root {
+    --clr-text: black;
+    --clr-blue: #00D5FF;
+    --clr-orange: #FF8C00;
+    --clr-grad: linear-gradient(90deg, var(--clr-orange) 15%, var(--clr-blue) 85%);
+    --time-interact: 150ms;
+}

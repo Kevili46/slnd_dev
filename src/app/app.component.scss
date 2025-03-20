@@ -1,0 +1,18 @@
+:host {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.page {
+    flex: 1;
+    height: 100vh;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: black;
+    }
+}
