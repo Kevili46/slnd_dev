@@ -1,15 +1,15 @@
 <section class="spotlight">
     <h1>
-        <p>Hello,</p>
-        <p>I'm Kevin and I do</p>
-        <p>web development</p>
+        <span>Hello,</span>
+        <span>I'm Kevin and I do</span>
+        <span class="clr-back"><span>web development</span></span>
     </h1>
 </section>
 <section>
     <div class="content">
         <h2>Who is he?</h2>
         <div class="columns">
-            <div>
+            <article>
                 <p>I’m Kevin and I love digital interaction and solving problems.<br>
                     Since 2021, I’ve been diving deep into web development and everything that goes with it. It’s my
                     passion
@@ -17,9 +17,29 @@
                     CMS.<br>
                     I graduated in 2025 with a bachelor’s degree in Online Media <a class="slnd-link"
                         href="https://www.hs-furtwangen.de/" target="_blank"> from HFU</a>.</p>
-                <slnd-button text="View my work" url="/work"></slnd-button>
-            </div>
+                <slnd-button text="get in touch" url="/contact"></slnd-button>
+            </article>
             <img src="/assets/img/kevin_portrait.jpg" alt="black and white portrait of kevin">
         </div>
+    </div>
+    <div class="content skills-experience">
+        <h2>Skills & Experience</h2>
+
+        <article>
+            <p>During my journey through marketing, UI/UX design and programming, I have gained experience with
+                many tools and technologies. The most important ones are mentioned in the following.</p>
+            <slnd-button text="view my work" url="/work"></slnd-button>
+            <div class="skills-box">
+                <div class="skill-category" *ngFor="let category of skills">
+                    <h3>{{category.name}}</h3>
+                    <div class="skills">
+                        <div class="skill" *ngFor="let skill of category.skills">
+                            <img [src]="skill.icon" alt=" {{skill.name}} icon">
+                            <span>{{skill.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
     </div>
 </section>

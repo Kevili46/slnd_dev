@@ -1,7 +1,9 @@
 section {
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
-    height: 100%;
+    align-items: center;
+    min-height: 100%;
 
     &.spotlight {
         align-items: center;
@@ -9,6 +11,7 @@ section {
 
     .content {
         width: max(700px, 60%);
+        margin-bottom: 250px;
 
         .columns {
             display: flex;
@@ -28,6 +31,71 @@ section {
             }
         }
     }
+
+    .skills-experience {
+
+        h2 {
+            text-align: center;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+
+            p {
+                width: 80%;
+                text-align: center;
+            }
+
+            .skills-box {
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 80px;
+
+                .skill-category {
+                    border-top: 2px solid black;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 30px;
+
+                    .skills {
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: center;
+                        gap: 40px;
+                        padding-left: 20px;
+
+                        .skill {
+                            flex: 0 0 100px;
+                            display: flex;
+                            flex-flow: column nowrap;
+                            align-items: center;
+                            gap: 10px;
+
+                            img {
+                                width: 60%;
+                                aspect-ratio: 1;
+                                object-fit: contain;
+                                filter: grayscale(.6);
+                                transition:
+                                    filter var(--time-interact) ease,
+                                    scale var(--time-interact) ease;
+                            }
+
+                            &:hover {
+                                img {
+                                    scale: 1.02;
+                                    filter: grayscale(0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 h1 {
@@ -36,17 +104,17 @@ h1 {
     display: flex;
     flex-flow: column nowrap;
 
-    p {
+    span {
         line-height: 1em;
     }
 
-    p:last-child {
+    .clr-back {
         text-align: center;
         color: white;
         background: var(--clr-grad);
         padding: .1em .1em .3em .1em;
         background-repeat: no-repeat;
-        animation: intro 700ms ease-out 200ms forwards;
+        animation: intro 900ms ease 200ms forwards;
         background-size: 0%;
     }
 }
