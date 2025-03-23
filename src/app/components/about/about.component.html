@@ -26,15 +26,18 @@
         <h2>Skills & Experience</h2>
 
         <article>
-            <p>During my journey through marketing, UI/UX design and programming, I have gained experience with
-                many tools and technologies. The most important ones are mentioned in the following.</p>
+            <p>During my journey through digital media, programming, UI/UX design and marketing, I have gained
+                experience and
+                worked
+                with
+                many tools and technologies. The most important ones are mentioned below.</p>
             <slnd-button text="view my work" url="/work"></slnd-button>
             <div class="skills-box">
-                <div class="skill-category" *ngFor="let category of skills">
+                <div #category class="skill-category" *ngFor="let category of skills">
                     <h3>{{category.name}}</h3>
                     <div class="skills">
                         <div class="skill" *ngFor="let skill of category.skills">
-                            <img [src]="skill.icon" alt=" {{skill.name}} icon">
+                            <img [src]="skill.icon" alt="{{skill.name}} icon">
                             <span>{{skill.name}}</span>
                         </div>
                     </div>

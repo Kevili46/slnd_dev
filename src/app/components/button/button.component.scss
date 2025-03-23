@@ -1,5 +1,4 @@
 :host {
-    --time-interact: 400ms;
     display: inline-block;
     position: relative;
     text-align: center;
@@ -13,7 +12,7 @@
         color: var(--clr-orange);
         text-transform: lowercase;
         padding: .5em 0;
-        transition: scale var(--time-interact) ease;
+        transition: scale var(--time-interact-calm) ease;
     }
 
     &::before,
@@ -25,16 +24,16 @@
         height: 2px;
         background: var(--clr-grad);
         transition:
-            left var(--time-interact) ease,
-            translate var(--time-interact) ease,
-            width var(--time-interact) ease;
+            left var(--time-interact-calm) ease,
+            translate var(--time-interact-calm) ease,
+            width var(--time-interact-calm) ease;
     }
 
     &::before {
         translate: -100% 0;
         top: 0;
         left: 100%;
-        transition-delay: 100ms;
+        transition-delay: var(--time-interact-delay);
     }
 
     &::after {

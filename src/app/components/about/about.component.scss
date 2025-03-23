@@ -1,16 +1,37 @@
+h1 {
+    font-size: max(5em, 5svw);
+    font-weight: 400;
+    display: flex;
+    flex-flow: column nowrap;
+
+    span {
+        line-height: 1em;
+    }
+
+    .clr-back {
+        text-align: center;
+        color: var(--clr-text-alt);
+        background: var(--clr-grad);
+        padding: .1em .1em .3em .1em;
+        background-repeat: no-repeat;
+        animation: intro 900ms ease 200ms forwards;
+        background-size: 0%;
+    }
+}
+
 section {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    min-height: 100%;
+    min-height: 100svh;
 
     &.spotlight {
         align-items: center;
     }
 
     .content {
-        width: max(700px, 60%);
+        width: max(700px, 70%);
         margin-bottom: 250px;
 
         .columns {
@@ -21,7 +42,7 @@ section {
             p {
                 padding: 0 .5em 1.5em .5em;
                 margin: 0 0 1em 0;
-                border-bottom: 2px solid black;
+                border-bottom: 2px solid var(--clr-text);
             }
 
             img {
@@ -35,37 +56,65 @@ section {
     .skills-experience {
 
         h2 {
-            text-align: center;
+            text-align: end;
         }
 
         article {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-end;
             gap: 40px;
 
             p {
-                width: 80%;
-                text-align: center;
+                text-align: end;
+                padding: 0 0 0 2em;
             }
 
             .skills-box {
                 display: flex;
                 flex-flow: column nowrap;
-                gap: 80px;
 
                 .skill-category {
-                    border-top: 2px solid black;
+                    border-top: 2px solid var(--clr-text);
                     display: flex;
                     flex-flow: column nowrap;
                     gap: 30px;
+                    padding: 10px 10px 80px 10px;
+                    transition:
+                        opacity var(--time-interact-calm) ease,
+                        filter var(--time-interact-calm) ease,
+                        scale var(--time-interact-calm) ease;
+
+                    h3 {
+                        position: relative;
+                        align-self: flex-start;
+                        transition: translate var(--time-interact-calm) ease;
+                        translate: .1em 0;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            bottom: -.2em;
+                            width: 1.2em;
+                            left: 100%;
+                            translate: -100%;
+                            height: 2px;
+                            background: var(--clr-grad);
+                            transition:
+                                width var(--time-interact-calm) ease,
+                                translate var(--time-interact-calm) ease,
+                                left var(--time-interact-calm) ease;
+                            transition-delay: var(--time-interact-delay);
+                        }
+                    }
+
 
                     .skills {
                         display: flex;
                         flex-flow: row wrap;
-                        justify-content: center;
+                        justify-content: flex-end;
                         gap: 40px;
-                        padding-left: 20px;
 
                         .skill {
                             flex: 0 0 100px;
@@ -78,44 +127,49 @@ section {
                                 width: 60%;
                                 aspect-ratio: 1;
                                 object-fit: contain;
-                                filter: grayscale(.6);
+                                filter: grayscale(1);
                                 transition:
                                     filter var(--time-interact) ease,
                                     scale var(--time-interact) ease;
                             }
 
-                            &:hover {
-                                img {
-                                    scale: 1.02;
-                                    filter: grayscale(0);
+                            span {
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    &:not(.blurred) {
+                        scale: 1.05;
+
+                        .skills {
+                            .skill {
+                                &:hover {
+                                    img {
+                                        filter: grayscale(0);
+                                    }
                                 }
+                            }
+                        }
+                    }
+
+                    &.blurred {
+                        opacity: .3;
+                        filter: blur(1px);
+
+                        h3 {
+                            translate: 0 0;
+
+                            &::after {
+                                left: 0;
+                                width: 0;
+                                translate: 0 0;
                             }
                         }
                     }
                 }
             }
         }
-    }
-}
-
-h1 {
-    font-size: max(5em, 5svw);
-    font-weight: 400;
-    display: flex;
-    flex-flow: column nowrap;
-
-    span {
-        line-height: 1em;
-    }
-
-    .clr-back {
-        text-align: center;
-        color: white;
-        background: var(--clr-grad);
-        padding: .1em .1em .3em .1em;
-        background-repeat: no-repeat;
-        animation: intro 900ms ease 200ms forwards;
-        background-size: 0%;
     }
 }
 
