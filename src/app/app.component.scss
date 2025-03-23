@@ -4,15 +4,5 @@
 }
 
 .page {
-    flex: 1;
-    height: 100svh;
-    overflow: auto;
-
-    &::-webkit-scrollbar {
-        width: 16px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: black;
-    }
+    flex: 1 1;
 }
