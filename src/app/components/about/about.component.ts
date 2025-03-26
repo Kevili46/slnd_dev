@@ -2,7 +2,7 @@ import { Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { skills } from '../../data/skills';
-import { SkillCategory } from '../../model/SkillCategory.interface';
+import { SkillCategory } from '../../model/SkillCategory.type';
 
 @Component({
   selector: 'slnd-about',
@@ -20,7 +20,6 @@ export class AboutComponent {
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
-    console.log('hi');
     const border: number = Math.floor(window.innerHeight / 1.5);
     this.categories.forEach(category => {
       let yTop = category.nativeElement.getBoundingClientRect().top;

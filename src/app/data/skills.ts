@@ -1,4 +1,4 @@
-import { SkillCategory } from "../model/SkillCategory.interface"
+import { SkillCategory } from "../model/SkillCategory.type"
 
 const frameworks: SkillCategory = {
     name: "frameworks & CMS",

@@ -1,6 +1,7 @@
 @import url(../public/styles/reset.scss);
 @import url(../public/fonts/fonts.scss);
 @import url(../public/styles/variables.scss);
+@import url(../public/styles/animations.scss);
 
 html {
     font-family: 'EB Garamond';
@@ -13,8 +14,13 @@ html {
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: black;
+        background-color: var(--clr-text);
     }
+}
+
+h1 {
+    font-size: max(5em, 5svw);
+    font-weight: 400;
 }
 
 h2 {
@@ -36,6 +42,44 @@ p {
     font-size: max(1em, 1svw);
     font-weight: 400;
     line-height: 1.3em;
+}
+
+.content {
+    width: max(700px, 70%);
+    margin-bottom: 250px;
+}
+
+.fade-text {
+    position: relative;
+    padding-right: .2em;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 0%;
+        height: 100%;
+        border-left: 2px solid black;
+        background-color: white;
+        animation: fade-text 1000ms ease;
+    }
+}
+
+.highlighted {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: max(.1em, 2px);
+        background: var(--clr-grad);
+    }
 }
 
 .slnd-nav {

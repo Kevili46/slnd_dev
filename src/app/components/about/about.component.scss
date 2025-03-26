@@ -1,6 +1,4 @@
 h1 {
-    font-size: max(5em, 5svw);
-    font-weight: 400;
     display: flex;
     flex-flow: column nowrap;
 
@@ -31,8 +29,6 @@ section {
     }
 
     .content {
-        width: max(700px, 70%);
-        margin-bottom: 250px;
 
         .columns {
             display: flex;
@@ -88,8 +84,6 @@ section {
                     h3 {
                         position: relative;
                         align-self: flex-start;
-                        transition: translate var(--time-interact-calm) ease;
-                        translate: .1em 0;
 
                         &::after {
                             content: '';
@@ -140,7 +134,7 @@ section {
                     }
 
                     &:not(.blurred) {
-                        scale: 1.05;
+                        scale: 1.02;
 
                         .skills {
                             .skill {
@@ -158,8 +152,6 @@ section {
                         filter: blur(1px);
 
                         h3 {
-                            translate: 0 0;
-
                             &::after {
                                 left: 0;
                                 width: 0;
@@ -170,15 +162,5 @@ section {
                 }
             }
         }
-    }
-}
-
-@keyframes intro {
-    0% {
-        background-size: 0%;
-    }
-
-    100% {
-        background-size: 100%;
     }
 }
