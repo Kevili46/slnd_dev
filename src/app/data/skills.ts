@@ -5,23 +5,23 @@ const frameworks: SkillCategory = {
     skills: [
         {
             name: "Node.js",
-            icon: "assets/icons/nodejs.svg"
+            icon: "assets/logos/nodejs.svg"
         },
         {
             name: "Flask",
-            icon: "assets/icons/flask.svg"
+            icon: "assets/logos/flask.svg"
         },
         {
             name: "Angular",
-            icon: "assets/icons/angular.svg"
+            icon: "assets/logos/angular.svg"
         },
         {
             name: "React",
-            icon: "assets/icons/react.svg"
+            icon: "assets/logos/react.svg"
         },
         {
             name: "WordPress",
-            icon: "assets/icons/wordpress.svg"
+            icon: "assets/logos/wordpress.svg"
         }
     ]
 }
@@ -31,27 +31,27 @@ const programming: SkillCategory = {
     skills: [
         {
             name: "Java",
-            icon: "assets/icons/java.svg"
+            icon: "assets/logos/java.svg"
         },
         {
             name: "Python",
-            icon: "assets/icons/python.svg"
+            icon: "assets/logos/python.svg"
         },
         {
             name: "JavaScript",
-            icon: "assets/icons/javascript.svg"
+            icon: "assets/logos/javascript.svg"
         },
         {
             name: "TypeScript",
-            icon: "assets/icons/typescript.svg"
+            icon: "assets/logos/typescript.svg"
         },
         {
             name: "CSS",
-            icon: "assets/icons/css.svg"
+            icon: "assets/logos/css.svg"
         },
         {
             name: "HTML",
-            icon: "assets/icons/html.svg"
+            icon: "assets/logos/html.svg"
         },
     ]
 }
@@ -61,11 +61,11 @@ const databases: SkillCategory = {
     skills: [
         {
             name: "MongoDB Atlas",
-            icon: "assets/icons/mongodb.svg"
+            icon: "assets/logos/mongodb.svg"
         },
         {
             name: "MySQL",
-            icon: "assets/icons/mysql.svg"
+            icon: "assets/logos/mysql.svg"
         },
     ]
 }
@@ -75,23 +75,23 @@ const more: SkillCategory = {
     skills: [
         {
             name: "LangChain",
-            icon: "assets/icons/langchain.svg"
+            icon: "assets/logos/langchain.svg"
         },
         {
             name: "Gemini Agentic AI",
-            icon: "assets/icons/gemini.svg"
+            icon: "assets/logos/gemini.svg"
         },
         {
             name: "Google Analytics 4",
-            icon: "assets/icons/ga4.svg"
+            icon: "assets/logos/ga4.svg"
         },
         {
             name: "Adobe Creative Cloud",
-            icon: "assets/icons/adobe.png"
+            icon: "assets/logos/adobe.png"
         },
         {
             name: "FL Studio",
-            icon: "assets/icons/flstudio.png"
+            icon: "assets/logos/flstudio.png"
         }
     ]
 }

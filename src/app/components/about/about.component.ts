@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, HostListener, QueryList, ViewChildren } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { skills } from '../../data/skills';

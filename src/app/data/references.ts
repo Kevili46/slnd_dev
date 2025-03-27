@@ -1,10 +1,19 @@
 import { Reference } from "../model/Reference.type";
 
-const trapper: Reference = {
-    name: "Trapper",
-    img: "assets/img/trapper_info.jpg",
-    url: "trapper.info",
-    tags: ['website', 'logo']
+const maable: Reference = {
+    name: "Maable",
+    description: "Semester assignment in Responsive Web Design.",
+    img: "assets/logos/maable_logo.svg",
+    url: "https://kevili46.github.io/maable/",
+    tags: ['concept']
 }
 
-export const work: Reference[] = [trapper]
+const trapper: Reference = {
+    name: "Trapper",
+    description: "Manufacturer of individual food trailers.",
+    img: "assets/logos/trapper_logo.svg",
+    url: "https://trapper.info",
+    tags: ['published']
+}
+
+export const work: Reference[] = [maable, trapper]

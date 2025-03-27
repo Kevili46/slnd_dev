@@ -3,7 +3,143 @@ section {
     flex-flow: column nowrap;
     align-items: center;
 
+    &.spotlight {
+        height: 90svh;
+    }
+
     h1 {
         margin: 40svh 0 1em 0;
+    }
+
+    .tag-filter {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        border-bottom: 2px solid var(--clr-text);
+        padding: 0 0 20px 0;
+
+        .filter-tag {
+            position: relative;
+            padding: .4em .5em;
+            user-select: none;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                background-color: var(--clr-text);
+                width: 0%;
+                height: 2px;
+                translate: -50% 0;
+                transition: width var(--time-interact) ease;
+            }
+
+            &:not(.filter) {
+                cursor: pointer;
+
+                &:hover {
+                    &::after {
+                        width: calc(100% - .8em);
+                    }
+                }
+            }
+
+            &.filter {
+                background-color: var(--clr-text);
+                color: var(--clr-text-alt)
+            }
+        }
+    }
+
+    .references {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: stretch;
+        gap: 100px 60px;
+        padding: 40px;
+
+        .reference {
+            position: relative;
+            flex: 1 0 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            color: var(--clr-text);
+            border-bottom: 2px solid var(--clr-text);
+            padding: 20px;
+            transition:
+                scale var(--time-interact-calm) ease,
+                filter var(--time-interact-calm) ease,
+                opacity var(--time-interact-calm) ease;
+
+            img {
+                height: 120px;
+                aspect-ratio: 2;
+                align-self: center;
+                margin: 40px 0;
+                filter: grayscale(1);
+                transition: filter var(--time-interact-calm) ease;
+            }
+
+            .work-tags {
+                display: flex;
+                flex-flow: row wrap;
+                align-self: flex-end;
+                gap: 10px;
+
+                .work-tag {
+                    color: var(--clr-text-alt);
+                    font-weight: 900;
+                    padding: .2em .5em;
+                    background: var(--clr-grad);
+
+                }
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background: var(--clr-grad);
+                transition:
+                    width var(--time-interact-slow) ease,
+                    left var(--time-interact-slow) ease,
+                    translate var(--time-interact-slow) ease;
+            }
+
+            &:hover {
+                scale: 1.01;
+
+                &::after {
+                    width: 20%;
+                    left: 100%;
+                    translate: -100% 0;
+                }
+
+                img {
+                    filter: grayscale(0);
+                }
+            }
+
+        }
+
+        &:has(.reference:hover) {
+            .reference:not(:hover) {
+                filter: blur(1px);
+                opacity: .3;
+            }
+        }
+    }
+
+    .button-center {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
     }
 }

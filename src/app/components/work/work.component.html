@@ -1,8 +1,26 @@
-<section>
-    <h1 class="fade-text">Samples of my <span class="highlighted">work</span>.</h1>
+<section class="spotlight">
+    <h1 class="fade-text">Samples of my <span class="highlighted">work.</span></h1>
 </section>
 <section>
     <div class="content">
-        <p>Hello</p>
+        <div class="tag-filter">
+            <span #tagElement (click)="filterWork($event, tagElement)" [attr.tag]="tag" class="filter-tag"
+                *ngFor="let tag of tags">{{tag}}</span>
+        </div>
+        <div class="references">
+            <a [href]="work.url" target="_blank" *ngFor="let work of shownWork" class="reference">
+                <div>
+                    <h3>{{work.name}}</h3>
+                    <p>{{work.description}}</p>
+                </div>
+                <img [src]="work.img" alt="Snapshot of the website of {{work.name}}">
+                <div class="work-tags">
+                    <span class="work-tag" *ngFor="let tag of work.tags">{{tag}}</span>
+                </div>
+            </a>
+        </div>
+        <div class="button-center">
+            <slnd-button text="get in touch" url="/contact"></slnd-button>
+        </div>
     </div>
 </section>
