@@ -78,7 +78,7 @@ const more: SkillCategory = {
             icon: "assets/logos/langchain.svg"
         },
         {
-            name: "Gemini Agentic AI",
+            name: "Gemini API",
             icon: "assets/logos/gemini.svg"
         },
         {

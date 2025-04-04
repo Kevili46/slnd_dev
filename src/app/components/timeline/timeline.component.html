@@ -1,0 +1,17 @@
+<div class="timeline-thread"></div>
+<div class="timestamps">
+    <div #stampElement *ngFor="let timestamp of timestamps" class="timestamp">
+        <div class="time-info">
+            <h3>{{timestamp.label}}</h3>
+            <!-- <p>{{timestamp.place}}</p> -->
+            <p>{{timestamp.description}}</p>
+        </div>
+        <span class="time-marker"></span>
+        <div class="time">
+            <p class="time-start">
+                {{timestamp.startString}} -
+                {{timestamp.endString}}</p>
+            <p>{{timestamp.duration}}</p>
+        </div>
+    </div>
+</div>
