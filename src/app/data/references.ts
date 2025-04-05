@@ -16,13 +16,4 @@ const trapper: Reference = {
     tags: ['published']
 }
 
-const trophies: Reference = {
-    name: "Trophies",
-    description: "Visualization of Pokemon data.",
-    img: "assets/logos/trapper_logo.svg",
-    url: "https://slnd.dev/trophies",
-    tags: ['concept']
-}
-
-
-export const work: Reference[] = [maable, trapper, trophies]
+export const work: Reference[] = [maable, trapper]
