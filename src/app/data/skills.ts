@@ -4,8 +4,8 @@ const frameworks: SkillCategory = {
     name: "frameworks & CMS",
     skills: [
         {
-            name: "Node.js",
-            icon: "assets/logos/nodejs.svg"
+            name: "Express.js",
+            icon: "assets/logos/express.svg"
         },
         {
             name: "Flask",
