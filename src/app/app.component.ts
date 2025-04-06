@@ -50,4 +50,9 @@ export class AppComponent implements AfterViewInit {
     this.hide = this.utilityService.hideHeader;
     this.menuOpen = this.utilityService.menuOpen;
   }
+
+  @HostListener('window: load')
+  allLoaded() {
+    this.el.nativeElement.classList.remove('load');
+  }
 }

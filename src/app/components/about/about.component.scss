@@ -76,6 +76,7 @@ section {
 
             .skills-box {
                 display: flex;
+                width: 100%;
                 flex-flow: column nowrap;
                 margin-bottom: 100px;
 
@@ -120,7 +121,7 @@ section {
                         gap: 40px;
 
                         .skill {
-                            flex: 0 0 80px;
+                            width: 80px;
                             display: flex;
                             flex-flow: column nowrap;
                             align-items: center;
@@ -205,7 +206,7 @@ section {
                             justify-content: flex-end;
 
                             .skill {
-                                flex-basis: 100px;
+                                width: 100px;
                             }
                         }
                     }

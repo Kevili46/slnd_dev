@@ -40,7 +40,6 @@ export class UtilityService {
   }
 
   resizeUpdate() {
-    console.log(this.mobile);
     if (window.innerWidth > 1024) {
       this.mobile = false;
       this.floatHeader = false;
