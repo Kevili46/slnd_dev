@@ -18,7 +18,7 @@ export class AboutComponent {
 
   @ViewChildren('category') categories!: QueryList<ElementRef>;
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onScroll() {
     const border: number = Math.floor(window.innerHeight / 1.5);
     this.categories.forEach(category => {

@@ -1,8 +1,14 @@
 :host {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
 }
 
 .page {
     flex: 1 1;
+}
+
+@media (min-width: 1025px) {
+    :host {
+        flex-flow: row nowrap;
+    }
 }

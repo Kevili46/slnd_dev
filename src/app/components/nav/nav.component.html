@@ -1,8 +1,13 @@
-<nav id="main-nav">
+<nav id="main-nav" [ngClass]="{'open' : this.menuOpen}">
+    <div (click)="openMenu()" class="toggle-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <ul>
-        <li><a class="slnd-nav" routerLink="/" routerLinkActive="active"
+        <li (click)="openMenu()"><a class=" slnd-nav" routerLink="/" routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact: true}">About</a></li>
-        <li><a class="slnd-nav" routerLink="/work" routerLinkActive="active">Work</a></li>
-        <li><a class="slnd-nav" routerLink="/contact" routerLinkActive="active">Contact</a></li>
+        <li (click)="openMenu()"><a class=" slnd-nav" routerLink="/work" routerLinkActive="active">Work</a></li>
+        <li (click)="openMenu()"><a class=" slnd-nav" routerLink="/contact" routerLinkActive="active">Contact</a></li>
     </ul>
 </nav>
