@@ -19,12 +19,12 @@ html {
 }
 
 h1 {
-    font-size: max(5em, 5svw);
+    font-size: clamp(3.5em, 10svw, 5em);
     font-weight: 400;
 }
 
 h2 {
-    font-size: max(4.5em, 4.5svw);
+    font-size: clamp(3.5em, 10svw, 4.5em);
     font-weight: 400;
     display: flex;
     flex-flow: column nowrap;
@@ -45,8 +45,8 @@ p {
 }
 
 .content {
-    width: max(700px, 70%);
-    margin-bottom: 250px;
+    width: min(700px, 95%);
+    margin-bottom: 150px;
 }
 
 .fade-text {
@@ -82,7 +82,7 @@ p {
     }
 }
 
-.slnd-nav {
+.slnd-nav-link {
     position: relative;
 
     &::after {
@@ -123,5 +123,21 @@ p {
 
     &:hover {
         color: var(--clr-orange);
+    }
+}
+
+
+@media (min-width: 1025px) {
+    h1 {
+        font-size: max(5em, 5svw);
+    }
+
+    h2 {
+        font-size: max(4.5em, 4.5svw);
+    }
+
+    .content {
+        width: max(700px, 70%);
+        margin-bottom: 250px;
     }
 }

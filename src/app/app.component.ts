@@ -37,6 +37,7 @@ export class AppComponent implements AfterViewInit {
     this.utilityService.scrollUpdate();
     this.float = this.utilityService.floatHeader;
     this.hide = this.utilityService.hideHeader;
+    this.menuOpen = this.utilityService.menuOpen;
   }
 
   @HostListener('window: resize')

@@ -1,14 +1,21 @@
 :host {
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
 }
 
 .page {
     flex: 1 1;
+    width: 90%;
 }
 
 @media (min-width: 1025px) {
     :host {
         flex-flow: row nowrap;
+        align-items: flex-start;
+    }
+
+    .page {
+        width: 100%;
     }
 }

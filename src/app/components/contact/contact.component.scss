@@ -4,7 +4,9 @@ section {
     align-items: center;
 
     h1 {
-        margin: 40svh 0 1em 0;
+        display: inline-block;
+        margin: 20svh 0 1em 0;
+        text-align: center;
     }
 
     .content {
@@ -37,6 +39,15 @@ section {
                     opacity: 1;
                 }
             }
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    section {
+        h1 {
+            text-align: start;
+            margin-top: 40svh;
         }
     }
 }
