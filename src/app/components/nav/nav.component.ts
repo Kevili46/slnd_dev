@@ -17,8 +17,10 @@ export class NavComponent {
   }
 
   openMenu(): void {
-    this.utilityService.menuOpen = !this.utilityService.menuOpen;
-    this.menuOpen = this.utilityService.menuOpen;
+    if (this.utilityService.mobile) {
+      this.utilityService.menuOpen = !this.utilityService.menuOpen;
+      this.menuOpen = this.utilityService.menuOpen;
+    }
   }
 
   @HostListener('window: resize')

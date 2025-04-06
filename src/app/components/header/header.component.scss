@@ -10,7 +10,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    transition: translate var(--time-interact-calm) ease;
 
     &::after {
         content: '';
@@ -36,6 +35,8 @@
 }
 
 a {
+    z-index: 2;
+
     img {
         width: clamp(120px, 20svw, 200px);
     }
