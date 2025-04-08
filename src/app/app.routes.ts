@@ -6,5 +6,6 @@ import { WorkComponent } from './components/work/work.component';
 export const routes: Routes = [
     { path: '', component: AboutComponent, title: 'About | SLND.' },
     { path: 'work', component: WorkComponent, title: 'Work | SLND.' },
-    { path: 'contact', component: ContactComponent, title: 'Contact | SLND.' }
+    { path: 'contact', component: ContactComponent, title: 'Contact | SLND.' },
+    { path: '**', redirectTo: '' }
 ];
