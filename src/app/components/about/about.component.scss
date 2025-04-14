@@ -23,7 +23,7 @@ section {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    min-height: 90svh;
+    min-height: 100svh;
 
     &.spotlight {
         align-items: center;
@@ -77,7 +77,6 @@ section {
                 display: flex;
                 width: 100%;
                 flex-flow: column nowrap;
-                margin-bottom: 100px;
 
                 .skill-category {
                     border-top: 2px solid var(--clr-text);
@@ -175,12 +174,6 @@ section {
                 width: 100%;
             }
         }
-    }
-}
-
-@media (min-width: 1025px) {
-    section {
-        min-height: 100svh;
     }
 }
 

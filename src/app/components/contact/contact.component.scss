@@ -1,6 +1,6 @@
 :host {
     display: block;
-    min-height: 90svh;
+    min-height: 100svh;
 }
 
 section {
@@ -10,7 +10,7 @@ section {
 
     h1 {
         display: inline-block;
-        margin: 30svh 0 1em 0;
+        margin: 35svh 0 1em 0;
         text-align: center;
     }
 
@@ -49,10 +49,6 @@ section {
 }
 
 @media (min-width: 1025px) {
-
-    :host {
-        min-height: 100vh;
-    }
 
     section {
         h1 {

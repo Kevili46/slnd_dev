@@ -4,11 +4,11 @@ section {
     align-items: center;
 
     &.spotlight {
-        height: 80svh;
+        height: 90svh;
     }
 
     h1 {
-        margin: 30svh 0 1em 0;
+        margin: 35svh 0 1em 0;
         text-align: center;
     }
 
@@ -149,9 +149,6 @@ section {
 
 @media (min-width: 1025px) {
     section {
-        &.spotlight {
-            height: 90svh;
-        }
 
         h1 {
             text-align: start;
