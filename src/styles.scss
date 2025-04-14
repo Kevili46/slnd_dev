@@ -85,6 +85,7 @@ p {
 
 .slnd-nav-link {
     position: relative;
+    color: var(--clr-text);
 
     &::after {
         content: '';

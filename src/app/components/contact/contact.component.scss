@@ -1,3 +1,8 @@
+:host {
+    display: block;
+    min-height: 90svh;
+}
+
 section {
     display: flex;
     flex-flow: column nowrap;
@@ -44,6 +49,11 @@ section {
 }
 
 @media (min-width: 1025px) {
+
+    :host {
+        min-height: 100vh;
+    }
+
     section {
         h1 {
             text-align: start;
