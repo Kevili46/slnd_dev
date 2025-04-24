@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 223 236">
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: url(#Unbenannter_Verlauf);
+      }
+
+      .st2 {
+        fill: url(#Unbenannter_Verlauf_2);
+      }
+
+      .st3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st0" width="223" height="236"/>
+    </clipPath>
+    <linearGradient id="Unbenannter_Verlauf" data-name="Unbenannter Verlauf" x1="20.5" y1="-119.8" x2="197.3" y2="-35.7" gradientTransform="translate(0 34) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e40035"/>
+      <stop offset=".2" stop-color="#f60a48"/>
+      <stop offset=".4" stop-color="#f20755"/>
+      <stop offset=".5" stop-color="#dc087d"/>
+      <stop offset=".7" stop-color="#9717e7"/>
+      <stop offset="1" stop-color="#6c00f5"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_2" data-name="Unbenannter Verlauf 2" x1="46.3" y1="10.3" x2="162" y2="-121.7" gradientTransform="translate(0 34) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff31d9"/>
+      <stop offset="1" stop-color="#ff5be1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g class="st3">
+    <g>
+      <path class="st1" d="M222.1,39.2l-8,125.9L137.4,0l84.7,39.2ZM169,202l-57.9,33.1-57.9-33.1,11.8-28.6h92.3l11.8,28.6ZM111,62.7l30.4,73.8h-60.7s30.4-73.8,30.4-73.8ZM7.9,165.1L0,39.2,84.7,0,7.9,165.1Z"/>
+      <path class="st2" d="M222.1,39.2l-8,125.9L137.4,0l84.7,39.2ZM169,202l-57.9,33.1-57.9-33.1,11.8-28.6h92.3l11.8,28.6ZM111,62.7l30.4,73.8h-60.7s30.4-73.8,30.4-73.8ZM7.9,165.1L0,39.2,84.7,0,7.9,165.1Z"/>
+    </g>
+  </g>
+</svg>

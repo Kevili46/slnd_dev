@@ -1,0 +1,69 @@
+:host {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    z-index: 9;
+    width: 100%;
+
+}
+
+.consent-banner {
+    background-color: var(--clr-text-alt);
+    width: 90%;
+    padding: 1em;
+    box-shadow: var(--box-shadow);
+
+    h3 {
+        border-bottom: 1px solid var(--clr-text);
+        margin-bottom: .5em;
+    }
+
+    .consent-content {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        >* {
+            flex: 1 1 550px;
+        }
+
+        p {
+            font-size: 1em;
+        }
+
+        .selectables {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            column-gap: max(8svw, 30px);
+            row-gap: 30px;
+
+
+            .settings {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                flex-wrap: nowrap;
+                gap: .4em;
+
+                div {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    gap: 10px;
+                }
+            }
+
+            .buttons {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 20px;
+            }
+        }
+    }
+}

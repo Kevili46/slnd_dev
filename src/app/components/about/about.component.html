@@ -30,15 +30,19 @@
                 experience and worked with many tools and technologies. The most important are mentioned below.</p>
             <slnd-button text="view my work" url="/work"></slnd-button>
             <div class="skills-box">
-                <div #category class="skill-category" *ngFor="let category of skills">
+                @for (category of skills; track category) {
+                <div #category class="skill-category">
                     <h3>{{category.name}}</h3>
                     <div class="skills">
-                        <div class="skill" *ngFor="let skill of category.skills">
+                        @for (skill of category.skills; track skill) {
+                        <div class="skill">
                             <img [src]="skill.icon" alt="{{skill.name}} icon">
                             <span>{{skill.name}}</span>
                         </div>
+                        }
                     </div>
                 </div>
+                }
             </div>
             <!-- <div class="experience-box">
                 <slnd-timeline></slnd-timeline>

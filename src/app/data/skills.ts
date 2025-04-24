@@ -4,7 +4,7 @@ const frameworks: SkillCategory = {
     name: "frameworks & CMS",
     skills: [
         {
-            name: "Express.js",
+            name: "Express",
             icon: "assets/logos/express.svg"
         },
         {

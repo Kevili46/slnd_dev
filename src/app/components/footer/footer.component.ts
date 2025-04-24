@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ConsentService } from '../../services/consent.service';
 
 @Component({
   selector: 'slnd-footer',
@@ -9,6 +10,7 @@ import { RouterLink } from '@angular/router';
 })
 export class FooterComponent {
 
+  consentService: ConsentService = inject(ConsentService);
   year: number;
 
   constructor() {

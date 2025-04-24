@@ -1,13 +1,15 @@
-import { AfterViewInit, Component, ElementRef, HostListener } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { UtilityService } from './services/utility.service';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
+import { AiagentComponent } from './components/aiagent/aiagent.component';
+import { ConsentComponent } from './components/consent/consent.component';
 
 @Component({
   selector: 'slnd',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, CommonModule],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, AiagentComponent, CommonModule, ConsentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -15,14 +17,12 @@ import { FooterComponent } from './components/footer/footer.component';
 export class AppComponent implements AfterViewInit {
   title = 'SLND';
 
-  float: boolean;
-  hide: boolean;
-  menuOpen: boolean;
+  utilityService: UtilityService = inject(UtilityService);
+  float: boolean = this.utilityService.floatHeader;
+  hide: boolean = this.utilityService.hideHeader;
+  menuOpen: boolean = this.utilityService.menuOpen;
 
-  constructor(private utilityService: UtilityService, private el: ElementRef) {
-    this.float = utilityService.floatHeader;
-    this.hide = utilityService.hideHeader;
-    this.menuOpen = utilityService.menuOpen;
+  constructor(private el: ElementRef) {
   }
 
   ngAfterViewInit() {

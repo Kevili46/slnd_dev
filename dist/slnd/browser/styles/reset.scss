@@ -1,0 +1,39 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+ol,
+ul,
+li,
+a,
+button,
+td,
+th,
+tr,
+p,
+input {
+    line-height: normal;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: transparent;
+    list-style: none;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    user-select: none;
+}

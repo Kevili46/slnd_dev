@@ -8,7 +8,8 @@
                 *ngFor="let tag of tags">{{tag}}</span>
         </div>
         <div class="references">
-            <a [href]="work.url" target="_blank" *ngFor="let work of shownWork" class="reference">
+            @for (work of shownWork; track work) {
+            <a [href]="work.url" target="_blank" class="reference">
                 <div>
                     <h3>{{work.name}}</h3>
                     <p>{{work.description}}</p>
@@ -18,6 +19,7 @@
                     <span class="work-tag" *ngFor="let tag of work.tags">{{tag}}</span>
                 </div>
             </a>
+            }
         </div>
         <div class="button-center">
             <slnd-button text="get in touch" url="/contact"></slnd-button>

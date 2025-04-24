@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,9 @@ export class UtilityService {
   lastScroll: number = 0;
   menuOpen: boolean = false;
 
-  constructor() { }
+
+  constructor() {
+  }
 
   scrollUpdate() {
     if (!this.mobile) {

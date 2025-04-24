@@ -1,0 +1,42 @@
+:host {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 20px;
+    background-color: var(--clr-orange-light);
+    filter: grayscale(1);
+    transition:
+        filter var(--time-interact-calm) ease,
+        scale var(--time-interact) ease;
+
+    &::after {
+        --padding: 2px;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: var(--padding);
+        translate: 0 -50%;
+        height: calc(100% - 2*var(--padding));
+        aspect-ratio: 1;
+        background-color: var(--clr-text-alt);
+        transition:
+            left var(--time-interact) ease,
+            translate var(--time-interact) ease;
+    }
+
+    &[state="true"] {
+        filter: grayscale(0);
+        background-color: var(--clr-orange);
+
+        &::after {
+            left: calc(100% - var(--padding));
+            translate: -100% -50%;
+        }
+    }
+
+    &:hover {
+        scale: 1.02;
+    }
+}

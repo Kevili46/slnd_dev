@@ -1,0 +1,23 @@
+@keyframes intro {
+    0% {
+        background-size: 0%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes fade-text {
+    0% {
+        width: 100%;
+    }
+
+    10% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
