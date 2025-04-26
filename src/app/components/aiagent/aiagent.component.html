@@ -9,15 +9,17 @@
     <div #history class="history">
         @if (!cookies.check('slnd-functional')) {
         <div class="cookie-disallowed">
-            <span>This is an AI Agent, that you can chat with.</span>
+            <span>This is an AI chatbot that you can chat with.</span>
             <span>To use this feature, please allow functional cookies!</span>
             <span class="slnd-consent-btn" role="button" (click)="allowFunctionalCookies()">Allow</span>
+            <span>Read the <a class="slnd-link" routerLink="/impressum">privacy policy</a>
+                to find out about data processing.</span>
         </div>
         } @else {
         @for (message of chatHistory; track message) {
         <div class="chatline">
             <div class="message" [ngClass]="message.role == 'system' ? 'system' : 'user'">
-                <span class="text">{{message.text}}</span>
+                <span class="text" [innerHTML]="message.text"></span>
                 <span class="time">{{message.date.getHours()}}:{{message.date.getMinutes().toString().padStart(2,
                     '0')}}</span>
             </div>
@@ -31,7 +33,7 @@
         }
     </div>
     <form [formGroup]="chatForm" (ngSubmit)="onSubmit()">
-        <input type="text" formControlName="query" id="query" placeholder="write a message" autocomplete="off">
+        <input #query type="text" formControlName="query" id="query" placeholder="write a message" autocomplete="off">
         <button [disabled]="disabled" type="submit"><img src="/assets/icons/icon_plane.svg" alt=""></button>
     </form>
 </div>

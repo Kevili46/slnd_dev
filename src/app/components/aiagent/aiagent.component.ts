@@ -7,10 +7,13 @@ import { Subscription } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { ConsentService } from '../../services/consent.service';
 import { LLMResponse } from '../../model/LLMResponse.type';
+import { RouterLink } from '@angular/router';
+import { UtilityService } from '../../services/utility.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'slnd-aiagent',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './aiagent.component.html',
   styleUrl: './aiagent.component.scss'
 })
@@ -22,24 +25,38 @@ export class AiagentComponent implements OnInit {
   typing: boolean = false;
   typingMessage: string = 'Typing';
   disabled: boolean = true;
+  inputPossible: boolean = false;
   querySubscription!: Subscription | undefined;
+  cookieSubscription!: Subscription | undefined;
+
 
   cookies: CookieService = inject(CookieService);
   consentService: ConsentService = inject(ConsentService);
+  utilityService: UtilityService = inject(UtilityService);
+  sanitizer: DomSanitizer = inject(DomSanitizer);
 
 
   @ViewChild('agent') agentEl!: ElementRef;
   @ViewChild('history') historyEl!: ElementRef;
+  @ViewChild('query') inputField!: ElementRef;
 
   constructor(private http: HttpClient, private el: ElementRef) { }
-
 
   ngOnInit(): void {
     this.chatForm = new FormGroup({
       'query': new FormControl('')
     })
 
-    this.querySubscription = this.chatForm.get('query')?.valueChanges.subscribe(value => {
+    this.cookieSubscription = this.consentService.functional$.subscribe(
+      (value) => {
+        this.disableInput(!value);
+        if (!value) {
+          this.chatHistory = [];
+        }
+      }
+    )
+
+    this.querySubscription = this.chatForm.controls['query']?.valueChanges.subscribe(value => {
       this.checkQueryfield(value);
     });
   }
@@ -59,24 +76,23 @@ export class AiagentComponent implements OnInit {
       return;
     }
     this.disabled = true;
+    this.disableInput(true);
     let userMessage: Message = { text: '', date: new Date(), role: 'user' };
     userMessage.text = query;
     this.chatHistory.push(userMessage);
     let to = setTimeout(() => this.scrollToBottom(this.historyEl), 0)
     this.chatForm.reset();
-    await this.sleep(300);
+    await this.utilityService.sleep(300);
     this.typing = true;
     to = setTimeout(() => this.scrollToBottom(this.historyEl), 0)
-    await this.sleep(500);
+    await this.utilityService.sleep(500);
     let systemMessage: Message = await this.getAPIResponse(query);
     this.chatHistory.push(systemMessage);
     this.typing = false;
     this.checkQueryfield(this.chatForm.get('query')?.value);
     to = setTimeout(() => this.scrollToBottom(this.historyEl), 2)
-  }
-
-  sleep(time: number) {
-    return new Promise(resolve => setTimeout(resolve, time));
+    this.disableInput(false);
+    this.inputField.nativeElement.focus();
   }
 
   scrollToBottom(el: ElementRef) {
@@ -86,7 +102,7 @@ export class AiagentComponent implements OnInit {
 
   getAPIResponse(query: string): Promise<Message> {
     return new Promise((resolve) => {
-      this.http.post<LLMResponse>('http://localhost:4600/chat', { message: query })
+      this.http.post<LLMResponse>('http://localhost:4600/chat', { message: query, _id: this.cookies.get('_slnd') })
         .subscribe({
           next: (res) => {
             const systemMessage = {
@@ -109,22 +125,39 @@ export class AiagentComponent implements OnInit {
   }
 
   checkQueryfield(value: string | null): void {
-    if (value && value.trim() !== '' && !this.typing && this.cookies.get('slnd-functional')) {
+    if (value && value.trim() !== '' && !this.typing && this.cookies.check('slnd-functional')) {
       this.disabled = false;
       return
     }
     this.disabled = true;
   }
 
-  allowFunctionalCookies() {
-    this.consentService.cookieMap.set(this.consentService.functional, true);
-    this.cookies.set('slnd-functional', 'true');
-    this.checkQueryfield(this.chatForm.get('query')?.value);
-    let to = setTimeout(() => this.scrollToBottom(this.historyEl), 0)
+  disableInput(disable: boolean) {
+    if (disable) {
+      this.chatForm.controls['query']?.disable();
+      return;
+    }
+    this.chatForm.controls['query']?.enable();
   }
 
-  editResponse(res: string): string {
+  allowFunctionalCookies() {
+    if (!this.cookies.check(this.consentService.firstVisit)) {
+      this.cookies.set(this.consentService.firstVisit, this.consentService.generateID(), this.consentService.expires);
+      this.consentService.cookieMap.set(this.consentService.firstVisit, true);
+    }
+    this.consentService.cookieMap.set(this.consentService.functional, true);
+    this.cookies.set('slnd-functional', 'true');
+    this.disableInput(false);
+    this.checkQueryfield(this.chatForm.get('query')?.value);
+    let to = setTimeout(() => this.scrollToBottom(this.historyEl), 0)
+    this.consentService.consentBanner = false;
+    this.inputField.nativeElement.focus();
+  }
 
-    return res.slice(0, -3);
+  editResponse(res: string): SafeHtml {
+    let edit = res.slice(1, -1);
+    edit = edit.replace(/\\n/g, '<br>');
+    edit = edit.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    return this.sanitizer.bypassSecurityTrustHtml(edit);
   }
 }

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { AiagentComponent } from './components/aiagent/aiagent.component';
 import { ConsentComponent } from './components/consent/consent.component';
+import { ConsentService } from './services/consent.service';
 
 @Component({
   selector: 'slnd',
@@ -18,6 +19,7 @@ export class AppComponent implements AfterViewInit {
   title = 'SLND';
 
   utilityService: UtilityService = inject(UtilityService);
+  consentService: ConsentService = inject(ConsentService);
   float: boolean = this.utilityService.floatHeader;
   hide: boolean = this.utilityService.hideHeader;
   menuOpen: boolean = this.utilityService.menuOpen;

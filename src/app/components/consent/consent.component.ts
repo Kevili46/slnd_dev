@@ -19,9 +19,11 @@ export class ConsentComponent {
   constructor() {
     if (this.cookies.check(this.consentService.functional)) {
       this.consentService.cookieMap.set(this.consentService.functional, true);
+      this.consentService.setFunctional(true);
     }
     if (this.cookies.check(this.consentService.analytics)) {
       this.consentService.cookieMap.set(this.consentService.analytics, true);
+      this.consentService.setAnalytics(true);
     }
     if (this.cookies.check(this.consentService.firstVisit)) {
       this.consentService.cookieMap.set(this.consentService.firstVisit, true);
@@ -38,8 +40,10 @@ export class ConsentComponent {
       }
       this.consentService.cookieMap.set(key, true);
       this.cookies.set(key, 'true', this.consentService.expires);
+      this.consentService.setFunctional(true);
+      this.consentService.setAnalytics(true);
     })
-    this.cookies.set(this.consentService.firstVisit, 'true', this.consentService.expires);
+    this.setFirstVisit()
     this.consentService.cookieMap.set(this.consentService.firstVisit, true);
     this.consentService.consentBanner = false;
   }
@@ -51,27 +55,37 @@ export class ConsentComponent {
       }
       this.consentService.cookieMap.set(key, false);
       this.cookies.delete(key);
+      this.consentService.setFunctional(false);
+      this.consentService.setAnalytics(false);
     })
-    this.cookies.set(this.consentService.firstVisit, 'true', this.consentService.expires);
+    this.setFirstVisit()
     this.consentService.cookieMap.set(this.consentService.firstVisit, true);
     this.consentService.consentBanner = false;
   }
 
   saveSettings() {
-    this.cookies.set(this.consentService.firstVisit, 'true', this.consentService.expires);
-    this.consentService.cookieMap.set(this.consentService.firstVisit, true);
+    this.setFirstVisit()
     if (this.consentService.cookieMap.get(this.consentService.functional)) {
       this.cookies.set(this.consentService.functional, 'true', this.consentService.expires)
+      this.consentService.setFunctional(true);
     } else {
       this.cookies.delete(this.consentService.functional);
+      this.consentService.setFunctional(false);
     }
     if (this.consentService.cookieMap.get(this.consentService.analytics)) {
       this.cookies.set(this.consentService.analytics, 'true', this.consentService.expires)
+      this.consentService.setAnalytics(true);
     } else {
       this.cookies.delete(this.consentService.analytics);
+      this.consentService.setAnalytics(false);
     }
     this.consentService.consentBanner = false;
   }
 
-
+  setFirstVisit() {
+    if (!this.cookies.check(this.consentService.firstVisit)) {
+      this.cookies.set(this.consentService.firstVisit, this.consentService.generateID(), this.consentService.expires);
+      this.consentService.cookieMap.set(this.consentService.firstVisit, true);
+    }
+  }
 }

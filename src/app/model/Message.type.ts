@@ -1,5 +1,7 @@
+import { SafeHtml } from "@angular/platform-browser"
+
 export type Message = {
-    text: string,
+    text: SafeHtml,
     date: Date,
     role: string
 }

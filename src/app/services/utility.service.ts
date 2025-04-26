@@ -51,4 +51,8 @@ export class UtilityService {
     }
     this.mobile = true;
   }
+
+  sleep(time: number) {
+    return new Promise(resolve => setTimeout(resolve, time));
+  }
 }

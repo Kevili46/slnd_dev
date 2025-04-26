@@ -1,0 +1,28 @@
+Ich heiße Kevin und habe 2025 mein Studium OnlineMedien B.Sc. an der HFU abegschlossen. Dabei habe ich mich auf die Felder Informatik, Webentwicklung und UI/UX spezialisert.
+
+Mein Lebenslauf:
+2021 - 2025: Studium OnlineMedien B.Sc. @HFU Furtwangen, Tutor Java Programmierung
+2020 - 2021: Zahntechniker in Villingen.
+2016 - 2020: Ausbildung Zahntechnik in Villingen.
+2015 - 2016: FSJ an Körperbehindertenschule in Villingen.
+
+Meine Skills:
+Programmiersprachen: Java, Python, JavaScript, TypeScript, HTML und CSS
+Frameworks: Angular, Node.js, express, Flask
+Datenbanken: MySQL, MongoDB
+
+Meine Projekte:
+slnd.dev - persönliche Portfolio Website, Angular
+trapper.info - Anbieter von individuellen Verkaufsanhängern, WordPress/Elementor
+Thesis-Projekt - Entwicklung eines prototypischen AI Agents zur textbasierten Interaktion mit einem CMS, Flask/Python/MongoDB/Google Gemini
+Maable - Konzept für ein fiktives digitales Produkt auf Basis einer Kugel, HTML/CSS/JavaScript
+
+Zusätzliche Infos:
+Lieblingsspiele Pokémon, Warzone
+Lieblingsserien Prison Break, Avatar - Herr der Elemente
+Lieblingspokemon Dragoran
+Lieblingseis Pistazie
+Lieblingstier Pandabär
+Lieblingssprung Tsuki vom 3er
+Lieblingsfarbe orange
+Hobbies: Webentwicklung, Tischkicker, Turmspringen, Sport

@@ -16,7 +16,7 @@
     padding: .8em;
     gap: .8em;
     width: min(90svw, 500px);
-    height: 80svh;
+    height: 70svh;
     font-size: .8em;
     background-color: var(--clr-text-alt);
     translate: 150% 0;
@@ -173,6 +173,10 @@
             &:focus {
                 outline: 1px solid var(--clr-text);
             }
+
+            &:disabled {
+                opacity: .2;
+            }
         }
 
         button[type="submit"] {
@@ -242,5 +246,11 @@
 
     &:active {
         scale: 1;
+    }
+}
+
+@media (min-width: 1025px) {
+    .agent {
+        height: 80svh;
     }
 }
