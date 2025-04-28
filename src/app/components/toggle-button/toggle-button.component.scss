@@ -1,7 +1,6 @@
 :host {
     display: inline-block;
     position: relative;
-    cursor: pointer;
     width: 50px;
     height: 20px;
     background-color: var(--clr-orange-light);
@@ -26,6 +25,14 @@
             translate var(--time-interact) ease;
     }
 
+    &.necessary {
+        opacity: .5;
+    }
+
+    &:not(.necessary) {
+        cursor: pointer;
+    }
+
     &[state="true"] {
         filter: grayscale(0);
         background-color: var(--clr-orange);
@@ -36,7 +43,7 @@
         }
     }
 
-    &:hover {
+    &:not(.necessary):hover {
         scale: 1.02;
     }
 }

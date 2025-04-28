@@ -3,11 +3,15 @@
     <h3>Cookie settings</h3>
 
     <div class="consent-content">
-        <p>This website uses cookies to add functionality and to analyse interaction.
+        <p>This website uses cookies to improve user experience, add functionality, and to analyse interaction.
 
         </p>
         <div class="selectables">
             <div class="settings">
+                <div>
+                    <p>necessary</p>
+                    <slnd-toggle-button state="true" class="necessary"></slnd-toggle-button>
+                </div>
                 <div>
                     <p>functional</p>
                     <slnd-toggle-button (click)="consentService.changeCookies(consentService.functional)"

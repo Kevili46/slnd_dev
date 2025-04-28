@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms'
@@ -17,7 +17,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './aiagent.component.html',
   styleUrl: './aiagent.component.scss'
 })
-export class AiagentComponent implements OnInit {
+export class AiagentComponent implements OnInit, OnDestroy {
 
   agentActive: boolean = false;
   chatForm!: FormGroup;
@@ -124,8 +124,8 @@ export class AiagentComponent implements OnInit {
     });
   }
 
-  checkQueryfield(value: string | null): void {
-    if (value && value.trim() !== '' && !this.typing && this.cookies.check('slnd-functional')) {
+  checkQueryfield(value: string): void {
+    if (value && value.trim() !== '' && !this.typing && this.cookies.check(this.consentService.functional)) {
       this.disabled = false;
       return
     }
@@ -158,6 +158,12 @@ export class AiagentComponent implements OnInit {
     let edit = res.slice(1, -1);
     edit = edit.replace(/\\n/g, '<br>');
     edit = edit.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    edit = edit.replace(/\\"(.*?)\\"/g, '<em>$1</em>');
     return this.sanitizer.bypassSecurityTrustHtml(edit);
+  }
+
+  ngOnDestroy(): void {
+    this.querySubscription?.unsubscribe();
+    this.cookieSubscription?.unsubscribe();
   }
 }

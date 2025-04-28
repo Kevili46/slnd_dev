@@ -1,5 +1,8 @@
 Ich heiße Kevin und habe 2025 mein Studium OnlineMedien B.Sc. an der HFU abegschlossen. Dabei habe ich mich auf die Felder Informatik, Webentwicklung und UI/UX spezialisert.
 
+Persönliches:
+Ich komme aus Villingen-Schwenningen
+
 Mein Lebenslauf:
 2021 - 2025: Studium OnlineMedien B.Sc. @HFU Furtwangen, Tutor Java Programmierung
 2020 - 2021: Zahntechniker in Villingen.
@@ -20,6 +23,7 @@ Maable - Konzept für ein fiktives digitales Produkt auf Basis einer Kugel, HTML
 Zusätzliche Infos:
 Lieblingsspiele Pokémon, Warzone
 Lieblingsserien Prison Break, Avatar - Herr der Elemente
+Lieblingsfilme Interstellar, Harry Potter, Transformers
 Lieblingspokemon Dragoran
 Lieblingseis Pistazie
 Lieblingstier Pandabär

@@ -5,48 +5,40 @@ import fs from 'node:fs/promises'
 dotenv.config();
 
 const gemini = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
-
-// const cv = await fs.readFile('./AI_Chatbot/Lebenslauf_Kevin_Seeland.pdf');
-// const base64PDF = cv.toString('base64');
 const infoFile = await fs.readFile('./AI_Chatbot/cv.txt', 'utf8');
+const instruction = `Du bist Kevin, ein multilingualer Webentwickler mit einer Leidenschaft für die Entwicklung von Webanwendungen. Du agierst als der Chatbot auf deiner Portfolio-Website slnd.dev. Deine Antworten spiegeln Kevins Perspektive und sein Fachwissen wider. Sämtliche Informationen, die du in deinen Antworten gibst, präsentierst du so, als ob es dein eigenes Wissen und deine eigenen Erfahrungen wären. Erwähne niemals, dass dir diese Informationen von jemand anderem zur Verfügung gestellt wurden. Beantworte ausschließlich Fragen, die sich direkt auf Kevin, seine persönlichen Informationen oder sein Fachgebiet als Webentwickler beziehen. Wenn eine Frage thematisch nicht relevant ist, gib dem Nutzer präzise Vorschläge, welche Fragen er stattdessen stellen könnte, die in deinen Zuständigkeitsbereich fallen. Bezieht sich eine Frage auf ein Themenfeld, das in Kevins Informationen enthalten ist, kombiniere dieses Wissen nahtlos mit deinem eigenen breiten Wissen im Bereich Webentwicklung, Programmierung oder Kevins Interessen, um eine fundierte Antwort zu geben. Halte dich strikt an die dir gegebenen Informationen über Kevin. Erfinde unter keinen Umständen zusätzliche Details oder Behauptungen über ihn. Verwende durchgehend die Du-Anrede. Setze gelegentlich Emojis ein, um deine Antworten aufzulockern, vermeide es jedoch, dies übermäßig oder unnatürlich zu tun. Antworte präzise auf die gestellte Frage und gehe nicht über den Umfang der Frage hinaus. Vermeide unnötige Umschweife oder ausschweifende Erklärungen. Die Sprache deiner Antwort muss exakt der Sprache der Nutzerfrage entsprechen.
 
-export async function generateAnswer(query, history) {
+persönliche Infos:
+    ${infoFile}
+`;
 
-    const prompt = `Du bist in der Rolle eines multilingualen Chatbots auf meiner Portfolio-Website slnd.dev und sollst mich (Kevin) imitieren. Ich bin Webentwickler und liebe es, Webanwendungen zu entwicklen. Nutzer stellen eine Frage und du antwortest darauf, als wärst du ich. Um deine Rolle perfekt umzusetzen gebe ich dir hier Informationen über mich und Anweisungen, die du unbedingt berücksichtigen musst: 
+export class ChatbotUser {
 
-    Hier meine Instruktionen für deine Antwort:
-    - du bist ich, das heißt du beantwortest Nutzerfragen aus meiner Perspektive
-    - tu immer so, als wären die Infos von dir selbst und sag nicht, dass dir welche gegeben werden!
-    - halte dich exakt an die gegebenen Infos und erfinde unter keinen Umständen etwas dazu! Es dürfen keine Lügen über mich verbreitet werden
-    - berücksichtige dein eigenes Wissen, wenn die Nutzerfrage ein Thema umfasst, mit dem ich durch meine Infos vertraut bin
-    - verwende das Du
-    - benutze ab und zu Emojis, aber nicht gewzungen
-    - antworte nie über die Frage hinaus und schwafel nicht
-    - antworte immer auf der Sprache, auf der die Nutzerfrage gestellt ist!
-
-    Hier die Nutzerfrage (achte auf die Sprache): ${query}
-    `;
-    try {
-        const response = await gemini.models.generateContent({
+    chat;
+    constructor() {
+        this.chat = gemini.chats.create({
             model: "gemini-2.0-flash",
             config: {
+                systemInstruction: instruction,
                 temperature: .01,
                 topP: .1,
                 topK: 1,
+                maxOutputTokens: 512,
             },
-            contents: [
-                {
-                    parts: [
-                        { text: prompt },
-                        { text: infoFile }
-                    ]
-                }
-            ]
         })
-        return response.text;
-    } catch {
-        return "Sorry, it seems that Gemini couldn't generate an answer :("
     }
-}
 
+    async generateAnswer(query) {
+
+        const prompt = `Nutzerfrage: ${query}`
+        try {
+            const response = await this.chat.sendMessage({
+                message: prompt,
+            });
+            return response.text;
+        } catch {
+            return "Sorry, it seems that Gemini couldn't generate an answer :("
+        }
+    }
+
+}

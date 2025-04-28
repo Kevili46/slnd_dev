@@ -233,15 +233,20 @@
         content: '';
         display: block;
         position: absolute;
-        right: 0;
+        left: 25%;
         bottom: 0;
         height: 2px;
-        width: 75%;
+        width: 0%;
         background: var(--clr-grad);
+        transition: width var(--time-interact) ease;
     }
 
     &:hover {
         scale: 1.05;
+
+        &::after {
+            width: 75%;
+        }
     }
 
     &:active {

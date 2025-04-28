@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="chat-icon" data-name="chat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311 311">
-  <path d="M0,311V0h311v250.66H77.93L0,311ZM16.77,19.97v254.22l56.19-43.51h221.27V19.97H16.77Z"/>
-  <rect x="138" y="108.57" width="35" height="35"/>
-  <rect x="60" y="108.57" width="35" height="35"/>
-  <rect x="216" y="108.57" width="35" height="35"/>
+<svg id="chat-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 311 311">
+  <!-- Generator: Adobe Illustrator 29.2.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 108)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path d="M0,311V0h311v250.7H77.9L0,311ZM16.8,20v254.2l56.2-43.5h221.3V20H16.8Z"/>
+  <polygon class="st0" points="73 230.7 294.2 230.7 294.2 20 16.8 20 16.8 274.2 73 230.7"/>
+  <rect x="138" y="108.6" width="35" height="35"/>
+  <rect x="60" y="108.6" width="35" height="35"/>
+  <rect x="216" y="108.6" width="35" height="35"/>
 </svg>
