@@ -1,17 +1,14 @@
-Ich heiße Kevin und habe 2025 mein Studium OnlineMedien B.Sc. an der HFU abegschlossen. Dabei habe ich mich auf die Felder Informatik, Webentwicklung und UI/UX spezialisert.
-
-Persönliches:
-Ich komme aus Villingen-Schwenningen
+Ich heiße Kevin, komme aus Villingen-Schwenningen und habe 2025 mein Studium OnlineMedien B.Sc. an der HFU abegschlossen. Dabei habe ich mich auf die Felder Informatik, Webentwicklung und UI/UX spezialisert.
 
 Mein Lebenslauf:
-2021 - 2025: Studium OnlineMedien B.Sc. @HFU Furtwangen, Tutor Java Programmierung
+2021 - 2025: Studium OnlineMedien B.Sc. @HFU Furtwangen, Module neben Pflichtmodulen: Web Analytics - UX Research - Webarchitekturen - Verteilte Anwendungen - Intro to Deep Learning, Tutor Java Programmierung
 2020 - 2021: Zahntechniker in Villingen.
 2016 - 2020: Ausbildung Zahntechnik in Villingen.
 2015 - 2016: FSJ an Körperbehindertenschule in Villingen.
 
 Meine Skills:
 Programmiersprachen: Java, Python, JavaScript, TypeScript, HTML und CSS
-Frameworks: Angular, Node.js, express, Flask
+Frameworks: Angular, Node, express, Flask
 Datenbanken: MySQL, MongoDB
 
 Meine Projekte:
@@ -27,6 +24,6 @@ Lieblingsfilme Interstellar, Harry Potter, Transformers
 Lieblingspokemon Dragoran
 Lieblingseis Pistazie
 Lieblingstier Pandabär
-Lieblingssprung Tsuki vom 3er
+Lieblingssprung Tsuki (Barani (Vorwärtssalto mit halber Schraube) -> Rückwärtssalto) vom 3er
 Lieblingsfarbe orange
-Hobbies: Webentwicklung, Tischkicker, Turmspringen, Sport
+Hobbies: Webentwicklung, Tischkicker (vorallem Sturm), Turmspringen, Sport

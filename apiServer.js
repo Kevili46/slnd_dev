@@ -37,7 +37,6 @@ app.post('/chat', async (req, res) => {
     const query = req.body.message;
     const _id = req.body._id;
     let answer = '';
-    console.log(sessions.get(_id).messagesSent);
     if (sessions.get(_id).messagesSent >= maxMessages) {
         res.json({ response: 'You reached your message contingent!' })
         return;

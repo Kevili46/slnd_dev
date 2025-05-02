@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +18,14 @@ export class ConsentService {
   ])
   expires: number = 365;
 
+  gtmID: string = "JXZ2JG3BMJ"
+
   functionalSource: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   functional$ = this.functionalSource.asObservable();
   analyticsSource: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   analytics$ = this.analyticsSource.asObservable();
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private document: Document) { }
 
   openConsentBanner(): void {
     this.consentBanner = true;
@@ -68,4 +71,25 @@ export class ConsentService {
     return ID;
   }
 
+  manageGTM() {
+    if (!this.cookieMap.get(this.analytics)) {
+      this.document.head.querySelectorAll('.slnd-gtm').forEach(script => {
+        this.document.head.removeChild(script);
+      })
+      return;
+    }
+    const dlScript = this.document.createElement('script');
+    dlScript.innerHTML = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-${this.gtmID}');`
+    dlScript.classList.add('slnd-gtm');
+    this.document.head.insertBefore(dlScript, this.document.head.firstChild);
+    const gtmScript = this.document.createElement('script');
+    gtmScript.classList.add('slnd-gtm');
+    gtmScript.async = true;
+    gtmScript.src = `https://www.googletagmanager.com/gtag/js?id=G-${this.gtmID}`;
+    this.document.head.insertBefore(gtmScript, this.document.head.firstChild);
+  }
 }

@@ -3,13 +3,14 @@
     <h3>Cookie settings</h3>
 
     <div class="consent-content">
-        <p>This website uses cookies to improve user experience, add functionality, and to analyse interaction.
+        <p>This website uses cookies to improve user experience, add functionality, and to analyse interaction. <br>By
+            allowing cookies, you agree to the <a class="slnd-link" routerLink="/privacy">privacy policy</a>.
 
         </p>
         <div class="selectables">
             <div class="settings">
                 <div>
-                    <p>necessary</p>
+                    <p>essential</p>
                     <slnd-toggle-button state="true" class="necessary"></slnd-toggle-button>
                 </div>
                 <div>
@@ -24,9 +25,9 @@
                 </div>
             </div>
             <div class="buttons">
+                <div class="slnd-consent-btn" role="button" (click)="rejectAll()">Reject all</div>
                 <div class="slnd-consent-btn" role="button" (click)="saveSettings()">Save</div>
                 <div class="slnd-consent-btn" role="button" (click)="allowAll()">Allow all</div>
-                <div class="slnd-consent-btn" role="button" (click)="rejectAll()">Reject all</div>
             </div>
         </div>
     </div>

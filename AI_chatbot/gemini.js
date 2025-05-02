@@ -36,8 +36,10 @@ export class ChatbotUser {
                 message: prompt,
             });
             return response.text;
-        } catch {
+        } catch (e) {
+            console.log(e);
             return "Sorry, it seems that Gemini couldn't generate an answer :("
+            return
         }
     }
 

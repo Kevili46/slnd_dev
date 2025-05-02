@@ -3,10 +3,11 @@ import { CookieService } from 'ngx-cookie-service';
 import { ToggleButtonComponent } from '../toggle-button/toggle-button.component';
 import { CommonModule } from '@angular/common';
 import { ConsentService } from '../../services/consent.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'slnd-consent',
-  imports: [ToggleButtonComponent, CommonModule],
+  imports: [ToggleButtonComponent, CommonModule, RouterLink],
   templateUrl: './consent.component.html',
   styleUrl: './consent.component.scss',
   providers: [CookieService]
@@ -24,6 +25,7 @@ export class ConsentComponent {
     if (this.cookies.check(this.consentService.analytics)) {
       this.consentService.cookieMap.set(this.consentService.analytics, true);
       this.consentService.setAnalytics(true);
+      this.consentService.manageGTM();
     }
     if (this.cookies.check(this.consentService.firstVisit)) {
       this.consentService.cookieMap.set(this.consentService.firstVisit, true);
@@ -45,6 +47,7 @@ export class ConsentComponent {
     })
     this.setFirstVisit()
     this.consentService.cookieMap.set(this.consentService.firstVisit, true);
+    this.consentService.manageGTM();
     this.consentService.consentBanner = false;
   }
 
@@ -60,6 +63,9 @@ export class ConsentComponent {
     })
     this.setFirstVisit()
     this.consentService.cookieMap.set(this.consentService.firstVisit, true);
+    this.cookies.delete('_ga');
+    this.cookies.delete(`_ga_${this.consentService.gtmID}`);
+    this.consentService.manageGTM();
     this.consentService.consentBanner = false;
   }
 
@@ -77,8 +83,11 @@ export class ConsentComponent {
       this.consentService.setAnalytics(true);
     } else {
       this.cookies.delete(this.consentService.analytics);
+      this.cookies.delete('_ga');
+      this.cookies.delete(`_ga_${this.consentService.gtmID}`);
       this.consentService.setAnalytics(false);
     }
+    this.consentService.manageGTM();
     this.consentService.consentBanner = false;
   }
 
