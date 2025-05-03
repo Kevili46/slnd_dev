@@ -152,6 +152,7 @@
 
     form {
         display: flex;
+        flex-flow: row nowrap;
         gap: 1em;
 
         >* {
@@ -189,6 +190,7 @@
                 opacity var(--time-interact) ease;
 
             img {
+                width: 100%;
                 rotate: -35deg;
             }
 

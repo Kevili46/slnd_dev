@@ -78,6 +78,9 @@ export class ConsentService {
       })
       return;
     }
+    if (this.document.head.querySelectorAll('.slnd-gtm').length > 0) {
+      return;
+    }
     const dlScript = this.document.createElement('script');
     dlScript.innerHTML = `
     window.dataLayer = window.dataLayer || [];

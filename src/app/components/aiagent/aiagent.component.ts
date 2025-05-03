@@ -102,7 +102,7 @@ export class AiagentComponent implements OnInit, OnDestroy {
 
   getAPIResponse(query: string): Promise<Message> {
     return new Promise((resolve) => {
-      this.http.post<LLMResponse>('http://localhost:4600/chat', { message: query, _id: this.cookies.get('_slnd') })
+      this.http.post<LLMResponse>('https://slnd.dev/api/chat', { message: query, _id: this.cookies.get('_slnd') })
         .subscribe({
           next: (res) => {
             const systemMessage = {
