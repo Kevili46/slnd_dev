@@ -1,0 +1,12 @@
+<nav id="main-nav" [class.open]="menuOpen()">
+    <div (click)="toggleMenu()" class="toggle-menu">
+        <span class="menu-icon-bar"></span>
+        <span class="menu-icon-bar"></span>
+        <span class="menu-icon-bar"></span>
+    </div>
+    <ul>
+        @for(navRoute of navRoutes(); track $index) {
+        <slnd-nav-item [navRoute]="navRoute"></slnd-nav-item>
+        }
+    </ul>
+</nav>

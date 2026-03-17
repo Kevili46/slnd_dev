@@ -1,0 +1,4 @@
+@mixin blurred {
+    opacity: .3;
+    filter: blur(1px);
+}

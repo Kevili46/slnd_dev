@@ -1,0 +1,101 @@
+@use '_mixins' as shared;
+
+:host {
+    border-top: 2px solid var(--clr-text);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+    padding: 10px 10px 80px 10px;
+    transition:
+        opacity var(--time-interact-calm) ease,
+        filter var(--time-interact-calm) ease,
+        scale var(--time-interact-calm) ease;
+
+    &.in-view {
+        scale: 1.02;
+
+        .skills {
+            .skill {
+                img {
+                    &:hover {
+                        filter: grayscale(0);
+
+                        &.inverse:hover {
+                            filter: grayscale(0) invert(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:not(.in-view) {
+        @include shared.blurred;
+
+        h3 {
+            &::after {
+                left: 0;
+                width: 0;
+                translate: 0 0;
+            }
+        }
+    }
+}
+
+
+
+h3 {
+    position: relative;
+    align-self: flex-start;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -.2em;
+        width: 1.2em;
+        left: 100%;
+        translate: -100%;
+        height: 2px;
+        background: var(--clr-grad);
+        transition:
+            width var(--time-interact-calm) ease,
+            translate var(--time-interact-calm) ease,
+            left var(--time-interact-calm) ease;
+        transition-delay: var(--time-interact-delay);
+    }
+}
+
+
+.skills {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    gap: 40px;
+
+    .skill {
+        width: 80px;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 60%;
+            aspect-ratio: 1;
+            object-fit: contain;
+            filter: grayscale(1);
+            transition:
+                filter var(--time-interact) ease,
+                scale var(--time-interact) ease;
+
+            &.inverse {
+                filter: grayscale(1) invert(1);
+            }
+        }
+
+        span {
+            text-align: center;
+        }
+    }
+}

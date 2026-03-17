@@ -1,0 +1,9 @@
+<h3>{{skillCategory().name}}</h3>
+<div class="skills">
+    @for (skill of skillCategory().skills; track skill) {
+    <div class="skill">
+        <img [src]="skill.icon" [class.inverse]="darkMode() && skill.inverseIcon" alt="{{skill.name}} icon">
+        <span>{{skill.name}}</span>
+    </div>
+    }
+</div>

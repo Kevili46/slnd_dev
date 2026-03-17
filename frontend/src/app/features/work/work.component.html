@@ -1,0 +1,21 @@
+<slnd-highlight-heading heading="Samples of my work." stringToHighlight="work."></slnd-highlight-heading>
+<section>
+  <div class="content">
+    <div class="tag-filter">
+      @for (tag of availableTags(); track tag) {
+      <span (click)="filterReferences(tag)" class="filter-tag"
+        [class.active-filter]="filterTags().has(tag)">{{tag}}</span>
+      }
+    </div>
+    <div class="references">
+      @for (reference of filteredReferences(); track $index) {
+      <slnd-reference class="reference" [reference]="reference"></slnd-reference>
+      } @empty {
+      <p>No matches for this filter combination.</p>
+      }
+    </div>
+    <div class="button-center">
+      <slnd-button text="get in touch" url="/contact"></slnd-button>
+    </div>
+  </div>
+</section>

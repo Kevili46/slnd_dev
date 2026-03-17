@@ -1,0 +1,44 @@
+@use '_animations' as *;
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90svh;
+
+    @include animations;
+}
+
+
+.fade-text {
+    position: relative;
+    padding-right: .2em;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 0%;
+        height: 100%;
+        border-left: 2px solid var(--clr-text);
+        background-color: var(--clr-bg);
+        animation: fade-text 1000ms ease;
+    }
+}
+
+.highlighted {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: max(.1em, 2px);
+        background: var(--clr-grad);
+    }
+}

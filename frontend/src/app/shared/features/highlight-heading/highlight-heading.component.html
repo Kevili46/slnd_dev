@@ -1,0 +1,9 @@
+<h1 class="fade-text">
+    @for (subString of highlightedHeading(); track $index) {
+    @if (subString.isHighlighted) {
+    <span class="highlighted">{{subString.text}}</span>
+    } @else {
+    {{subString.text}}
+    }
+    }
+</h1>

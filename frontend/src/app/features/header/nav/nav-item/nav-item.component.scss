@@ -1,0 +1,32 @@
+:host {}
+
+.nav-item {
+    position: relative;
+    color: var(--clr-text);
+    font-size: 1.2em;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: var(--clr-grad);
+        bottom: -.1em;
+        left: 50%;
+        translate: -50% 0;
+        height: 2px;
+        width: 0px;
+        transition: width var(--time-interact) ease;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+.active {
+    &::after {
+        width: 100%;
+    }
+}

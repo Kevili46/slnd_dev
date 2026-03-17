@@ -1,0 +1,22 @@
+import { Component, viewChildren } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'slnd-privacy',
+  imports: [RouterLink],
+  templateUrl: './privacy.component.html',
+  styleUrl: './privacy.component.scss'
+})
+export class PrivacyComponent {
+
+  public readonly privacyItems = viewChildren('privacyItem');
+
+  togglePrivacyItem(event: MouseEvent) {
+    const clicked: HTMLElement = event.target as HTMLElement;
+    let parent: HTMLElement | null | undefined = clicked.parentElement;
+    while (!parent?.classList.contains('privacy-item')) {
+      parent = parent?.parentElement;
+    }
+    parent.classList.toggle('open-item');
+  }
+}

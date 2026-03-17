@@ -1,0 +1,93 @@
+@use '_mixins' as shared;
+
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .tag-filter {
+        position: sticky;
+        top: 0px;
+        display: flex;
+        justify-content: flex-end;
+        background-color: var(--clr-bg);
+        z-index: 2;
+        gap: 20px;
+        border-bottom: 2px solid var(--clr-text);
+        padding: 20px 0 20px 0;
+
+        .filter-tag {
+            position: relative;
+            padding: .4em .5em;
+            user-select: none;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                background-color: var(--clr-text);
+                width: 0%;
+                height: 2px;
+                translate: -50% 0;
+                transition: width var(--time-interact) ease;
+            }
+
+            &:not(.filter) {
+                cursor: pointer;
+
+                &:hover {
+                    &::after {
+                        width: calc(100% - .8em);
+                    }
+                }
+            }
+
+            &.active-filter {
+                background-color: var(--clr-text);
+                color: var(--clr-bg)
+            }
+        }
+    }
+
+    .references {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: stretch;
+        justify-content: center;
+        gap: 100px 60px;
+        padding: 40px 10px;
+
+        &:has(.reference:hover) {
+            .reference:not(:hover) {
+                scale: .97;
+                @include shared.blurred;
+            }
+        }
+    }
+
+    .button-center {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+    }
+}
+
+@media (min-width: 1025px) {
+    section {
+
+        h1 {
+            text-align: start;
+            margin-top: 40svh;
+        }
+
+        .references {
+            padding: 40px;
+
+            .reference {
+                flex-basis: 300px;
+            }
+        }
+    }
+}

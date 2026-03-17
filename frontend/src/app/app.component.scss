@@ -1,0 +1,47 @@
+@use '_variables' as mode;
+@import url(./shared/fonts/fonts.scss);
+
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: var(--clr-bg);
+    font-family: var(--font-primary);
+    font-size: 20px;
+    color: var(--clr-text);
+    letter-spacing: .03em;
+
+    *:focus-visible {
+        outline: 1px solid var(--clr-text);
+        border-radius: 0;
+    }
+
+    &.load {
+        &::after {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--clr-bg);
+            z-index: 10;
+        }
+    }
+}
+
+.page {
+    flex: 1 1 0;
+    position: relative;
+}
+
+@media (min-width: 1025px) {
+    :host {
+        flex-flow: row nowrap;
+    }
+
+    .page {
+        flex: 1 0 0;
+        height: 100%;
+    }
+}
