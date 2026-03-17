@@ -1,0 +1,32 @@
+# --- Top Level Secrets & Config ---
+.env
+apiServer.js.log
+gemini.js.log
+
+# --- Angular Frontend (Nested) ---
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.vscode/
+frontend/out-tsc/
+frontend/bazel-out/
+
+# --- Testing & Coverage ---
+frontend/coverage/
+frontend/.nyc_output/
+
+# --- Dependency management ---
+# We keep package.json, but some ignore local lock files 
+# if they use different managers. Usually, keep these.
+# !frontend/package-lock.json
+
+# --- OS Generated ---
+.DS_Store
+Thumbs.db
+*.swp
+
+# --- IDE Specific ---
+.idea/
+.project
+.settings/
+*.sublime-workspace
