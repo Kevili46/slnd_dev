@@ -1,0 +1,9 @@
+@for(message of history(); track $index) {
+<slnd-message [message]="message"></slnd-message>
+}
+@if(typing()) {
+<div class="typing">
+    <img class="author-img" src="/assets/img/kevin_portrait.jpg" alt="">
+    <p>Typing <span>.</span><span>.</span><span>.</span></p>
+</div>
+}

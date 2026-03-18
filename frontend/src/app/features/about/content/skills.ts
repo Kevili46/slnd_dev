@@ -76,6 +76,10 @@ const more: SkillCategory = {
     name: "more",
     skills: [
         {
+            name: "Git",
+            icon: "assets/logos/git.svg"
+        },
+        {
             name: "LangChain",
             icon: "assets/logos/langchain.svg"
         },

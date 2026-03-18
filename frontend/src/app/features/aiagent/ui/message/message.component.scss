@@ -1,0 +1,62 @@
+:host {
+    display: flex;
+    gap: 5px;
+    max-width: 90%;
+
+    &.user {
+        animation: fade-message var(--time-interact) ease;
+        align-self: flex-end;
+
+        .message-main {
+            align-items: flex-end;
+
+            .message-text {
+                background-color: var(--clr-orange-light);
+                color: black;
+            }
+        }
+    }
+
+    &.system {
+        align-self: flex-start;
+
+        .message-text {
+            border: 1px solid var(--clr-blue-light);
+        }
+    }
+}
+
+.author-img {
+    height: 32px;
+}
+
+
+.message-main {
+    display: flex;
+    flex-direction: column;
+
+    .message-text {
+        display: inline-block;
+        overflow-wrap: break-word;
+        font-size: 1em;
+        padding: .3em .5em;
+        hyphens: auto;
+    }
+
+    .message-time {
+        font-family: var(--font-secondary);
+        font-size: .6em;
+    }
+}
+
+@keyframes fade-message {
+    0% {
+        opacity: 0;
+        translate: 0 20px;
+    }
+
+    100% {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
