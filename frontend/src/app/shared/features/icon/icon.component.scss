@@ -1,9 +1,9 @@
 :host {
     display: block;
-}
 
-svg {
-    display: block;
-    width: 100%;
-    fill: var(--clr-text);
+    &::ng-deep svg {
+        display: block;
+        width: 100%;
+        fill: var(--clr-text);
+    }
 }

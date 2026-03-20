@@ -1,5 +1,5 @@
 import { Message } from "./Message.model";
-import { Participant } from "./participant.model";
+import { Participant } from "./Participant.model";
 
 export interface Chat {
     id: number;

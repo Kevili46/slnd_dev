@@ -1,5 +1,7 @@
-import { Component, input, InputSignal } from '@angular/core';
+import { Component, computed, inject, input, InputSignal, Signal } from '@angular/core';
 import { Icon, ICON } from '@shared/features/icon/models/icon.model';
+import { icons } from './models/icons';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'slnd-icon',
@@ -8,12 +10,19 @@ import { Icon, ICON } from '@shared/features/icon/models/icon.model';
   styleUrl: './icon.component.scss',
   host: {
     '[style.width]': 'width() ? width() : null',
+    '[innerHTML]': 'svg() ?? ""'
   }
 })
 export class IconComponent {
 
-  public readonly icon: InputSignal<Icon | undefined> = input();
+  public sanititzer: DomSanitizer = inject(DomSanitizer);
+
+  public readonly icon: InputSignal<Icon> = input.required();
   public readonly width: InputSignal<string> = input('20px');
+
+  public readonly svg: Signal<SafeHtml | undefined> = computed(() => {
+    return this.sanititzer.bypassSecurityTrustHtml(icons.get(this.icon()) ?? '');
+  })
 
   protected readonly ICON = ICON;
 

@@ -17,7 +17,7 @@ export class ChatbotUser {
     chat;
     constructor() {
         this.chat = gemini.chats.create({
-            model: "gemini-2.0-flash",
+            model: "gemini-flash-lite-latest",
             config: {
                 systemInstruction: instruction,
                 temperature: .01,
@@ -37,9 +37,7 @@ export class ChatbotUser {
             });
             return response.text;
         } catch (e) {
-            console.log(e);
             return "Sorry, it seems that Gemini couldn't generate an answer :("
-            return
         }
     }
 

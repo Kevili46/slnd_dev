@@ -14,25 +14,40 @@
     }
 }
 
-.typing {
+.chatline {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    animation: fade-typing var(--time-interact) ease;
+    align-items: flex-start;
+    gap: 5px;
+
+    &.user {
+        justify-content: flex-end;
+    }
 
     .author-img {
         width: 32px;
-        aspect-ratio: 1;
     }
 
-    p {
-        font-size: 1em;
 
-        span {
-            --index: sibling-index();
-            margin-right: 2px;
-            display: inline-block;
-            animation: typing 900ms calc(var(--index)* 120ms) ease infinite;
+    &.typing {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        animation: fade-typing var(--time-interact) ease;
+
+        .author-img {
+            width: 32px;
+            aspect-ratio: 1;
+        }
+
+        p {
+            font-size: 1em;
+
+            span {
+                --index: sibling-index();
+                margin-right: 2px;
+                display: inline-block;
+                animation: typing 900ms calc(var(--index)* 120ms) ease infinite;
+            }
         }
     }
 }

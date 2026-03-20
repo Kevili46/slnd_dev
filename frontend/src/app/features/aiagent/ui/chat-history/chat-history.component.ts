@@ -2,6 +2,7 @@ import { Component, Signal, inject, ElementRef, afterEveryRender } from '@angula
 import { AgentService } from '@features/aiagent/services/agent.service';
 import { Message } from '@features/aiagent/models/Message.model';
 import { MessageComponent } from '@features/aiagent/ui/message/message.component';
+import { ROLE } from '@features/aiagent/models/Roles.model';
 
 @Component({
   selector: 'slnd-chat-history',
@@ -38,4 +39,5 @@ export class ChatHistoryComponent {
     });
   }
 
+  protected readonly ROLE = ROLE;
 }

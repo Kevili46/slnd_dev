@@ -7,7 +7,7 @@
     --clr-orange: #FF8C00;
     --clr-orange-light: #ffb65d;
     --clr-grad: linear-gradient(90deg, var(--clr-orange) 15%, var(--clr-blue) 85%);
-    --clr-shadow: rgba(0, 0, 0, .4);
+    --clr-shadow: #777777;
     --time-interact: 150ms;
     --time-interact-calm: 350ms;
     --time-interact-slow: 500ms;
@@ -19,5 +19,6 @@
 
 @mixin dark {
     --clr-text: #d7d7d7;
-    --clr-bg: #171717;
+    --clr-bg: #202020;
+    --clr-shadow: #000000;
 }

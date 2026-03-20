@@ -2,7 +2,7 @@ import { Injectable, WritableSignal, Signal, signal, computed, effect } from '@a
 import { Chat } from '../models/Chat.model';
 import { Message } from '../models/Message.model';
 import { ROLE } from '../models/Roles.model';
-import { Participant } from '../models/participant.model';
+import { Participant } from '../models/Participant.model';
 
 @Injectable({
   providedIn: 'root',

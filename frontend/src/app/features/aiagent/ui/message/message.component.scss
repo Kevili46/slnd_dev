@@ -2,11 +2,9 @@
     display: flex;
     gap: 5px;
     max-width: 90%;
+    animation: fade-message var(--time-interact) ease;
 
     &.user {
-        animation: fade-message var(--time-interact) ease;
-        align-self: flex-end;
-
         .message-main {
             align-items: flex-end;
 
@@ -25,11 +23,6 @@
         }
     }
 }
-
-.author-img {
-    height: 32px;
-}
-
 
 .message-main {
     display: flex;
