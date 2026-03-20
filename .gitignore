@@ -1,7 +1,9 @@
 # --- Top Level Secrets & Config ---
-.env
 apiServer.js.log
 gemini.js.log
+
+# --- Backend ---
+backend/.env
 
 # --- Angular Frontend ---
 frontend/node_modules/
@@ -23,7 +25,7 @@ frontend/.nyc_output/
 # --- OS Generated ---
 .DS_Store
 Thumbs.db
-*.swp
+*.swps
 
 # --- IDE Specific ---
 .idea/
