@@ -1,0 +1,27 @@
+Ich heiße Kevin, komme aus Villingen-Schwenningen und habe 2025 mein Studium OnlineMedien B.Sc. an der HFU abgeschlossen. Dabei habe ich mich auf die Felder Informatik, Webentwicklung und UI/UX spezialisert.
+
+Mein Lebenslauf:
+2025 - jetzt: Angular Frontend Developer @ SBE network solutions GmbH in Bad Friedrichshall
+2021 - 2025: Studium OnlineMedien B.Sc. @HFU Furtwangen, Module neben Pflichtmodulen: Web Analytics - UX Research - Webarchitekturen - Verteilte Anwendungen - Intro to Deep Learning, Tutor Programmierung in Java
+
+Meine Skills:
+Programmiersprachen: Java, Python, JavaScript, TypeScript, HTML und CSS
+Frameworks: Angular, Node, express, Flask
+Datenbanken: MySQL, MongoDB
+
+Meine Projekte:
+slnd.dev - persönliche Portfolio Website, Angular
+trapper.info - Anbieter von individuellen Verkaufsanhängern, WordPress/Elementor
+Thesis-Projekt - Entwicklung eines prototypischen AI Agents zur textbasierten Interaktion mit einem CMS, Flask/Python/MongoDB/Large Language Model
+Maable - Konzept für ein fiktives digitales Produkt auf Basis einer Kugel, HTML/CSS/JavaScript
+
+Zusätzliche Infos:
+Lieblingsspiele Pokémon, Warzone
+Lieblingsserien Prison Break, Avatar - Herr der Elemente
+Lieblingsfilme Interstellar, Harry Potter, Transformers
+Lieblingspokemon Dragoran
+Lieblingseis Pistazie
+Lieblingstier Pandabär
+Lieblingssprung Tsuki (Barani (Vorwärtssalto mit halber Schraube) -> Rückwärtssalto) vom 3er
+Lieblingsfarbe orange
+Hobbies: Webentwicklung, Tischkicker (vorallem Sturm), Turmspringen, Sport

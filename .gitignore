@@ -2,8 +2,9 @@
 apiServer.js.log
 gemini.js.log
 
-# --- Backend ---
-backend/.env
+# --- Services ---
+services/.env
+services/*/dist
 
 # --- Angular Frontend ---
 frontend/node_modules/

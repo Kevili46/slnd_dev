@@ -9,6 +9,10 @@ html {
     &[dark] {
         @include mode.dark;
     }
+
+    &::-webkit-scrollbar {
+        scrollbar-width: none;
+    }
 }
 
 
@@ -20,6 +24,7 @@ html {
 h1 {
     font-size: clamp(3em, 10svw, 5em);
     font-weight: 400;
+    line-height: 1em;
     text-wrap: balance;
 }
 
