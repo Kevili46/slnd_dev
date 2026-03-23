@@ -3,7 +3,7 @@ apiServer.js.log
 gemini.js.log
 
 # --- Services ---
-services/.env
+services/*/.env
 services/*/dist
 
 # --- Angular Frontend ---
