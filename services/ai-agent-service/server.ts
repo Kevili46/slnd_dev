@@ -2,14 +2,13 @@ import 'dotenv/config';
 import app from './src/app';
 import * as http from 'http';
 
-const PORT: string | number = process.env.PORT || 3000;
+const PORT: string | number = process.env.PORT || 3002;
 
 const server: http.Server = http.createServer(app);
 
 server.listen(PORT, () => {
     console.log('----------------------------------------------------');
-    console.log(`🚀 AI Agent Service started on http://localhost:${PORT}`);
-    console.log(`📡 Status: Ready for Nginx reverse-proxy traffic (TS)`);
+    console.log(`🤖 AI Agent Service started on http://localhost:${PORT}`);
     console.log('----------------------------------------------------');
 });
 

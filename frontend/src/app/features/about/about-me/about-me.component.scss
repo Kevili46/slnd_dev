@@ -1,0 +1,20 @@
+:host {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2em;
+
+}
+
+article {
+    flex: 1 1 300px;
+}
+
+p {
+    margin: 0 0 40px 0;
+}
+
+img {
+    width: min(60%, 200px);
+    aspect-ratio: 1;
+    object-fit: contain;
+}

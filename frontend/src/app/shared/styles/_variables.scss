@@ -2,14 +2,17 @@
     --clr-text: black;
     --clr-text-alt: white;
     --clr-bg: white;
+    --clr-bg-2: #fafafa;
     --clr-blue: #00D5FF;
     --clr-blue-light: #a5f0ff;
     --clr-orange: #FF8C00;
     --clr-orange-light: #ffb65d;
     --clr-grad: linear-gradient(90deg, var(--clr-orange) 15%, var(--clr-blue) 85%);
+    --clr-border: #eaeaea;
     --clr-shadow: #777777;
     --clr-online: #01c92c;
     --clr-offline: #ff5454;
+    --border: 1px solid var(--clr-border);
     --time-interact: 150ms;
     --time-interact-calm: 350ms;
     --time-interact-slow: 500ms;
@@ -22,5 +25,7 @@
 @mixin dark {
     --clr-text: #d7d7d7;
     --clr-bg: #202020;
-    --clr-shadow: #000000;
+    --clr-bg-2: #1a1a1a;
+    --clr-border: #000000;
+    --clr-shadow: #111111;
 }

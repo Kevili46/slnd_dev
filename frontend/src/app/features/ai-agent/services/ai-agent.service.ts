@@ -34,6 +34,11 @@ export class AiAgentService {
 
   constructor() {
     this.initChat();
+    effect(() => {
+      if (this.agentOpen()) {
+        this.reloadHealth();
+      };
+    })
   }
 
   public toggleAgent() {
@@ -69,15 +74,8 @@ export class AiAgentService {
 
   }
 
-  private createMessage(text: string, author: Participant) {
-    const message: Message = {
-      text,
-      author,
-      date: new Date(),
-    }
-
-    this._chat.update((current) =>
-      current ? { ...current, history: [...current.history, message] } : current);
+  private reloadHealth() {
+    this.aiAgentHttpService.reloadHealth();
   }
 
   private initChat() {
@@ -98,6 +96,18 @@ export class AiAgentService {
     }
 
     this._chat.set(chat);
+  }
+
+
+  private createMessage(text: string, author: Participant) {
+    const message: Message = {
+      text,
+      author,
+      date: new Date(),
+    }
+
+    this._chat.update((current) =>
+      current ? { ...current, history: [...current.history, message] } : current);
   }
 
 }

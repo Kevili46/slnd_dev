@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from '@features/footer/footer.component';
 import { AiAgentComponent } from '@features/ai-agent/ai-agent.component';
 import { ConsentComponent } from '@features/consent/consent.component';
+import { IdService } from '@core/services/id/id.service';
 
 @Component({
   selector: 'slnd',
@@ -17,6 +18,7 @@ import { ConsentComponent } from '@features/consent/consent.component';
 export class AppComponent {
   private renderer: Renderer2 = inject(Renderer2);
   private utilityService: UtilityService = inject(UtilityService);
+  private idService: IdService = inject(IdService);
   private elRef: ElementRef = inject(ElementRef);
 
   public readonly darkMode = this.utilityService.darkMode;

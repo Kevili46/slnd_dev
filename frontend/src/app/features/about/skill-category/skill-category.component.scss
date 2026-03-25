@@ -1,15 +1,22 @@
 @use '_mixins' as shared;
 
 :host {
-    border-top: 2px solid var(--clr-text);
     display: flex;
-    flex-flow: column nowrap;
-    gap: 30px;
-    padding: 10px 10px 80px 10px;
+    flex-flow: row wrap;
+    gap: 2em;
+
     transition:
         opacity var(--time-interact-calm) ease,
         filter var(--time-interact-calm) ease,
         scale var(--time-interact-calm) ease;
+
+    &.core-category {
+        h3 {
+            padding: 0 .3em;
+            background: var(--clr-grad);
+            color: var(--clr-text-alt);
+        }
+    }
 
     &.in-view {
         scale: 1.02;
@@ -68,20 +75,21 @@ h3 {
 
 
 .skills {
+    flex: 1 1 500px;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    gap: 40px;
+    gap: 1em;
 
     .skill {
-        width: 80px;
+        flex: 0 0 100px;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
         gap: 10px;
 
         img {
-            width: 60%;
+            width: min(60%, 56px);
             aspect-ratio: 1;
             object-fit: contain;
             filter: grayscale(1);

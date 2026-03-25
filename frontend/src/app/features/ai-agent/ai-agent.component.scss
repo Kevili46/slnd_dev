@@ -14,13 +14,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: .8em;
     gap: .8em;
     width: min(90svw, 500px);
     height: 70svh;
     font-size: .8em;
-    background-color: color-mix(in hsl, var(--clr-bg), transparent 3%);
-    border: 1px solid var(--clr-bg);
     backdrop-filter: blur(5px);
     translate: 150% 0;
     transition: translate var(--time-interact-slow) ease;

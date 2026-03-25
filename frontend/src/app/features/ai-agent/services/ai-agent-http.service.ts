@@ -9,11 +9,18 @@ export class AiAgentHttpService {
   private http = inject(HttpClient);
   private readonly apiUrl = `${environment.apiUrl}/ai-agent`;
 
-  public readonly health = httpResource<ApiHealthResponse>(() => `${this.apiUrl}/health`);
+  private readonly health = httpResource<ApiHealthResponse>(() => `${this.apiUrl}/health`);
 
   public readonly online = computed(() => {
-    return this.health.value()?.status === 'UP';
+    if (this.health.error() || this.health.isLoading()) {
+      return false;
+    }
+    return this.health.value()?.status === 'UP' || false;
   });
+
+  public reloadHealth() {
+    this.health.reload();
+  }
 
   public sendChatPrompt(query: string): Observable<AiAgentResponse> {
     return this.http.post<AiAgentResponse>(`${this.apiUrl}/sendMessage`, { query });

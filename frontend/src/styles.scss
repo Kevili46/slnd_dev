@@ -87,6 +87,14 @@ p {
     }
 }
 
+.slnd-bubble-back {
+    border: var(--border);
+    border-radius: 3em;
+    corner-shape: squircle;
+    padding: 1.5em;
+    background-color: color-mix(in hsl, var(--clr-bg-2), transparent 3%);
+}
+
 
 @media (min-width: 1025px) {
     h1 {

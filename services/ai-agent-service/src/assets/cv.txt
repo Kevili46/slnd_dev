@@ -1,10 +1,11 @@
-Ich heiße Kevin, komme aus Villingen-Schwenningen und habe 2025 mein Studium OnlineMedien B.Sc. an der HFU abgeschlossen. Dabei habe ich mich auf die Felder Informatik, Webentwicklung und UI/UX spezialisert.
+Ich heiße Kevin und habe 2025 mein Studium OnlineMedien B.Sc. an der HFU abgeschlossen. Dabei habe ich mich auf die Felder Informatik, Webentwicklung und UI/UX spezialisert.
 
 Mein Lebenslauf:
 2025 - jetzt: Angular Frontend Developer @ SBE network solutions GmbH in Bad Friedrichshall
 2021 - 2025: Studium OnlineMedien B.Sc. @HFU Furtwangen, Module neben Pflichtmodulen: Web Analytics - UX Research - Webarchitekturen - Verteilte Anwendungen - Intro to Deep Learning, Tutor Programmierung in Java
 
 Meine Skills:
+Main-Stack: Angular, TypeScript, express/Node.js
 Programmiersprachen: Java, Python, JavaScript, TypeScript, HTML und CSS
 Frameworks: Angular, Node, express, Flask
 Datenbanken: MySQL, MongoDB

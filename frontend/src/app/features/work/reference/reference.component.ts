@@ -6,6 +6,9 @@ import { Reference } from '@features/work/models/Reference.type';
   imports: [],
   templateUrl: './reference.component.html',
   styleUrl: './reference.component.scss',
+  host: {
+    '[class.slnd-bubble-back]': 'true',
+  }
 })
 export class ReferenceComponent {
 

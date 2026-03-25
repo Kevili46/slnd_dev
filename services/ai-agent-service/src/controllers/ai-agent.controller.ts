@@ -14,12 +14,16 @@ export const chatWithAi = async (
             return res.status(400).json({ error: 'Query is required' });
         }
 
-        const aiResponse = await aiAgentService.sendMessage(query);
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 20000);
 
-        return res.status(200).json({
-            success: true,
-            data: aiResponse
-        });
+        try {
+            const aiResponse = await aiAgentService.sendMessage(query, controller.signal);
+            return res.status(200).json({ success: true, data: aiResponse });
+        } catch (error: any) {
+        } finally {
+            clearTimeout(timeout);
+        }
     } catch (error) {
         next(error);
     }

@@ -6,8 +6,6 @@
     align-items: flex-start;
     justify-content: space-between;
     color: var(--clr-text);
-    border-bottom: 2px solid var(--clr-text);
-    padding: 20px;
     transition:
         scale var(--time-interact-calm) ease,
         filter var(--time-interact-calm) ease,
@@ -58,7 +56,7 @@ img {
     gap: 10px;
 
     .reference-tag {
-        color: var(--clr-text-alt);
+        color: var(--clr-bg);
         font-weight: 900;
         padding: .2em .5em;
         background: var(--clr-grad);
