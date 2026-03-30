@@ -1,16 +1,20 @@
 import 'dotenv/config';
 import app from './src/app';
 import * as http from 'http';
+import { setupWebSocket } from '@websockets/ai-agent.ws';
 
 const PORT: string | number = process.env.PORT || 3002;
 
 const server: http.Server = http.createServer(app);
 
+setupWebSocket(server);
+
 server.listen(PORT, () => {
-    console.log('----------------------------------------------------');
+    console.log('-------------------------------------------------------');
     console.log(`🤖 AI Agent Service started on http://localhost:${PORT}`);
-    console.log('----------------------------------------------------');
+    console.log('-------------------------------------------------------');
 });
+
 
 const shutdown = (): void => {
     server.close(() => {
@@ -19,7 +23,7 @@ const shutdown = (): void => {
 
     setTimeout(() => {
         process.exit(1);
-    }, 10000);
+    }, 5000);
 };
 
 process.on('SIGTERM', shutdown);

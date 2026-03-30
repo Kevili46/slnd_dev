@@ -30,12 +30,12 @@ h1 {
 
 
 h2 {
+    width: 100%;
     font-size: clamp(3.5em, 10svw, 4.5em);
     font-weight: 400;
-    display: flex;
-    flex-flow: column nowrap;
-    gap: .1em;
     margin-bottom: .4em;
+    hyphens: auto;
+    text-wrap: balance;
 }
 
 h3 {
@@ -93,6 +93,8 @@ p {
     corner-shape: squircle;
     padding: 1.5em;
     background-color: color-mix(in hsl, var(--clr-bg-2), transparent 3%);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
 }
 
 

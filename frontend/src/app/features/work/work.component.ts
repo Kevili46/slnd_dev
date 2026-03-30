@@ -1,6 +1,7 @@
 import { Component, Signal, WritableSignal, signal, computed } from '@angular/core';
 import { Reference } from '@features/work/models/Reference.type';
 import { ButtonComponent } from '@shared/features/button/button.component';
+import { BUTTON } from '@shared/features/button/models/button-type.model';
 import { HighlightHeadingComponent } from '@shared/features/highlight-heading/highlight-heading.component';
 
 import { ReferenceComponent } from './reference/reference.component';
@@ -51,5 +52,7 @@ export class WorkComponent {
     }
     this._filterTags.set(currentFilterTags);
   }
+
+  protected readonly BUTTON = BUTTON;
 }
 

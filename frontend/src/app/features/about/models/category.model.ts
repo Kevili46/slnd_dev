@@ -1,7 +1,8 @@
 export const CATEGORY = {
     'CORE': 'Core Stack',
     'FRONTEND': 'Frontend',
-    'BACKEND': 'Backend & DB',
+    'BACKEND': 'Backend',
+    'DB': 'Database',
     'LANGUAGE': 'Coding in',
     'TOOL': 'Tools',
 } as const;

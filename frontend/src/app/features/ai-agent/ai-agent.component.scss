@@ -18,7 +18,6 @@
     width: min(90svw, 500px);
     height: 70svh;
     font-size: .8em;
-    backdrop-filter: blur(5px);
     translate: 150% 0;
     transition: translate var(--time-interact-slow) ease;
     box-shadow: var(--box-shadow);
@@ -28,7 +27,8 @@
     }
 
     .chat-head {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 30px;
         justify-content: space-between;
         align-items: flex-start;
         gap: 1em;
@@ -66,21 +66,8 @@
             }
         }
 
-        button {
-            cursor: pointer;
-            transition: scale var(--time-interact) ease;
-
-            &:hover {
-                scale: 1.05;
-            }
-
-            &:active {
-                scale: 1;
-            }
-
-            .close-icon {
-                fill: var(--clr-text);
-            }
+        .close-button {
+            justify-self: center;
         }
     }
 
@@ -113,65 +100,13 @@
                 opacity: .2;
             }
         }
-
-        button[type="submit"] {
-            padding: 5px;
-            transition:
-                scale var(--time-interact) ease,
-                opacity var(--time-interact) ease;
-            background-color: unset;
-
-
-            &:not(:disabled) {
-
-                &:hover {
-                    scale: 1.05;
-                }
-
-                &:active {
-                    scale: 1;
-                }
-            }
-
-            &:disabled {
-                cursor: default;
-                opacity: .3;
-            }
-        }
-
     }
 }
 
-.toggle-agent {
+.toggle-button {
     position: fixed;
     bottom: 1em;
     right: min(1em, 5svw);
-    cursor: pointer;
-    transition: scale var(--time-interact) ease;
-
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 25%;
-        bottom: 0;
-        height: 2px;
-        width: 0%;
-        background: var(--clr-grad);
-        transition: width var(--time-interact) ease;
-    }
-
-    &:hover {
-        scale: 1.05;
-
-        &::after {
-            width: 75%;
-        }
-    }
-
-    &:active {
-        scale: 1;
-    }
 }
 
 @media (min-width: 1025px) {

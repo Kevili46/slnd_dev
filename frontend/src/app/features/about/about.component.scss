@@ -1,65 +1,30 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 section {
     display: flex;
     flex-flow: column nowrap;
+    width: min(885px, 90%);
     justify-content: center;
-    align-items: center;
-    min-height: 100svh;
 
-    .skills-experience {
-
-        h2 {
-            text-align: end;
-        }
-
-        article {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 40px;
-            width: 100%;
-
-            p {
-                text-align: end;
-                padding: 0 0 0 2em;
-            }
-
-            .skills-box {
-                display: flex;
-                gap: 3em;
-                width: 100%;
-                flex-flow: column nowrap;
-            }
-
-            .experience-box {
-                width: 100%;
-            }
-        }
+    .skills {
+        text-align: end;
     }
-}
 
-@media (min-width: 1025px) {
-    .content {
-        width: max(700px, 70%);
+    &.heading {
+        min-height: 100svh;
+    }
+
+    &:not(.heading) {
         margin-bottom: 250px;
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
     section {
-        .skills-experience {
-            article {
-                .skills-box {
-                    .skill-category {
-                        .skills {
-                            justify-content: flex-end;
-
-                            .skill {
-                                width: 100px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        width: max(700px, 70%);
     }
 }

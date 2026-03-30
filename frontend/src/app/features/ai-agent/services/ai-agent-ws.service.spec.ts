@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AiAgentHttpService } from './ai-agent-http.service';
+import { AiAgentWSService } from './ai-agent-ws.service';
 
 describe('AiAgentHttpService', () => {
-  let service: AiAgentHttpService;
+  let service: AiAgentWSService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AiAgentHttpService);
+    service = TestBed.inject(AiAgentWSService);
   });
 
   it('should be created', () => {

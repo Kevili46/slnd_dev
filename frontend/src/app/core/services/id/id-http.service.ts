@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class IdHttpService {
   private http = inject(HttpClient);
-  private readonly apiUrl = `${environment.apiUrl}/id`;
+  private readonly apiUrl = `${environment.httpUrl}/id`;
 
   private readonly health = httpResource<ApiHealthResponse>(() => `${this.apiUrl}/health`);
 

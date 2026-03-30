@@ -1,4 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://slnd.dev/api/v1'
+    wsUrl: 'wss://slnd.dev/api/v1',
+    httpUrl: 'https://slnd.dev/api/v1'
 };

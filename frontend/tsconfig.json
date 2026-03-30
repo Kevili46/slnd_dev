@@ -17,6 +17,9 @@
       ],
       "@shared/*": [
         "src/app/shared/*"
+      ],
+      "@slnd/*": [
+        "../shared/*"
       ]
     },
     "strict": true,

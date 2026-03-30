@@ -3,8 +3,8 @@ import {
     ChatSession,
     Content
 } from "@google/generative-ai";
-import { SYSTEM_PROMPT } from "@utils/CONSTANTS";
 import { history } from "@utils/chatHistory";
+import { SYSTEM_PROMPT } from "@utils/CONSTANTS";
 import { readFileSync } from "node:fs";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
@@ -33,22 +33,15 @@ const model = genAI.getGenerativeModel({
     systemInstruction: systemPrompt,
 });
 
-const chat: ChatSession = model.startChat({ history });
+export const createChatSession = () => {
+    return model.startChat({ history: [] });
+};
 
-export const sendMessage = async (query: string, signal?: AbortSignal): Promise<string> => {
+export const sendMessage = async (session: ChatSession, query: string): Promise<string> => {
     try {
-        const result = await chat.sendMessage(query, { signal });
-        const response = result.response;
-        const text: string = response.text();
-
-        if (!text) {
-            return "I cannot answer that."
-        }
-
-        return text;
-
-    } catch (error: any) {
-        console.error(error);
-        return 'Sorry, I cannot answer at the moment. Ask me again later :)';
+        const result = await session.sendMessage(query);
+        return result.response.text() || "I cannot answer that.";
+    } catch (error) {
+        return 'Sorry, I am having trouble right now.';
     }
 };

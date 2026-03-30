@@ -21,6 +21,7 @@ app.use('/api/v1/id', createProxyMiddleware({
 app.use('/api/v1/ai-agent', createProxyMiddleware({
     target: AI_AGENT_SERVICE_URL,
     changeOrigin: true,
+    ws: true,
 }));
 
 app.get('/api/health', (req, res) => res.json({ status: 'UP', timestamp: new Date().toISOString() }));

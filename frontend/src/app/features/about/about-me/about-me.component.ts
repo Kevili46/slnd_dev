@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '@shared/features/button/button.component';
+import { BUTTON } from '@shared/features/button/models/button-type.model';
 
 @Component({
   selector: 'slnd-about-me',
@@ -11,5 +12,7 @@ import { ButtonComponent } from '@shared/features/button/button.component';
   }
 })
 export class AboutMeComponent {
+
+  protected readonly BUTTON = BUTTON;
 
 }

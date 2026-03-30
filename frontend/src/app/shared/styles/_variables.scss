@@ -1,6 +1,5 @@
 @mixin light {
     --clr-text: black;
-    --clr-text-alt: white;
     --clr-bg: white;
     --clr-bg-2: #fafafa;
     --clr-blue: #00D5FF;
@@ -15,7 +14,7 @@
     --border: 1px solid var(--clr-border);
     --time-interact: 150ms;
     --time-interact-calm: 350ms;
-    --time-interact-slow: 500ms;
+    --time-interact-slow: 600ms;
     --time-interact-delay: 100ms;
     --box-shadow: 0 0 15px var(--clr-shadow);
     --font-primary: 'EB Garamond', serif;

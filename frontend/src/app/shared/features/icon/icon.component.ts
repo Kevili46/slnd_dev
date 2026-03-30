@@ -9,7 +9,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './icon.component.html',
   styleUrl: './icon.component.scss',
   host: {
-    '[style.width]': 'width() ? width() : null',
+    '[style.width]': 'width()',
     '[innerHTML]': 'svg() ?? ""'
   }
 })

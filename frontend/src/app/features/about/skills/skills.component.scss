@@ -1,0 +1,29 @@
+:host {
+    display: flex;
+    gap: 3em;
+    flex-flow: column nowrap;
+}
+
+article {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    gap: 1em;
+
+    p {
+        text-align: end;
+        padding: 0 0 0 2em;
+    }
+}
+
+
+.skills-box {
+    display: flex;
+    gap: 3em;
+    width: 100%;
+    flex-flow: column nowrap;
+}
+
+.experience-box {
+    width: 100%;
+}

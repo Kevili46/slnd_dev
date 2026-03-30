@@ -1,0 +1,14 @@
+<article>
+    <p>Throughout my journey in corporate software engineering and UI/UX design, I have leveraged modern
+        technologies to solve complex, real-world problems. Below are the core languages and tools I use
+        to realize sophisticated digital products.</p>
+    <slnd-button [relevance]="BUTTON.CTA" text="view my work" url="/work"></slnd-button>
+</article>
+<div class="skills-box">
+    @for (category of skillCategories(); track category) {
+    <slnd-skill-category [skillCategory]="category"></slnd-skill-category>
+    }
+</div>
+<!-- <div class="experience-box">
+                <slnd-timeline></slnd-timeline>
+            </div> -->

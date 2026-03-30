@@ -3,7 +3,6 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
-import aiAgentRoutes from '@routes/ai-agent.routes';
 
 const app: Application = express();
 
@@ -18,12 +17,5 @@ app.get('/health', (req: Request, res: Response) => {
         timestamp: new Date().toISOString()
     });
 });
-
-app.use('', aiAgentRoutes);
-
-app.use((req: Request, res: Response) => {
-    res.status(404).json({ error: 'Route not found' });
-});
-
 
 export default app;

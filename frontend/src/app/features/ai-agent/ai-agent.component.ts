@@ -1,15 +1,16 @@
 import { Component, ElementRef, inject, Signal, viewChild, computed, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
-import { IconComponent } from '@shared/features/icon/icon.component';
 import { ChatHistoryComponent } from './ui/chat-history/chat-history.component';
+import { ButtonComponent } from '@shared/features/button/button.component';
 import { ICON } from '@shared/features/icon/models/icon.model';
+import { BUTTON } from '@shared/features/button/models/button-type.model';
 import { AiAgentService } from './services/ai-agent.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'slnd-aiagent',
-  imports: [CommonModule, FormsModule, IconComponent, ChatHistoryComponent],
+  imports: [CommonModule, FormsModule, ChatHistoryComponent, ButtonComponent],
   templateUrl: './ai-agent.component.html',
   styleUrl: './ai-agent.component.scss',
   host: {
@@ -40,7 +41,6 @@ export class AiAgentComponent {
 
   public submitQuery() {
     this.agentService.sendMessage(this.query());
-    this.agentService.startTyping();
     this.query.set('');
     this.queryInput().nativeElement.focus();
   }
@@ -63,4 +63,5 @@ export class AiAgentComponent {
   }
 
   protected readonly ICON = ICON;
+  protected readonly BUTTON = BUTTON;
 }

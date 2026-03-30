@@ -44,18 +44,18 @@ export const skills: Skill[] = [
     {
         name: "PostgreSQL",
         icon: "/assets/logos/postgresql.svg",
-        category: CATEGORY.BACKEND,
+        category: CATEGORY.DB,
         core: true,
     },
     {
         name: "MySQL",
         icon: "/assets/logos/mysql.svg",
-        category: CATEGORY.BACKEND,
+        category: CATEGORY.DB,
     },
     {
         name: "MongoDB",
         icon: "/assets/logos/mongodb.svg",
-        category: CATEGORY.BACKEND,
+        category: CATEGORY.DB,
     },
     {
         name: "JavaScript",
@@ -89,18 +89,18 @@ export const skills: Skill[] = [
         category: CATEGORY.TOOL,
     },
     {
-        name: "FL Studio",
-        icon: "/assets/logos/flstudio.png",
-        category: CATEGORY.TOOL,
-    },
-    {
         name: "Google Analytics",
         icon: "/assets/logos/ga4.svg",
         category: CATEGORY.TOOL,
     },
     {
-        name: "Adobe Creative Cloud",
+        name: "Creative Cloud",
         icon: "/assets/logos/adobe.png",
+        category: CATEGORY.TOOL,
+    },
+    {
+        name: "FL Studio",
+        icon: "/assets/logos/flstudio.png",
         category: CATEGORY.TOOL,
     },
 ];
