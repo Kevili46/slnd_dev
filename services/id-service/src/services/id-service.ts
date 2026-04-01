@@ -1,17 +1,17 @@
 import jwt from 'jsonwebtoken';
-import { COOKIE_NAME } from '@utils/CONSTANTS';
 import { userStorage, addNewUser } from '@utils/UserStorage';
-import { UserData } from '@interfaces/UserData.model';
+import { IdResponse, UserData } from '@slnd/core/models';
 
 const JWT_SECRET = process.env.JWT_SECRET || '09q2jjg2309509112';
 
-export const identifyUser: (token: string) => { token: string, userId: string } = (token) => {
+export const identifyUser: (token: string | undefined) => IdResponse = (token) => {
 
     let userId: string | null = null;
 
     if (token) {
         try {
-            userId = jwt.verify(token, JWT_SECRET) as string;
+            const verified = jwt.verify(token, JWT_SECRET) as { userId: string };
+            userId = verified.userId;
         } catch {
             userId = null;
         }
@@ -22,10 +22,11 @@ export const identifyUser: (token: string) => { token: string, userId: string } 
     }
 
     const newToken = jwt.sign({ userId }, JWT_SECRET, { expiresIn: '1y' });
+    const userData: UserData = getUserData(userId);
 
-    return { token: newToken, userId };
+    return { token: newToken, userId, userData };
 }
 
-export const getUserData: (uuid: string) => UserData | undefined = (uuid: string) => {
-    return userStorage.get(uuid);
+export const getUserData: (userId: string) => UserData = (userId: string) => {
+    return userStorage.get(userId)!;
 }

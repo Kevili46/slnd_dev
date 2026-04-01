@@ -6,7 +6,7 @@ html {
 
     @include mode.light;
 
-    &[dark] {
+    &[data-theme='DARK'] {
         @include mode.dark;
     }
 

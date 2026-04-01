@@ -23,6 +23,9 @@
       ],
       "@utils/*": [
         "src/utils/*"
+      ],
+      "@slnd/*": [
+        "../../shared/*"
       ]
     },
     "strict": true,

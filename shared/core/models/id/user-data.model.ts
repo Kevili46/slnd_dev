@@ -1,8 +1,8 @@
+import { Consent } from './consent.model'
 export interface UserData {
-    uuid: string,
+    userId: string,
     data: {
-        functional: boolean,
-        analytics: boolean,
+        consent: Consent,
         theme: string,
         lang: string,
     }

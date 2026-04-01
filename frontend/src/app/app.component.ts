@@ -28,6 +28,8 @@ export class AppComponent {
 
   constructor() {
     afterNextRender(() => {
+      this.idService.initializeUser();
+
       this.initResizeObserver();
 
       window.addEventListener('load', this.elRef.nativeElement.classList.remove('load'));

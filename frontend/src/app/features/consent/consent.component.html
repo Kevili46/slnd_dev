@@ -1,4 +1,4 @@
-@if (consentService.consentBanner) {
+@if (consentOpen()) {
 <div class="consent-banner">
     <h3>Cookie settings</h3>
 
@@ -7,29 +7,24 @@
             allowing cookies, you agree to the <a class="slnd-link" routerLink="/privacy">privacy policy</a>.
 
         </p>
-        <div class="selectables">
-            <div class="settings">
-                <div>
-                    <p>essential</p>
-                    <slnd-toggle-button state="true" class="necessary"></slnd-toggle-button>
-                </div>
-                <div>
-                    <p>functional</p>
-                    <slnd-toggle-button (click)="consentService.changeCookies(consentService.functional)"
-                        [attr.state]="consentService.cookieMap.get(consentService.functional) ? 'true' : ''"></slnd-toggle-button>
-                </div>
-                <div>
-                    <p>analytics</p>
-                    <slnd-toggle-button (click)="consentService.changeCookies(consentService.analytics)"
-                        [attr.state]="consentService.cookieMap.get(consentService.analytics) ? 'true' : ''"></slnd-toggle-button>
-                </div>
+        <div class="consent-settings">
+            <div class="consent-selection">
+                <span class="consent-selector"> essential <slnd-toggle-button
+                        [mandatory]="true"></slnd-toggle-button></span>
+                <span class="consent-selector"> functional <slnd-toggle-button
+                        [active]="displayConsentSettings().functional"
+                        (toggle)="changeConsentSettings({functional: !displayConsentSettings().functional})"></slnd-toggle-button></span>
+                <span class="consent-selector"> analytics <slnd-toggle-button
+                        [active]="displayConsentSettings().analytics"
+                        (toggle)="changeConsentSettings({analytics: !displayConsentSettings().analytics})"></slnd-toggle-button></span>
             </div>
-            <div class="buttons">
-                <div class="slnd-consent-btn" role="button" (click)="rejectAll()">Reject all</div>
-                <div class="slnd-consent-btn" role="button" (click)="saveSettings()">Save</div>
-                <div class="slnd-consent-btn" role="button" (click)="allowAll()">Allow all</div>
+            <div class="consent-buttons">
+                <slnd-button text="Reject" [relevance]="BUTTON.RAISED" (btnClick)="rejectAll()"></slnd-button>
+                <slnd-button text="Allow All" [relevance]="BUTTON.RAISED" (btnClick)="allowAll()"></slnd-button>
+                <slnd-button text="Save" [relevance]="BUTTON.RAISED" (btnClick)="saveConsentSettings()"></slnd-button>
             </div>
         </div>
+
     </div>
 </div>
 }

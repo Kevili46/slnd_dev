@@ -1,22 +1,25 @@
+import { UserData } from '@slnd/core/models';
 import * as crypto from 'crypto';
-import { UserData } from "@interfaces/UserData.model";
 
 export const userStorage: Map<string, UserData> = new Map();
 
 export const addNewUser: () => string = () => {
-    const uuid = createUUID();
+    const userId = createUUID();
     const plainData: UserData = {
-        uuid,
+        userId,
         data: {
-            functional: false,
-            analytics: false,
+            consent: {
+                obtained: false,
+                functional: false,
+                analytics: false,
+            },
             theme: 'light',
             lang: 'EN'
         },
         createdAt: new Date(),
     }
-    userStorage.set(uuid, plainData);
-    return uuid;
+    userStorage.set(userId, plainData);
+    return userId;
 }
 
 const createUUID: () => string = () => {

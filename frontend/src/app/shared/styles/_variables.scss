@@ -3,9 +3,9 @@
     --clr-bg: white;
     --clr-bg-2: #fafafa;
     --clr-blue: #00D5FF;
-    --clr-blue-light: #a5f0ff;
+    --clr-blue-light: color-mix(in hsl, var(--clr-blue), transparent 80%);
     --clr-orange: #FF8C00;
-    --clr-orange-light: #ffb65d;
+    --clr-orange-light: color-mix(in hsl, var(--clr-orange), transparent 20%);
     --clr-grad: linear-gradient(90deg, var(--clr-orange) 15%, var(--clr-blue) 85%);
     --clr-border: #eaeaea;
     --clr-shadow: #777777;

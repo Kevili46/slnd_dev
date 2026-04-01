@@ -1,4 +1,4 @@
-import { Injectable, WritableSignal, signal, computed, ElementRef, Renderer2, inject, effect, RendererFactory2 } from '@angular/core';
+import { Injectable, WritableSignal, signal, computed, ElementRef, Renderer2, inject, effect, RendererFactory2, Signal } from '@angular/core';
 import { DOCUMENT } from '@angular/common'
 
 @Injectable({
@@ -13,9 +13,7 @@ export class UtilityService {
   public readonly mobile = this._mobile.asReadonly();
 
   private _floating: WritableSignal<boolean> = signal(false);
-  public readonly floatHeader = computed(() => {
-    return this._floating() && this.mobile();
-  });
+  public readonly floatHeader = computed(() => { return this._floating() && this.mobile(); });
 
   private _menuOpen: WritableSignal<boolean> = signal(false);
   public readonly menuOpen = this._menuOpen.asReadonly();
@@ -23,23 +21,26 @@ export class UtilityService {
   private _darkMode: WritableSignal<boolean> = signal(false);
   public readonly darkMode = this._darkMode.asReadonly();
 
+  private _consentOpen: WritableSignal<boolean> = signal(true);
+  public readonly consentOpen: Signal<boolean> = this._consentOpen.asReadonly();
+
   private renderer: Renderer2;
 
   constructor() {
     this.renderer = this.rendererFac.createRenderer(null, null);
     effect(() => {
       if (this.darkMode()) {
-        this.renderer.setAttribute(this.document.documentElement, 'dark', '');
+        this.renderer.setAttribute(this.document.documentElement, 'data-theme', 'DARK');
         return;
       }
-      this.renderer.removeAttribute(this.document.documentElement, 'dark');
+      this.renderer.setAttribute(this.document.documentElement, 'data-theme', 'LIGHT');
 
     })
   }
 
 
   public scrollUpdate() {
-    if (!this.mobile) {
+    if (!this.mobile()) {
       return;
     }
 
@@ -62,10 +63,18 @@ export class UtilityService {
     if (!this.mobile()) {
       return;
     }
-    this._menuOpen.set(!this.menuOpen());
+    this._menuOpen.update(current => !current);
   }
 
-  public toggleDarkMode() {
+  public toggleDarkMode(toggle?: boolean) {
+    if (toggle != undefined) {
+      this._darkMode.set(toggle);
+      return;
+    }
     this._darkMode.set(!this.darkMode());
+  }
+
+  public toggleConsentBanner() {
+    this._consentOpen.update(current => !current);
   }
 }

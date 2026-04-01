@@ -1,100 +1,75 @@
-import { Component, inject } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
-import { ToggleButtonComponent } from '../toggle-button/toggle-button.component';
+import { Component, computed, effect, inject, signal, Signal, WritableSignal } from '@angular/core';
 
-import { ConsentService } from '../../core/services/consent.service';
 import { RouterLink } from '@angular/router';
+import { ConsentSettings } from '@features/consent/models/consent-settings.model';
+import { ConsentArgs } from '@features/consent/models/consent-args.model';
+import { IdService } from '@core/services/id/id.service';
+import { UserData } from '@slnd/core/models';
+import { UtilityService } from '@core/services/utility.service';
+import { ToggleButtonComponent } from "@shared/features/toggle-button/toggle-button.component";
+import { ButtonComponent } from "@shared/features/button/button.component";
+import { BUTTON } from '@shared/features/button/models/button-type.model';
 
 @Component({
   selector: 'slnd-consent',
-  imports: [ToggleButtonComponent, RouterLink],
+  imports: [RouterLink, ToggleButtonComponent, ButtonComponent],
   templateUrl: './consent.component.html',
   styleUrl: './consent.component.scss',
-  providers: [CookieService]
+  host: {
+    '[class.slnd-bubble-back]': 'true',
+  }
 })
 export class ConsentComponent {
 
-  cookies: CookieService = inject(CookieService);
-  consentService: ConsentService = inject(ConsentService);
+  private idService: IdService = inject(IdService);
+  private utilityService: UtilityService = inject(UtilityService);
+
+  private _displayConsentSettings: WritableSignal<ConsentSettings> = signal({ functional: false, analytics: false });
+  public readonly displayConsentSettings: Signal<ConsentSettings> = this._displayConsentSettings.asReadonly();
+
+  public readonly currentConsentSettings: Signal<ConsentSettings> = computed(() => {
+    const userData: UserData | undefined = this.idService.userData();
+    const consentSettings: ConsentSettings = {
+      functional: userData?.data.consent.functional ?? false,
+      analytics: userData?.data.consent.analytics ?? false,
+    }
+    return consentSettings;
+  });
+
+  public readonly consentOpen: Signal<boolean> = this.utilityService.consentOpen;
 
   constructor() {
-    if (this.cookies.check(this.consentService.functional)) {
-      this.consentService.cookieMap.set(this.consentService.functional, true);
-      this.consentService.setFunctional(true);
-    }
-    if (this.cookies.check(this.consentService.analytics)) {
-      this.consentService.cookieMap.set(this.consentService.analytics, true);
-      this.consentService.setAnalytics(true);
-      this.consentService.manageGTM();
-    }
-    if (this.cookies.check(this.consentService.firstVisit)) {
-      this.consentService.cookieMap.set(this.consentService.firstVisit, true);
-      this.consentService.consentBanner = false;
-      return;
-    }
-    this.consentService.consentBanner = true;
-  }
-
-  allowAll() {
-    this.consentService.cookieMap.forEach((value, key) => {
-      if (key === this.consentService.firstVisit) {
-        return;
-      }
-      this.consentService.cookieMap.set(key, true);
-      this.cookies.set(key, 'true', this.consentService.expires);
-      this.consentService.setFunctional(true);
-      this.consentService.setAnalytics(true);
+    effect(() => {
+      this._displayConsentSettings.set(this.currentConsentSettings());
     })
-    this.setFirstVisit()
-    this.consentService.cookieMap.set(this.consentService.firstVisit, true);
-    this.consentService.manageGTM();
-    this.consentService.consentBanner = false;
   }
 
-  rejectAll() {
-    this.consentService.cookieMap.forEach((value, key) => {
-      if (key === this.consentService.firstVisit) {
-        return;
+  public changeConsentSettings(args: ConsentArgs = {}) {
+    this._displayConsentSettings.update((current) => {
+      const base: ConsentSettings = current ?? { functional: false, analytics: false };
+      return {
+        functional: args.functional ?? base.functional,
+        analytics: args.analytics ?? base.analytics,
       }
-      this.consentService.cookieMap.set(key, false);
-      this.cookies.delete(key);
-      this.consentService.setFunctional(false);
-      this.consentService.setAnalytics(false);
     })
-    this.setFirstVisit()
-    this.consentService.cookieMap.set(this.consentService.firstVisit, true);
-    this.cookies.delete('_ga');
-    this.cookies.delete(`_ga_${this.consentService.gtmID}`);
-    this.consentService.manageGTM();
-    this.consentService.consentBanner = false;
   }
 
-  saveSettings() {
-    this.setFirstVisit()
-    if (this.consentService.cookieMap.get(this.consentService.functional)) {
-      this.cookies.set(this.consentService.functional, 'true', this.consentService.expires)
-      this.consentService.setFunctional(true);
-    } else {
-      this.cookies.delete(this.consentService.functional);
-      this.consentService.setFunctional(false);
-    }
-    if (this.consentService.cookieMap.get(this.consentService.analytics)) {
-      this.cookies.set(this.consentService.analytics, 'true', this.consentService.expires)
-      this.consentService.setAnalytics(true);
-    } else {
-      this.cookies.delete(this.consentService.analytics);
-      this.cookies.delete('_ga');
-      this.cookies.delete(`_ga_${this.consentService.gtmID}`);
-      this.consentService.setAnalytics(false);
-    }
-    this.consentService.manageGTM();
-    this.consentService.consentBanner = false;
+  public toggleConsentBanner() {
+    this.utilityService.toggleConsentBanner();
   }
 
-  setFirstVisit() {
-    if (!this.cookies.check(this.consentService.firstVisit)) {
-      this.cookies.set(this.consentService.firstVisit, this.consentService.generateID(), this.consentService.expires);
-      this.consentService.cookieMap.set(this.consentService.firstVisit, true);
-    }
+  public saveConsentSettings() {
+    this.idService.saveConsentSettings(this.displayConsentSettings());
   }
+
+  public allowAll() {
+    this.idService.saveConsentSettings({ functional: true, analytics: true });
+  }
+
+  public rejectAll() {
+    this.idService.saveConsentSettings({ functional: false, analytics: false });
+  }
+
+  protected readonly BUTTON = BUTTON;
+
 }

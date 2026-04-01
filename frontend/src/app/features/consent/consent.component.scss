@@ -1,18 +1,14 @@
 :host {
-    display: flex;
-    justify-content: center;
     position: fixed;
     bottom: 20px;
+    left: 50%;
+    translate: -50% 0;
     z-index: 9;
-    width: 100%;
-
+    width: min(90%, 550px);
 }
 
 .consent-banner {
-    background-color: var(--clr-text-alt);
-    width: 90%;
-    padding: 1em;
-    box-shadow: var(--box-shadow);
+    width: 100%;
 
     h3 {
         border-bottom: 1px solid var(--clr-text);
@@ -21,47 +17,35 @@
 
     .consent-content {
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
         gap: 20px;
 
-        >* {
-            flex: 1 1 550px;
-        }
-
         p {
-            font-size: 1em;
+            hyphens: auto;
+            font-size: .9em;
         }
 
-        .selectables {
+        .consent-settings {
             display: flex;
-            flex-flow: row wrap;
-            justify-content: flex-end;
-            column-gap: max(8svw, 30px);
-            row-gap: 30px;
+            flex-direction: column;
+            gap: 20px;
 
-
-            .settings {
+            .consent-selection {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: flex-end;
-                flex-wrap: nowrap;
-                gap: .4em;
+                gap: 6px;
 
-                div {
+                .consent-selector {
                     display: flex;
-                    flex-wrap: nowrap;
-                    align-items: center;
-                    gap: 10px;
+                    gap: .5em;
                 }
             }
 
-            .buttons {
+            .consent-buttons {
                 display: flex;
-                align-items: center;
-                justify-content: flex-end;
                 gap: 20px;
             }
         }

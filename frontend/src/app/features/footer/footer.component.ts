@@ -1,6 +1,6 @@
 import { Component, inject, WritableSignal, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { ConsentService } from '../../core/services/consent.service';
+import { RouterLink } from '@angular/router'; import { UtilityService } from '@core/services/utility.service';
+
 
 @Component({
   selector: 'slnd-footer',
@@ -10,7 +10,7 @@ import { ConsentService } from '../../core/services/consent.service';
 })
 export class FooterComponent {
 
-  private consentService: ConsentService = inject(ConsentService);
+  private utilityService: UtilityService = inject(UtilityService);
 
   private _year: WritableSignal<number | undefined> = signal(undefined);
   public readonly year = this._year.asReadonly();
@@ -20,7 +20,7 @@ export class FooterComponent {
   }
 
   public openConsentBanner() {
-    this.consentService.openConsentBanner();
+    this.utilityService.toggleConsentBanner();
   }
 
 }

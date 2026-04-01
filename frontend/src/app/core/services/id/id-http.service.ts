@@ -1,8 +1,9 @@
-import { HttpClient, httpResource } from '@angular/common/http';
-import { computed, inject, Injectable } from '@angular/core';
-import { ApiHealthResponse } from '@core/models/ApiHealthResponse.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { IdResponse } from '@slnd/core/models';
 import { environment } from '@environments/environment';
 import { Observable } from 'rxjs';
+import { ConsentSettings } from '@features/consent/models/consent-settings.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,18 +12,16 @@ export class IdHttpService {
   private http = inject(HttpClient);
   private readonly apiUrl = `${environment.httpUrl}/id`;
 
-  private readonly health = httpResource<ApiHealthResponse>(() => `${this.apiUrl}/health`);
+  public initializeUser(token: string | null): Observable<IdResponse> {
 
-  public readonly online = computed(() => {
-    if (this.health.error() || this.health.isLoading()) {
-      return false;
+    let headers = new HttpHeaders();
+    if (token) {
+      headers = headers.set('Authorization', `Bearer ${token}`);
     }
-    return this.health.value()?.status === 'UP' || false;
-  });
-
-
-  public initializeUser(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/init`);
+    return this.http.get<IdResponse>(`${this.apiUrl}/init`, { headers });
   }
 
+  public postConsentSettings(consentSettings: ConsentSettings) {
+    return;
+  }
 }

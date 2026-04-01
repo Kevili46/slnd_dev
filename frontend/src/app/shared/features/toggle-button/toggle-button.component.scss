@@ -1,0 +1,56 @@
+:host {
+    display: block;
+}
+
+button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 2.5em;
+    aspect-ratio: 2;
+    border-radius: 1em;
+    corner-shape: squircle;
+    border: 1px solid var(--clr-border);
+    background-color: var(--clr-bg-1);
+    box-shadow: 0 0 .2em -.1em var(--clr-shadow) inset;
+    cursor: pointer;
+    transition:
+        background-color var(--time-interact) ease,
+        box-shadow var(--time-interact-calm) ease,
+        border var(--time-interact) ease;
+
+    &.active,
+    &.mandatory {
+        background-color: color-mix(in hsl, var(--clr-orange), transparent 30%);
+        box-shadow: 0 0 .3em 0em var(--clr-orange) inset, 0 0 .3em 0em var(--clr-orange);
+        border-color: var(--clr-orange);
+
+        .toggle-head {
+            opacity: .9;
+            box-shadow: 0 0 .1em var(--clr-orange);
+            left: calc(100% - var(--padding));
+            translate: -100% 0;
+
+        }
+    }
+
+    &.mandatory {
+        cursor: default;
+        opacity: .6;
+    }
+
+    .toggle-head {
+        --padding: 3px;
+        display: block;
+        position: absolute;
+        height: calc(100% - 2*var(--padding));
+        left: var(--padding);
+        aspect-ratio: 1;
+        border-radius: .5em;
+        corner-shape: squircle;
+        background-color: var(--clr-bg);
+        box-shadow: 0 0 .1em var(--clr-shadow);
+
+        transition: translate var(--time-interact) ease, left var(--time-interact) ease;
+    }
+}
