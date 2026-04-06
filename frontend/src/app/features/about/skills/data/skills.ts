@@ -79,28 +79,18 @@ export const skills: Skill[] = [
         category: CATEGORY.LANGUAGE,
     },
     {
-        name: "Gemini API",
-        icon: "/assets/logos/gemini.svg",
-        category: CATEGORY.TOOL,
-    },
-    {
         name: "Git",
         icon: "/assets/logos/git.svg",
         category: CATEGORY.TOOL,
     },
     {
-        name: "Google Analytics",
-        icon: "/assets/logos/ga4.svg",
+        name: "Docker",
+        icon: "/assets/logos/docker.svg",
         category: CATEGORY.TOOL,
     },
     {
-        name: "Creative Cloud",
-        icon: "/assets/logos/adobe.png",
-        category: CATEGORY.TOOL,
-    },
-    {
-        name: "FL Studio",
-        icon: "/assets/logos/flstudio.png",
+        name: "Gemini API",
+        icon: "/assets/logos/gemini.svg",
         category: CATEGORY.TOOL,
     },
 ];

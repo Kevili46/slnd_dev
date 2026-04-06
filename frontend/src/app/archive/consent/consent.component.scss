@@ -4,7 +4,7 @@
     left: 50%;
     translate: -50% 0;
     z-index: 9;
-    width: min(90%, 550px);
+    width: 90%;
 }
 
 .consent-banner {
@@ -17,8 +17,8 @@
 
     .consent-content {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-flow: row wrap;
+        justify-content: center;
         align-items: center;
         gap: 20px;
 

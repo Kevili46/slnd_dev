@@ -5,8 +5,8 @@
         <span class="menu-icon-bar"></span>
     </div>
     <ul>
-        @for(navRoute of navRoutes(); track $index) {
-        <slnd-nav-item [navRoute]="navRoute"></slnd-nav-item>
+        @for(navRoute of mainNavRoutes(); track $index) {
+        <slnd-nav-item [mainNav]="true" [navRoute]="navRoute"></slnd-nav-item>
         }
     </ul>
 </nav>

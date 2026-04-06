@@ -4,9 +4,9 @@ import { ButtonComponent } from '@shared/features/button/button.component';
 import { BUTTON } from '@shared/features/button/models/button-type.model';
 import { HighlightHeadingComponent } from '@shared/features/highlight-heading/highlight-heading.component';
 
-import { ReferenceComponent } from './reference/reference.component';
+import { ReferenceComponent } from './ui/reference/reference.component';
 
-import { references } from './content/references';
+import { references } from './data/references';
 
 @Component({
   selector: 'slnd-work',

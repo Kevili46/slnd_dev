@@ -2,7 +2,7 @@ import { inject, Injectable, signal, Signal, WritableSignal } from '@angular/cor
 import { IdHttpService } from './id-http.service';
 import { IdResponse, UserData } from '@slnd/core/models';
 import { UtilityService } from '../utility.service';
-import { ConsentSettings } from '@features/consent/models/consent-settings.model';
+import { ConsentSettings } from 'src/app/archive/consent/models/consent-settings.model';
 
 @Injectable({
   providedIn: 'root',

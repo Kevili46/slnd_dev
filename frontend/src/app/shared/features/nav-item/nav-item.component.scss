@@ -9,7 +9,7 @@
         content: '';
         display: block;
         position: absolute;
-        background: var(--clr-grad);
+        background: var(--clr-text);
         bottom: -.1em;
         left: 50%;
         translate: -50% 0;
@@ -21,6 +21,12 @@
     &:hover {
         &::after {
             width: 100%;
+        }
+    }
+
+    &.main-nav-item {
+        &::after {
+            background: var(--clr-grad);
         }
     }
 }

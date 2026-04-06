@@ -7,7 +7,7 @@
 section {
     display: flex;
     flex-flow: column nowrap;
-    width: min(885px, 90%);
+    width: min(1000px, 90%);
     justify-content: center;
 
     .skills {
@@ -20,11 +20,5 @@ section {
 
     &:not(.heading) {
         margin-bottom: 250px;
-    }
-}
-
-@media (min-width: 1025px) {
-    section {
-        width: max(700px, 70%);
     }
 }

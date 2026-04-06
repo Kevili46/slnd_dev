@@ -58,9 +58,7 @@
             }
         }
 
-        img {
-            margin-top: 20px;
-            width: 20px;
+        .toggle-icon {
             rotate: 45deg;
             transition:
                 rotate var(--time-interact) ease,
@@ -78,7 +76,7 @@
                 }
             }
 
-            img {
+            .toggle-icon {
                 scale: 1.1;
             }
         }
@@ -109,7 +107,7 @@
     &.open-item {
 
         .privacy-head {
-            img {
+            .toggle-icon {
                 rotate: 0deg;
             }
         }

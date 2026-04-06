@@ -3,10 +3,11 @@ import app from './src/app';
 import * as http from 'http';
 
 const PORT: string | number = process.env.PORT || 3001;
+const HOST: string = process.env.HOST || 'localhost';
 
 const server: http.Server = http.createServer(app);
 
-server.listen(PORT, () => {
+app.listen(Number(PORT), HOST, () => {
     console.log('----------------------------------------------------');
     console.log(`👤 ID Service started on http://localhost:${PORT}`);
     console.log('----------------------------------------------------');

@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { IdResponse } from '@slnd/core/models';
 import { environment } from '@environments/environment';
 import { Observable } from 'rxjs';
-import { ConsentSettings } from '@features/consent/models/consent-settings.model';
+import { ConsentSettings } from 'src/app/archive/consent/models/consent-settings.model';
 
 @Injectable({
   providedIn: 'root',

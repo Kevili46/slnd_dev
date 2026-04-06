@@ -19,6 +19,7 @@
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
+    "http-proxy-middleware": "^3.0.5",
     "morgan": "^1.10.1"
   },
   "devDependencies": {
@@ -26,9 +27,9 @@
     "@types/express": "^5.0.6",
     "@types/morgan": "^1.9.10",
     "@types/node": "^25.5.0",
-    "http-proxy-middleware": "^3.0.5",
     "nodemon": "^3.1.14",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.3"
   }

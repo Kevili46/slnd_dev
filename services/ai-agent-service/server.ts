@@ -4,12 +4,13 @@ import * as http from 'http';
 import { setupWebSocket } from '@websockets/ai-agent.ws';
 
 const PORT: string | number = process.env.PORT || 3002;
+const HOST: string = process.env.HOST || 'localhost';
 
 const server: http.Server = http.createServer(app);
 
 setupWebSocket(server);
 
-server.listen(PORT, () => {
+server.listen(Number(PORT), HOST, () => {
     console.log('-------------------------------------------------------');
     console.log(`🤖 AI Agent Service started on http://localhost:${PORT}`);
     console.log('-------------------------------------------------------');

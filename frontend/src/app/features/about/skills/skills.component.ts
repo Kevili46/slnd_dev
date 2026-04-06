@@ -4,7 +4,7 @@ import { SkillCategoryComponent } from '@features/about/skills/skill-category/sk
 import { CATEGORY, CategoryType } from '@features/about/models/category.model';
 import { SkillCategory } from '@features/about/models/skill-category.model';
 import { Skill } from '@features/about/models/skill.model';
-import { skills } from '@features/about/content/skills';
+import { skills } from '@features/about/skills/data/skills';
 import { BUTTON } from '@shared/features/button/models/button-type.model';
 
 @Component({

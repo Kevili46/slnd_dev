@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TitleHeadingComponent } from '@features/about/title-heading/title-heading.component';
-import { AboutMeComponent } from '@features/about/about-me/about-me.component';
+import { TitleHeadingComponent } from '@features/about/ui/title-heading/title-heading.component';
+import { AboutMeComponent } from '@features/about/ui/about-me/about-me.component';
 import { SkillsComponent } from '@features/about/skills/skills.component';
 
 @Component({

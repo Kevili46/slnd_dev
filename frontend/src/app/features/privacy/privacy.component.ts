@@ -1,9 +1,11 @@
 import { Component, viewChildren } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { IconComponent } from "@shared/features/icon/icon.component";
+import { ICON } from '@shared/features/icon/models/icon.model';
 
 @Component({
   selector: 'slnd-privacy',
-  imports: [RouterLink],
+  imports: [RouterLink, IconComponent],
   templateUrl: './privacy.component.html',
   styleUrl: './privacy.component.scss'
 })
@@ -19,4 +21,6 @@ export class PrivacyComponent {
     }
     parent.classList.toggle('open-item');
   }
+
+  protected readonly ICON = ICON;
 }

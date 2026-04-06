@@ -5,12 +5,11 @@ import { UtilityService } from '@core/services/utility.service';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '@features/footer/footer.component';
 import { AiAgentComponent } from '@features/ai-agent/ai-agent.component';
-import { ConsentComponent } from '@features/consent/consent.component';
 import { IdService } from '@core/services/id/id.service';
 
 @Component({
   selector: 'slnd',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, AiAgentComponent, CommonModule, ConsentComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, AiAgentComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

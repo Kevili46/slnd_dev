@@ -76,17 +76,6 @@ p {
     }
 }
 
-.slnd-consent-btn {
-    padding: .2em .5em;
-    border: 1px solid var(--clr-text);
-    cursor: pointer;
-    transition: background-color var(--time-interact) ease;
-
-    &:hover {
-        background-color: var(--clr-blue-light);
-    }
-}
-
 .slnd-bubble-back {
     border: var(--border);
     border-radius: 3em;

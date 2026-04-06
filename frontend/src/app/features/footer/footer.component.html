@@ -1,8 +1,8 @@
 <nav class="footer-nav">
     <ul>
-        <li><a class="slnd-nav-link" routerLink="/impressum">Impressum</a></li>
-        <li><a class="slnd-nav-link" routerLink="/privacy">Privacy Policy</a></li>
-        <li><a class="slnd-nav-link" (click)="openConsentBanner()">Cookie Settings</a></li>
+        @for(navRoute of footerNavRoutes(); track $index) {
+        <slnd-nav-item [navRoute]="navRoute"></slnd-nav-item>
+        }
     </ul>
 </nav>
 <p>&#169; {{year()}} Kevin Seeland</p>

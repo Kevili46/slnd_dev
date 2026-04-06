@@ -1,8 +1,8 @@
 import { Component, computed, effect, inject, signal, Signal, WritableSignal } from '@angular/core';
 
 import { RouterLink } from '@angular/router';
-import { ConsentSettings } from '@features/consent/models/consent-settings.model';
-import { ConsentArgs } from '@features/consent/models/consent-args.model';
+import { ConsentSettings } from 'src/app/archive/consent/models/consent-settings.model';
+import { ConsentArgs } from 'src/app/archive/consent/models/consent-args.model';
 import { IdService } from '@core/services/id/id.service';
 import { UserData } from '@slnd/core/models';
 import { UtilityService } from '@core/services/utility.service';
