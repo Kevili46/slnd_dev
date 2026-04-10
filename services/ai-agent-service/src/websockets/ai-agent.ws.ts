@@ -1,6 +1,6 @@
 import { WebSocketServer, WebSocket } from 'ws';
 import { IncomingMessage } from 'http';
-import { createChatSession, sendMessage } from '@services/ai-agent-service';
+import { createChatSession, sendMessage } from '#services/ai-agent-service';
 import { AgentClientResponse, ClientAgentRequest, WS_DATA, WS_STATUS } from '@slnd/core/models';
 import { ChatSession } from '@google/generative-ai';
 

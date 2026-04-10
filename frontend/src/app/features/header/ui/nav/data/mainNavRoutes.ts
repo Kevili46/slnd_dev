@@ -1,4 +1,4 @@
-import { NavRoute } from "@shared/features/nav-item/models/nav-route.model";
+import { NavRoute } from "#shared/features/nav-item/models/nav-route.model";
 
 export const mainNavRoutes: NavRoute[] = [
     { text: 'About', route: '/' },

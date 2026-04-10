@@ -2,9 +2,9 @@ import { Component, ElementRef, inject, Signal, viewChild, computed, signal, Wri
 import { CommonModule } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { ChatHistoryComponent } from './ui/chat-history/chat-history.component';
-import { ButtonComponent } from '@shared/features/button/button.component';
-import { ICON } from '@shared/features/icon/models/icon.model';
-import { BUTTON } from '@shared/features/button/models/button-type.model';
+import { ButtonComponent } from '#shared/features/button/button.component';
+import { ICON } from '#shared/features/icon/models/icon.model';
+import { BUTTON } from '#shared/features/button/models/button-type.model';
 import { AiAgentService } from './services/ai-agent.service';
 import { FormsModule } from '@angular/forms';
 

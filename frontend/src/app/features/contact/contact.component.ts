@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Signal, inject, viewChild } from '@angular/core';
-import { UtilityService } from '@core/services/utility.service';
-import { HighlightHeadingComponent } from '@shared/features/highlight-heading/highlight-heading.component';
+import { UtilityService } from '#core/services/utility.service';
+import { HighlightHeadingComponent } from '#shared/features/highlight-heading/highlight-heading.component';
 
 @Component({
   selector: 'slnd-contact',

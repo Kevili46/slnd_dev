@@ -1,18 +1,18 @@
 import { Component, computed, effect, inject, signal, Signal, WritableSignal } from '@angular/core';
 
 import { RouterLink } from '@angular/router';
-import { ConsentSettings } from 'src/app/archive/consent/models/consent-settings.model';
-import { ConsentArgs } from 'src/app/archive/consent/models/consent-args.model';
-import { IdService } from '@core/services/id/id.service';
+import { ConsentSettings } from '#archive/consent/models/consent-settings.model';
+import { ConsentArgs } from '#archive/consent/models/consent-args.model';
+import { IdService } from '#core/services/id/id.service';
 import { UserData } from '@slnd/core/models';
-import { UtilityService } from '@core/services/utility.service';
-import { ToggleButtonComponent } from "@shared/features/toggle-button/toggle-button.component";
-import { ButtonComponent } from "@shared/features/button/button.component";
-import { BUTTON } from '@shared/features/button/models/button-type.model';
+import { UtilityService } from '#core/services/utility.service';
+import { ToggleButtonComponent } from "#shared/features/toggle-button/toggle-button.component";
+// import { ButtonComponent } from "#shared/features/button/button.component";
+import { BUTTON } from '#shared/features/button/models/button-type.model';
 
 @Component({
   selector: 'slnd-consent',
-  imports: [RouterLink, ToggleButtonComponent, ButtonComponent],
+  imports: [RouterLink, ToggleButtonComponent],
   templateUrl: './consent.component.html',
   styleUrl: './consent.component.scss',
   host: {
@@ -58,17 +58,17 @@ export class ConsentComponent {
     this.utilityService.toggleConsentBanner();
   }
 
-  public saveConsentSettings() {
-    this.idService.saveConsentSettings(this.displayConsentSettings());
-  }
+  // public saveConsentSettings() {
+  //   this.idService.saveConsentSettings(this.displayConsentSettings());
+  // }
 
-  public allowAll() {
-    this.idService.saveConsentSettings({ functional: true, analytics: true });
-  }
+  // public allowAll() {
+  //   this.idService.saveConsentSettings({ functional: true, analytics: true });
+  // }
 
-  public rejectAll() {
-    this.idService.saveConsentSettings({ functional: false, analytics: false });
-  }
+  // public rejectAll() {
+  //   this.idService.saveConsentSettings({ functional: false, analytics: false });
+  // }
 
   protected readonly BUTTON = BUTTON;
 

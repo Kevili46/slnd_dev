@@ -1,6 +1,6 @@
 import { Component, inject, Signal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UtilityService } from '@core/services/utility.service';
+import { UtilityService } from '#core/services/utility.service';
 import { NavItemComponent } from '../../../../shared/features/nav-item/nav-item.component';
 import { NavRoute } from '../../../../shared/features/nav-item/models/nav-route.model';
 import { mainNavRoutes } from './data/mainNavRoutes';

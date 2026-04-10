@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import * as idService from '@services/id-service';
+import * as idService from '#services/id-service';
 
 export const initIdentification = async (req: Request, res: Response, next: NextFunction) => {
     try {

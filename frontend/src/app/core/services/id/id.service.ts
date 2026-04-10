@@ -2,7 +2,6 @@ import { inject, Injectable, signal, Signal, WritableSignal } from '@angular/cor
 import { IdHttpService } from './id-http.service';
 import { IdResponse, UserData } from '@slnd/core/models';
 import { UtilityService } from '../utility.service';
-import { ConsentSettings } from 'src/app/archive/consent/models/consent-settings.model';
 
 @Injectable({
   providedIn: 'root',
@@ -35,10 +34,6 @@ export class IdService {
 
   public getToken(): string | null {
     return localStorage.getItem(this.TOKEN_KEY);
-  }
-
-  public saveConsentSettings(consentSettings: ConsentSettings) {
-    this.idHttpService.postConsentSettings(consentSettings);
   }
 
 }

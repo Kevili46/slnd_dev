@@ -3,13 +3,12 @@ import {
     ChatSession,
     Content
 } from "@google/generative-ai";
-import { SYSTEM_PROMPT } from "@utils/CONSTANTS";
+import { SYSTEM_PROMPT } from "#utils/CONSTANTS";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
-
-const filePath = path.join(process.cwd(), 'assets', 'cv.txt');
+const filePath = path.join(process.cwd(), 'src/assets/cv.txt');
 const infoFile = readFileSync(filePath, 'utf-8');
 
 const systemPrompt: Content = {

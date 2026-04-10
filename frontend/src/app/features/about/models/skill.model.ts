@@ -1,4 +1,4 @@
-import { CategoryType } from "@features/about/models/category.model";
+import { CategoryType } from "#features/about/models/category.model";
 
 export interface Skill {
     name: string;

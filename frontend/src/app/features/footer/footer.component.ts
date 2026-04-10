@@ -1,8 +1,8 @@
 import { Component, inject, WritableSignal, signal, Signal } from '@angular/core';
-import { UtilityService } from '@core/services/utility.service';
+import { UtilityService } from '#core/services/utility.service';
 import { footerNavRoutes } from './data/footerNavRoutes';
-import { NavRoute } from '@shared/features/nav-item/models/nav-route.model';
-import { NavItemComponent } from "@shared/features/nav-item/nav-item.component";
+import { NavRoute } from '#shared/features/nav-item/models/nav-route.model';
+import { NavItemComponent } from "#shared/features/nav-item/nav-item.component";
 
 
 @Component({

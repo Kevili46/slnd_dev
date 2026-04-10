@@ -1,11 +1,11 @@
 import { afterNextRender, Component, ElementRef, inject, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '@features/header/header.component';
-import { UtilityService } from '@core/services/utility.service';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from '@features/footer/footer.component';
-import { AiAgentComponent } from '@features/ai-agent/ai-agent.component';
-import { IdService } from '@core/services/id/id.service';
+import { HeaderComponent } from '#features/header/header.component';
+import { UtilityService } from '#core/services/utility.service';
+import { FooterComponent } from '#features/footer/footer.component';
+import { AiAgentComponent } from '#features/ai-agent/ai-agent.component';
+import { IdService } from '#core/services/id/id.service';
 
 @Component({
   selector: 'slnd',

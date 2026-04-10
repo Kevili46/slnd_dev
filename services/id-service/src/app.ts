@@ -3,7 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
-import idServiceRoutes from '@routes/id-service.routes';
+import idServiceRoutes from '#routes/id-service.routes';
 
 const app: Application = express();
 

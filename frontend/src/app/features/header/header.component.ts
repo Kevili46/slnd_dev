@@ -1,10 +1,10 @@
 import { Component, inject, Signal } from '@angular/core';
-import { UtilityService } from '@core/services/utility.service';
+import { UtilityService } from '#core/services/utility.service';
 import { NavComponent } from './ui/nav/nav.component';
 import { ActionsComponent } from './ui/actions/actions.component';
-import { IconComponent } from '@shared/features/icon/icon.component';
+import { IconComponent } from '#shared/features/icon/icon.component';
 
-import { ICON } from '@shared/features/icon/models/icon.model';
+import { ICON } from '#shared/features/icon/models/icon.model';
 
 @Component({
   selector: 'slnd-header',

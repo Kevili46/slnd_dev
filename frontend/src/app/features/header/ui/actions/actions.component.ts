@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { UtilityService } from '@core/services/utility.service';
+import { UtilityService } from '#core/services/utility.service';
 
 @Component({
   selector: 'slnd-actions',

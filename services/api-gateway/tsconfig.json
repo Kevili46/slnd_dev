@@ -4,27 +4,6 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "./dist",
-    "baseUrl": "./",
-    "paths": {
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@controllers/*": [
-        "src/controllers/*"
-      ],
-      "@interfaces/*": [
-        "src/interfaces/*"
-      ],
-      "@routes/*": [
-        "src/routes/*"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-    },
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true

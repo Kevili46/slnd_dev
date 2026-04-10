@@ -1,28 +1,28 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "rootDir": "../..",
     "outDir": "./dist",
-    "baseUrl": "./",
     "paths": {
-      "@assets/*": [
-        "src/assets/*"
+      "#assets/*": [
+        "./src/assets/*"
       ],
-      "@controllers/*": [
-        "src/controllers/*"
+      "#controllers/*": [
+        "./src/controllers/*"
       ],
-      "@interfaces/*": [
-        "src/interfaces/*"
+      "#interfaces/*": [
+        "./src/interfaces/*"
       ],
-      "@routes/*": [
-        "src/routes/*"
+      "#routes/*": [
+        "./src/routes/*"
       ],
-      "@services/*": [
-        "src/services/*"
+      "#services/*": [
+        "./src/services/*"
       ],
-      "@utils/*": [
-        "src/utils/*"
+      "#utils/*": [
+        "./src/utils/*"
       ],
       "@slnd/*": [
         "../../shared/*"
@@ -30,6 +30,6 @@
     },
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
   }
 }

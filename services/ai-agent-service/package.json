@@ -4,14 +4,23 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec ts-node -r tsconfig-paths/register server.ts",
-    "build": "tsc && tsc-alias",
+    "dev": "nodemon --exec tsx server.ts",
+    "build": "tsc",
     "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
+  "imports": {
+    "#assets/*": "./src/app/assets/*",
+    "#controllers/*": "./src/controllers/*",
+    "#interfaces/*": "./src/app/interfaces/*",
+    "#routes/*": "./src/app/routes/*",
+    "#services/*": "./src/app/services/*",
+    "#websockets/*": "./src/app/websockets/*",
+    "#utils/*": "./src/app/utils/*"
+  },
   "description": "",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -29,9 +38,7 @@
     "@types/node": "^25.5.0",
     "@types/ws": "^8.18.1",
     "nodemon": "^3.1.14",
-    "ts-node": "^10.9.2",
-    "tsc-alias": "^1.8.16",
-    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
 }

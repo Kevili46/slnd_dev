@@ -10,6 +10,13 @@
     "serve:ssr:slnd": "node dist/slnd/server/server.mjs"
   },
   "type": "module",
+  "imports": {
+    "#core/*": "./src/app/core/*",
+    "#environments/*": "./src/environments/*",
+    "#features/*": "./src/app/features/*",
+    "#shared/*": "./src/app/shared/*",
+    "#archive/*": "./src/app/archive/*"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^20.3.17",

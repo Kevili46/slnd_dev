@@ -1,5 +1,5 @@
 import { Component, computed, inject, input, InputSignal, Signal } from '@angular/core';
-import { Icon, ICON } from '@shared/features/icon/models/icon.model';
+import { Icon, ICON } from '#shared/features/icon/models/icon.model';
 import { icons } from './models/icons';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 

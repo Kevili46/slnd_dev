@@ -1,9 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { IdResponse } from '@slnd/core/models';
-import { environment } from '@environments/environment';
+import { environment } from '#environments/environment';
 import { Observable } from 'rxjs';
-import { ConsentSettings } from 'src/app/archive/consent/models/consent-settings.model';
 
 @Injectable({
   providedIn: 'root',
@@ -19,9 +18,5 @@ export class IdHttpService {
       headers = headers.set('Authorization', `Bearer ${token}`);
     }
     return this.http.get<IdResponse>(`${this.apiUrl}/init`, { headers });
-  }
-
-  public postConsentSettings(consentSettings: ConsentSettings) {
-    return;
   }
 }
