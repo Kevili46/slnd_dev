@@ -5,7 +5,7 @@ import { Message } from '../models/Message.model';
 import { ROLE } from '../models/Roles.model';
 import { Participant } from '../models/Participant.model';
 import { AiAgentWSService } from './ai-agent-ws.service';
-import { AgentClientResponse, WS_DATA, WS_STATUS } from '@slnd/core/models';
+import { AgentClientResponse, WS_DATA, WS_STATUS } from '@slnd/shared';
 
 @Injectable({ providedIn: 'root' })
 export class AiAgentService {

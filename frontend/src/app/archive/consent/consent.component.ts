@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { ConsentSettings } from '#archive/consent/models/consent-settings.model';
 import { ConsentArgs } from '#archive/consent/models/consent-args.model';
 import { IdService } from '#core/services/id/id.service';
-import { UserData } from '@slnd/core/models';
+import { UserData } from '@slnd/shared';
 import { UtilityService } from '#core/services/utility.service';
 import { ToggleButtonComponent } from "#shared/features/toggle-button/toggle-button.component";
 // import { ButtonComponent } from "#shared/features/button/button.component";

@@ -1,0 +1,9 @@
+{
+  "name": "slnd_dev",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "services/*",
+    "shared"
+  ]
+}

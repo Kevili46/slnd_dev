@@ -2,7 +2,7 @@ import { Injectable, signal, Signal } from '@angular/core';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
 import { environment } from '#environments/environment';
 import { catchError, EMPTY, Observable, Subject } from 'rxjs';
-import { ClientAgentRequest } from '@slnd/core/models';
+import { ClientAgentRequest } from '@slnd/shared';
 
 @Injectable({ providedIn: 'root' })
 export class AiAgentWSService {

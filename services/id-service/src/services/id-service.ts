@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { userStorage, addNewUser } from '#utils/UserStorage';
-import { IdResponse, UserData } from '@slnd/core/models';
+import { IdResponse, UserData } from '@slnd/shared';
 
 const JWT_SECRET = process.env.JWT_SECRET || '09q2jjg2309509112';
 
