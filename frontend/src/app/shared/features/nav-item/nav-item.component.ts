@@ -1,7 +1,7 @@
 import { Component, inject, input, InputSignal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NavRoute } from '#shared/features/nav-item/models/nav-route.model';
-import { UtilityService } from '#core/services/utility.service';
+import { NavRoute } from '#shared/features/nav-item/models/nav-route.model.js';
+import { UtilityService } from '#core/services/utility.service.js';
 
 @Component({
   selector: 'slnd-nav-item',

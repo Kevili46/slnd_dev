@@ -1,7 +1,7 @@
 import { Component, viewChildren } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IconComponent } from "#shared/features/icon/icon.component";
-import { ICON } from '#shared/features/icon/models/icon.model';
+import { IconComponent } from "#shared/features/icon/icon.component.js";
+import { ICON } from '#shared/features/icon/models/icon.model.js';
 
 @Component({
   selector: 'slnd-privacy',

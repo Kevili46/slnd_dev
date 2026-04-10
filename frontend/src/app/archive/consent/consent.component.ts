@@ -1,14 +1,14 @@
 import { Component, computed, effect, inject, signal, Signal, WritableSignal } from '@angular/core';
 
 import { RouterLink } from '@angular/router';
-import { ConsentSettings } from '#archive/consent/models/consent-settings.model';
-import { ConsentArgs } from '#archive/consent/models/consent-args.model';
-import { IdService } from '#core/services/id/id.service';
+import { ConsentSettings } from '#archive/consent/models/consent-settings.model.js';
+import { ConsentArgs } from '#archive/consent/models/consent-args.model.js';
+import { IdService } from '#core/services/id/id.service.js';
 import { UserData } from '@slnd/shared';
-import { UtilityService } from '#core/services/utility.service';
-import { ToggleButtonComponent } from "#shared/features/toggle-button/toggle-button.component";
+import { UtilityService } from '#core/services/utility.service.js';
+import { ToggleButtonComponent } from "#shared/features/toggle-button/toggle-button.component.js";
 // import { ButtonComponent } from "#shared/features/button/button.component";
-import { BUTTON } from '#shared/features/button/models/button-type.model';
+import { BUTTON } from '#shared/features/button/models/button-type.model.js';
 
 @Component({
   selector: 'slnd-consent',

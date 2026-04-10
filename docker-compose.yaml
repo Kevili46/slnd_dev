@@ -28,6 +28,8 @@ services:
     build:
       context: .
       dockerfile: ./services/id-service/Dockerfile
+    ports:
+      - "4601:4601"
     env_file:
       - ./services/id-service/.env
     environment:
@@ -37,6 +39,8 @@ services:
     build:
       context: .
       dockerfile: ./services/ai-agent-service/Dockerfile
+    ports:
+      - "4602:4602"
     env_file:
       - ./services/ai-agent-service/.env
     environment:

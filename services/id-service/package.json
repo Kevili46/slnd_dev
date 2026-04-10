@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec tsx server.ts",
+    "dev": "nodemon --exec tsx src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js"
   },
@@ -13,16 +13,39 @@
   "license": "ISC",
   "type": "module",
   "imports": {
-    "#assets/*": "./src/app/assets/*",
-    "#controllers/*": "./src/controllers/*",
-    "#interfaces/*": "./src/app/interfaces/*",
-    "#routes/*": "./src/app/routes/*",
-    "#services/*": "./src/app/services/*",
-    "#utils/*": "./src/app/utils/*"
+    "#assets/*": {
+      "development": "./src/assets/*.ts",
+      "types": "./src/assets/*.ts",
+      "default": "./dist/assets/*.js"
+    },
+    "#controllers/*": {
+      "development": "./src/controllers/*.ts",
+      "types": "./src/controllers/*.ts",
+      "default": "./dist/controllers/*.js"
+    },
+    "#interfaces/*": {
+      "development": "./src/interfaces/*.ts",
+      "types": "./src/interfaces/*.ts",
+      "default": "./dist/interfaces/*.js"
+    },
+    "#routes/*": {
+      "development": "./src/routes/*.ts",
+      "types": "./src/routes/*.ts",
+      "default": "./dist/routes/*.js"
+    },
+    "#services/*": {
+      "development": "./src/services/*.ts",
+      "types": "./src/services/*.ts",
+      "default": "./dist/services/*.js"
+    },
+    "#utils/*": {
+      "development": "./src/utils/*.ts",
+      "types": "./src/utils/*.ts",
+      "default": "./dist/utils/*.js"
+    }
   },
   "description": "",
   "dependencies": {
-    "@slnd/shared": "*",
     "cors": "^2.8.6",
     "crypto": "^1.0.1",
     "dotenv": "^17.3.1",

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '#shared/features/button/button.component';
-import { BUTTON } from '#shared/features/button/models/button-type.model';
+import { ButtonComponent } from '#shared/features/button/button.component.js';
+import { BUTTON } from '#shared/features/button/models/button-type.model.js';
 
 @Component({
   selector: 'slnd-about-me',

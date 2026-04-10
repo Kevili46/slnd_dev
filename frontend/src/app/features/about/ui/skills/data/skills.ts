@@ -1,5 +1,5 @@
-import { Skill } from "#features/about/models/skill.model";
-import { CATEGORY } from "#features/about/models/category.model";
+import { Skill } from "#features/about/models/skill.model.js";
+import { CATEGORY } from "#features/about/models/category.model.js";
 
 
 export const skills: Skill[] = [

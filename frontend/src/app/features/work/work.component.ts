@@ -1,8 +1,8 @@
 import { Component, Signal, WritableSignal, signal, computed } from '@angular/core';
-import { Reference } from '#features/work/models/Reference.type';
-import { ButtonComponent } from '#shared/features/button/button.component';
-import { BUTTON } from '#shared/features/button/models/button-type.model';
-import { HighlightHeadingComponent } from '#shared/features/highlight-heading/highlight-heading.component';
+import { Reference } from '#features/work/models/reference.model.js';
+import { ButtonComponent } from '#shared/features/button/button.component.js';
+import { BUTTON } from '#shared/features/button/models/button-type.model.js';
+import { HighlightHeadingComponent } from '#shared/features/highlight-heading/highlight-heading.component.js';
 
 import { ReferenceComponent } from './ui/reference/reference.component';
 

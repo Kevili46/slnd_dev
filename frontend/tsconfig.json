@@ -3,31 +3,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "ESNext",
     "module": "ES2022",
     "moduleResolution": "bundler",
-    "rootDir": "..",
+    "rootDir": "./src",
     "outDir": "./dist/out-tsc",
-    "paths": {
-      "#core/*": [
-        "./src/app/core/*"
-      ],
-      "#environments/*": [
-        "./src/environments/*"
-      ],
-      "#features/*": [
-        "./src/app/features/*"
-      ],
-      "#shared/*": [
-        "./src/app/shared/*"
-      ],
-      "#archive/*": [
-        "./src/app/archive/*"
-      ],
-      "@slnd/*": [
-        "../shared/*"
-      ],
-    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,

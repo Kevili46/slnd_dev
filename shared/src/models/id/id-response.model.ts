@@ -1,4 +1,4 @@
-import { UserData } from "./user-data.model";
+import { UserData } from "./user-data.model.js";
 
 
 export interface IdResponse {

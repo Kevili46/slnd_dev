@@ -1,4 +1,4 @@
-import { Consent } from './consent.model'
+import { Consent } from './consent.model.js'
 export interface UserData {
     userId: string,
     data: {
