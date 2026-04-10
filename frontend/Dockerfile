@@ -1,15 +1,15 @@
 FROM node:22-alpine AS builder
 WORKDIR /app
 
-COPY shared/ ./shared/
-
+COPY package.json package-lock.json ./
+COPY shared/package.json ./shared/
 COPY frontend/package*.json ./frontend/
 
-WORKDIR /app/frontend
 RUN npm install --legacy-peer-deps
 
-COPY frontend/ ./
-RUN npm run build
+COPY shared/ ./shared/
+COPY frontend/ ./frontend/
+RUN npm run build --workspace=frontend
 
 FROM nginx:alpine AS runner
 

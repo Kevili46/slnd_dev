@@ -2,12 +2,14 @@
 FROM node:22-alpine AS builder
 WORKDIR /app
 
-COPY shared/ ./shared/
+COPY package.json package-lock.json ./
+COPY shared/package.json ./shared/
 COPY services/api-gateway/package*.json ./services/api-gateway/
 
 WORKDIR /app/services/api-gateway
 RUN npm install --include=dev
 
+COPY shared/ ./shared/
 COPY services/api-gateway/ ./
 
 RUN npm run build

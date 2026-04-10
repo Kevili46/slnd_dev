@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import app from './src/app';
 import * as http from 'http';
-import { setupWebSocket } from '@websockets/ai-agent.ws';
+import { setupWebSocket } from '#websockets/ai-agent.ws';
 
 const PORT: string | number = process.env.PORT || 3002;
 const HOST: string = process.env.HOST || 'localhost';
