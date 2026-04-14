@@ -1,5 +1,5 @@
 import { Component, InputSignal, input } from '@angular/core';
-import { Reference } from '#features/work/models/reference.model.js';
+import { Reference } from '@features/work/models/reference.model';
 
 @Component({
   selector: 'slnd-reference',

@@ -5,5 +5,6 @@ export const ICON = {
     "CLOSE": "CLOSE",
     "CHAT": "CHAT",
     "PLANE": "PLANE",
+    "MAIL": "MAIL",
 } as const;
 export type Icon = typeof ICON[keyof typeof ICON];

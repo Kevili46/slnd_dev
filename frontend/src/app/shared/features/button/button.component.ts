@@ -1,8 +1,8 @@
 import { Component, computed, input, InputSignal, output, OutputEmitterRef, Signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Icon } from '#shared/features/icon/models/icon.model.js';
-import { IconComponent } from '#shared/features/icon/icon.component.js';
-import { ButtonType, BUTTON } from '#shared/features/button/models/button-type.model.js';
+import { Icon } from '@shared/features/icon/models/icon.model';
+import { IconComponent } from '@shared/features/icon/icon.component';
+import { ButtonType, BUTTON } from '@shared/features/button/models/button-type.model';
 
 @Component({
   selector: 'slnd-button',

@@ -1,11 +1,13 @@
 import { Injectable, WritableSignal, Signal, signal, computed, effect, inject } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop'; // Modern Angular cleanup
-import { Chat } from '../models/Chat.model';
-import { Message } from '../models/Message.model';
-import { ROLE } from '../models/Roles.model';
-import { Participant } from '../models/Participant.model';
-import { AiAgentWSService } from './ai-agent-ws.service';
-import { AgentClientResponse, WS_DATA, WS_STATUS } from '@slnd/shared';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { AiAgentWSService } from '@features/ai-agent/services/ai-agent-ws.service';
+import { Chat } from '@features/ai-agent/models/chat.model';
+import { Message } from '@features/ai-agent/models/message.model';
+import { ROLE } from '@features/ai-agent/models/roles.model';
+import { Participant } from '@features/ai-agent/models/participant.model';
+import { AgentClientResponse } from '@features/ai-agent/models/agent-client-response.model';
+import { WS_DATA } from '@features/ai-agent/models/ws-data-type.model';
+import { WS_STATUS } from '@features/ai-agent/models/ws-status.model';
 
 @Injectable({ providedIn: 'root' })
 export class AiAgentService {

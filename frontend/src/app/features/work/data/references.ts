@@ -1,4 +1,4 @@
-import { Reference } from "#features/work/models/reference.model.js";
+import { Reference } from "@features/work/models/reference.model";
 
 const maable: Reference = {
     name: "Maable",

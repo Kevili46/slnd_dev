@@ -6,4 +6,5 @@ export const icons: Map<Icon, string> = new Map([
     [ICON.CLOSE, '<svg viewBox="0 0 50 50"> <path d="M0 4.24L4.24 0L25 20.76L45.76 0L50 4.24L29.24 25L50 45.76L45.76 50L25 29.24L4.24 50L0 45.76L20.76 25Z" /></svg>'],
     [ICON.CHAT, '<svg version="1.1" viewBox="0 0 100 100"> <path d="M0,100V0h100v80.6H25L0,100ZM5.4,6.4v81.7l18.1-14h71.2V6.4H5.4Z" /> <rect x="44.4" y="34.9" width="11.3" height="11.3" /> <rect x="19.3" y="34.9" width="11.3" height="11.3" /> <rect x="69.5" y="34.9" width="11.3" height="11.3" / > </svg>'],
     [ICON.PLANE, '<svg viewBox="0 0 371.53 344.38"> <path d="M.01,344.38v-160.36s371.03,0,371.03,0L.01,344.38ZM20,204.02v109.93s254.36-109.94,254.36-109.94H20Z" /> <path d="M371.53,160.37H.5V0l371.03,160.37ZM20.5,140.37h254.35L20.5,30.43v109.94Z" /> </svg>'],
+    [ICON.MAIL, '<svg viewBox="0 0 31.29 20.01"> <g transform="translate(0, -5.643)"> <polygon points="30.271,5.643 1.018,5.643 15.645,19.671"></polygon> <polygon points="15.645,22.539 0,7.536 0,25.648 31.291,25.648 31.291,7.536"></polygon> </g> </svg>']
 ]);

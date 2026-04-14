@@ -1,4 +1,4 @@
-import { Participant } from "./Participant.model";
+import { Participant } from "./participant.model";
 
 export interface Message {
     text: string,

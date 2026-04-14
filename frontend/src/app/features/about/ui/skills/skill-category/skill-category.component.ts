@@ -1,7 +1,7 @@
 import { Component, InputSignal, inject, input } from '@angular/core';
-import { SkillCategory } from '#features/about/models/skill-category.model.js';
-import { UtilityService } from '#core/services/utility.service.js';
-import { CATEGORY } from '#features/about/models/category.model.js';
+import { SkillCategory } from '@features/about/models/skill-category.model';
+import { UtilityService } from '@core/services/utility.service';
+import { CATEGORY } from '@features/about/models/category.model';
 
 @Component({
   selector: 'slnd-skill-category',

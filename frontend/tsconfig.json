@@ -3,9 +3,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ES2022",
-    "moduleResolution": "bundler",
     "rootDir": "./src",
     "outDir": "./dist/out-tsc",
     "strict": true,
@@ -17,7 +14,28 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
+    "moduleResolution": "bundler",
     "importHelpers": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "allowImportingTsExtensions": false,
+    "paths": {
+      "@core/*": [
+        "./src/app/core/*"
+      ],
+      "@features/*": [
+        "./src/app/features/*"
+      ],
+      "@shared/*": [
+        "./src/app/shared/*"
+      ],
+      "@environments/*": [
+        "./src/environments/*"
+      ],
+      "@archive/*": [
+        "./src/app/archive/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

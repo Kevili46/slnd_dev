@@ -2,7 +2,7 @@
 <div class="skills">
     @for (skill of skillCategory().skills; track skill) {
     <div class="skill">
-        <img [src]="skill.icon" [class.inverse]="darkMode() && skill.inverseIcon" alt="{{skill.name}} icon">
+        <img [src]="skill.logo" [class.inverse]="darkMode() && skill.inverseLogo" alt="{{skill.name}} icon">
         <span>{{skill.name}}</span>
     </div>
     }

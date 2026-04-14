@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec tsx src/server.ts",
+    "dev": "nodemon --exec tsx --conditions=development src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js"
   },
@@ -17,6 +17,11 @@
       "development": "./src/assets/*.ts",
       "types": "./src/assets/*.ts",
       "default": "./dist/assets/*.js"
+    },
+    "#models/*": {
+      "development": "./src/models/*.ts",
+      "types": "./src/models/*.ts",
+      "default": "./dist/models/*.js"
     },
     "#controllers/*": {
       "development": "./src/controllers/*.ts",

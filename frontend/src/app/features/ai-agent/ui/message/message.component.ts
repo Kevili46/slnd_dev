@@ -1,6 +1,6 @@
 import { Component, computed, input, InputSignal, Signal } from '@angular/core';
-import { Message } from '#features/ai-agent/models/Message.model.js';
-import { ROLE } from '#features/ai-agent/models/Roles.model.js';
+import { Message } from '@features/ai-agent/models/message.model';
+import { ROLE } from '@features/ai-agent/models/roles.model';
 
 @Component({
   selector: 'slnd-message',

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
@@ -10,7 +9,7 @@ describe('ContactComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ContactComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ContactComponent);
     component = fixture.componentInstance;
@@ -21,3 +20,4 @@ describe('ContactComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

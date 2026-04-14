@@ -1,10 +1,9 @@
 import { Component, ElementRef, inject, Signal, viewChild, computed, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CookieService } from 'ngx-cookie-service';
-import { ChatHistoryComponent } from '#features/ai-agent/ui/chat-history/chat-history.component.js';
-import { ButtonComponent } from '#shared/features/button/button.component.js';
-import { ICON } from '#shared/features/icon/models/icon.model.js';
-import { BUTTON } from '#shared/features/button/models/button-type.model.js';
+import { ChatHistoryComponent } from '@features/ai-agent/ui/chat-history/chat-history.component';
+import { ButtonComponent } from '@shared/features/button/button.component';
+import { ICON } from '@shared/features/icon/models/icon.model';
+import { BUTTON } from '@shared/features/button/models/button-type.model';
 import { AiAgentService } from './services/ai-agent.service';
 import { FormsModule } from '@angular/forms';
 
@@ -19,7 +18,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class AiAgentComponent {
 
-  private cookies: CookieService = inject(CookieService);
   private agentService: AiAgentService = inject(AiAgentService);
 
   public agentEl: Signal<ElementRef> = viewChild.required('agent', { read: ElementRef });
@@ -57,10 +55,6 @@ export class AiAgentComponent {
   //   edit = edit.replace(/\\"(.*?)\\"/g, '<em>$1</em>');
   //   return edit;
   // }
-
-  public check(cookie: string) {
-    this.cookies.check(cookie);
-  }
 
   protected readonly ICON = ICON;
   protected readonly BUTTON = BUTTON;

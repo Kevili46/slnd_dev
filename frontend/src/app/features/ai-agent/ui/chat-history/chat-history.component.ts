@@ -1,8 +1,8 @@
 import { Component, Signal, inject, ElementRef, afterEveryRender, effect } from '@angular/core';
-import { AiAgentService } from '#features/ai-agent/services/ai-agent.service.js';
-import { Message } from '#features/ai-agent/models/Message.model.js';
-import { MessageComponent } from '#features/ai-agent/ui/message/message.component.js';
-import { ROLE } from '#features/ai-agent/models/Roles.model.js';
+import { AiAgentService } from '@features/ai-agent/services/ai-agent.service';
+import { Message } from '@features/ai-agent/models/message.model';
+import { MessageComponent } from '@features/ai-agent/ui/message/message.component';
+import { ROLE } from '@features/ai-agent/models/roles.model';
 
 @Component({
   selector: 'slnd-chat-history',
@@ -23,18 +23,9 @@ export class ChatHistoryComponent {
   constructor() {
     afterEveryRender(() => {
       const currentHistoryLength = this.history()?.length;
-      if (this.lastHistoryLength == currentHistoryLength) {
-        return;
-      }
-      this.scrollHistoryToBottom();
-      this.lastHistoryLength = currentHistoryLength;
-    });
-
-    effect(() => {
-      if (this.typing()) {
-        setTimeout(() => {
-          this.scrollHistoryToBottom();
-        }, 100);
+      if (this.lastHistoryLength != currentHistoryLength || this.typing()) {
+        this.scrollHistoryToBottom();
+        this.lastHistoryLength = currentHistoryLength;
       }
     });
   }

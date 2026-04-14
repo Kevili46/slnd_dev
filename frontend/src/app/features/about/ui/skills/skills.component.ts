@@ -1,11 +1,11 @@
 import { Component, ElementRef, viewChildren, Signal, signal, inject, Renderer2, OnDestroy, afterNextRender, computed } from '@angular/core';
-import { ButtonComponent } from '#shared/features/button/button.component.js';
-import { SkillCategoryComponent } from '#features/about/ui/skills/skill-category/skill-category.component.js';
-import { CATEGORY, CategoryType } from '#features/about/models/category.model.js';
-import { SkillCategory } from '#features/about/models/skill-category.model.js';
-import { Skill } from '#features/about/models/skill.model.js';
-import { skills } from '#features/about/ui/skills/data/skills.js';
-import { BUTTON } from '#shared/features/button/models/button-type.model.js';
+import { ButtonComponent } from '@shared/features/button/button.component';
+import { SkillCategoryComponent } from '@features/about/ui/skills/skill-category/skill-category.component';
+import { CATEGORY, CategoryType } from '@features/about/models/category.model';
+import { SkillCategory } from '@features/about/models/skill-category.model';
+import { Skill } from '@features/about/models/skill.model';
+import { skills } from '@features/about/ui/skills/data/skills.js';
+import { BUTTON } from '@shared/features/button/models/button-type.model';
 
 @Component({
   selector: 'slnd-skills',

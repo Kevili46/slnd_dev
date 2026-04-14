@@ -1,6 +1,6 @@
 import { Component, computed, input, InputSignal, Signal } from '@angular/core';
-import { HighlightHeadingSubString } from '#shared/features/highlight-heading/models/highlight-heading.model.js';
-import { SubstringIndices } from '#shared/features/highlight-heading/models/substring-indices.model.js';
+import { HighlightHeadingSubString } from '@shared/features/highlight-heading/models/highlight-heading.model';
+import { SubstringIndices } from '@shared/features/highlight-heading/models/substring-indices.model';
 
 @Component({
   selector: 'slnd-highlight-heading',

@@ -1,9 +1,17 @@
-<slnd-highlight-heading heading="Time for contact." stringToHighlight="contact."></slnd-highlight-heading>
+<slnd-highlight-heading heading="Get in contact." stringToHighlight="contact."></slnd-highlight-heading>
 <section>
-    <div class="content">
-        <div #mail class="mail">
-            <p>oops :)</p>
-            <a #mailLink class="slnd-link" href="mailto:kevin@slnd.dev">kevin&#64;slnd.dev</a>
+    <div class="contacts slnd-bubble-back">
+        @for(contact of contacts(); track $index) {
+        <div class="contact">
+            @if(contact.logo; as logo) {
+            <img class="contact-img" [class.inverse-logo]="contact.inverseLogo" [src]="logo">
+            }
+            @if(contact.icon; as icon) {
+            <slnd-icon class="contact-img" width="" [icon]="icon"></slnd-icon>
+            }
+            <span class="contact-name">{{contact.title}}</span>
+            <a class="contact-link" target="_blank" [href]="contact.link"></a>
         </div>
+        }
     </div>
 </section>

@@ -1,7 +1,7 @@
 import { Component, computed, inject, input, InputSignal, Signal } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Icon, ICON } from '#shared/features/icon/models/icon.model.js';
-import { icons } from '#shared/features/icon/models/icons.js';
+import { Icon, ICON } from '@shared/features/icon/models/icon.model';
+import { icons } from '@shared/features/icon/models/icons.js';
 
 @Component({
   selector: 'slnd-icon',
@@ -9,7 +9,7 @@ import { icons } from '#shared/features/icon/models/icons.js';
   templateUrl: './icon.component.html',
   styleUrl: './icon.component.scss',
   host: {
-    '[style.width]': 'width()',
+    '[style.width]': 'width() || null',
     '[innerHTML]': 'svg() ?? ""'
   }
 })

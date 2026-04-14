@@ -1,5 +1,3 @@
-:host {}
-
 .nav-item {
     position: relative;
     color: var(--clr-text);
@@ -32,6 +30,8 @@
 }
 
 .active {
+    pointer-events: none;
+
     &::after {
         width: 100%;
     }

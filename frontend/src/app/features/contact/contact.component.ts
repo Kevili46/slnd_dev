@@ -1,34 +1,18 @@
-import { AfterViewInit, Component, ElementRef, Signal, inject, viewChild } from '@angular/core';
-import { UtilityService } from '#core/services/utility.service.js';
-import { HighlightHeadingComponent } from '#shared/features/highlight-heading/highlight-heading.component.js';
+import { Component, signal, Signal } from '@angular/core';
+import { HighlightHeadingComponent } from '@shared/features/highlight-heading/highlight-heading.component';
+import { contacts } from '@features/contact/data/contacts.js';
+import { Contact } from '@features/contact/models/contact.model';
+import { IconComponent } from "@shared/features/icon/icon.component";
 
 @Component({
   selector: 'slnd-contact',
-  imports: [HighlightHeadingComponent],
+  imports: [HighlightHeadingComponent, IconComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 
-export class ContactComponent implements AfterViewInit {
+export class ContactComponent {
 
-  private utilityService: UtilityService = inject(UtilityService);
+  public readonly contacts: Signal<Contact[]> = signal(contacts);
 
-
-  public mail: Signal<ElementRef> = viewChild.required('mail');
-  public mailLink: Signal<ElementRef> = viewChild.required('mailLink');
-
-  constructor() {
-  }
-
-  ngAfterViewInit() {
-    if (!this.utilityService.mobile()) {
-      let randXsign = Math.random() < .55 ? -1 : 1;
-      let randX = (200 * Math.random()) * randXsign;
-      let randY = (window.innerHeight - this.mailLink().nativeElement.getBoundingClientRect().bottom - 200) * Math.random() + 100;
-      this.mail().nativeElement.addEventListener('mouseover', () => {
-        this.mail().nativeElement.classList.add('hovered');
-        this.mailLink().nativeElement.style.translate = `${randX}px ${randY}px`;
-      })
-    }
-  }
 }

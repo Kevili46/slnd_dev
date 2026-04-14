@@ -18,6 +18,11 @@
       "types": "./src/assets/*.ts",
       "default": "./dist/assets/*.js"
     },
+    "#models/*": {
+      "development": "./src/models/*.ts",
+      "types": "./src/models/*.ts",
+      "default": "./dist/models/*.js"
+    },
     "#controllers/*": {
       "development": "./src/controllers/*.ts",
       "types": "./src/controllers/*.ts",

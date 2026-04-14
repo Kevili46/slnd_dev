@@ -1,5 +1,8 @@
 :host {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 section {
@@ -7,46 +10,31 @@ section {
     flex-flow: column nowrap;
     align-items: center;
 
-    .content {
+    .contacts {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        gap: 20px;
 
-        .mail {
+        .contact {
             position: relative;
-            padding: .5em .2em;
-            text-align: center;
+            flex: 0 0 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-            p {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                translate: -50% -50%;
-                opacity: 0;
-                transition: opacity var(--time-interact) ease;
-            }
+            .contact-img {
+                width: 80%;
+                aspect-ratio: 1;
 
-            a {
-                display: block;
-                font-size: 1.2em;
-                transition: translate var(--time-interact-calm) ease;
-            }
-
-            &.hovered {
-                p {
-                    opacity: 1;
+                &.inverse-logo {
+                    filter: invert(1);
                 }
             }
+
+            .contact-link {
+                position: absolute;
+                inset: 0;
+            }
         }
     }
-}
 
-@media (min-width: 1025px) {
-
-    section {
-        h1 {
-            text-align: start;
-            margin-top: 40svh;
-        }
-    }
 }

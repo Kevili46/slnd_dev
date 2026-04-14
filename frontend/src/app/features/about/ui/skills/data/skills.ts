@@ -1,96 +1,96 @@
-import { Skill } from "#features/about/models/skill.model.js";
-import { CATEGORY } from "#features/about/models/category.model.js";
+import { Skill } from "@features/about/models/skill.model";
+import { CATEGORY } from "@features/about/models/category.model";
 
 
 export const skills: Skill[] = [
     {
         name: "Angular",
-        icon: "/assets/logos/angular.svg",
+        logo: "/assets/logos/angular.svg",
         category: CATEGORY.FRONTEND,
         core: true,
     },
     {
         name: "CSS",
-        icon: "/assets/logos/css.svg",
+        logo: "/assets/logos/css.svg",
         category: CATEGORY.FRONTEND,
     },
     {
         name: "HTML",
-        icon: "/assets/logos/html.svg",
+        logo: "/assets/logos/html.svg",
         category: CATEGORY.FRONTEND,
     },
     {
         name: "Node.js",
-        icon: "/assets/logos/nodejs.svg",
+        logo: "/assets/logos/nodejs.svg",
         category: CATEGORY.BACKEND,
         core: true,
     },
     {
         name: "Express",
-        icon: "/assets/logos/express.svg",
+        logo: "/assets/logos/express.svg",
         category: CATEGORY.BACKEND,
-        inverseIcon: true,
+        inverseLogo: true,
     },
     {
         name: ".NET",
-        icon: "/assets/logos/dotnet.svg",
+        logo: "/assets/logos/dotnet.svg",
         category: CATEGORY.BACKEND,
     },
     {
         name: "nginx",
-        icon: "/assets/logos/nginx.svg",
+        logo: "/assets/logos/nginx.svg",
         category: CATEGORY.BACKEND,
     },
     {
         name: "PostgreSQL",
-        icon: "/assets/logos/postgresql.svg",
+        logo: "/assets/logos/postgresql.svg",
         category: CATEGORY.DB,
         core: true,
     },
     {
         name: "MySQL",
-        icon: "/assets/logos/mysql.svg",
+        logo: "/assets/logos/mysql.svg",
         category: CATEGORY.DB,
     },
     {
         name: "MongoDB",
-        icon: "/assets/logos/mongodb.svg",
+        logo: "/assets/logos/mongodb.svg",
         category: CATEGORY.DB,
     },
     {
         name: "JavaScript",
-        icon: "/assets/logos/javascript.svg",
+        logo: "/assets/logos/javascript.svg",
         category: CATEGORY.LANGUAGE,
     },
     {
         name: "TypeScript",
-        icon: "/assets/logos/typescript.svg",
+        logo: "/assets/logos/typescript.svg",
         category: CATEGORY.LANGUAGE,
         core: true,
     },
     {
         name: "Java",
-        icon: "/assets/logos/java.svg",
+        logo: "/assets/logos/java.svg",
         category: CATEGORY.LANGUAGE,
     },
     {
         name: "C#",
-        icon: "/assets/logos/csharp.svg",
+        logo: "/assets/logos/csharp.svg",
         category: CATEGORY.LANGUAGE,
     },
     {
         name: "Git",
-        icon: "/assets/logos/git.svg",
+        logo: "/assets/logos/git.svg",
         category: CATEGORY.TOOL,
     },
     {
         name: "Docker",
-        icon: "/assets/logos/docker.svg",
+        logo: "/assets/logos/docker.svg",
         category: CATEGORY.TOOL,
     },
     {
         name: "Gemini API",
-        icon: "/assets/logos/gemini.svg",
+        logo: "/assets/logos/gemini.svg",
         category: CATEGORY.TOOL,
     },
 ];

@@ -1,9 +1,9 @@
 import { Component, inject, Signal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UtilityService } from '#core/services/utility.service.js';
-import { NavItemComponent } from '#shared/features/nav-item/nav-item.component.js';
-import { NavRoute } from '#shared/features/nav-item/models/nav-route.model.js';
-import { mainNavRoutes } from '#features/header/ui/nav/data/mainNavRoutes.js';
+import { UtilityService } from '@core/services/utility.service';
+import { NavItemComponent } from '@shared/features/nav-item/nav-item.component';
+import { NavRoute } from '@shared/features/nav-item/models/nav-route.model';
+import { mainNavRoutes } from '@features/header/ui/nav/data/mainNavRoutes.js';
 
 @Component({
   selector: 'slnd-nav',

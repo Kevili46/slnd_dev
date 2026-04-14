@@ -1,9 +1,9 @@
-import { CategoryType } from "#features/about/models/category.model.js";
+import { CategoryType } from "@features/about/models/category.model";
 
 export interface Skill {
     name: string;
-    icon: string;
+    logo: string;
     category: CategoryType
     core?: boolean;
-    inverseIcon?: boolean;
+    inverseLogo?: boolean;
 }
