@@ -2,16 +2,14 @@
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "extends": "./tsconfig.json",
-  "composite": true,
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine"
-    ],
-    "rootDir": "./src",
+    ]
   },
   "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
+    "src/**/*.d.ts",
+    "src/**/*.spec.ts"
   ]
 }

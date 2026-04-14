@@ -10,9 +10,5 @@ import { SkillsComponent } from '@features/about/ui/skills/skills.component';
   styleUrl: './about.component.scss'
 })
 
-
 export class AboutComponent {
-  constructor() {
-    console.log('hey');
-  }
 }

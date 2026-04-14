@@ -55,7 +55,6 @@ export class AiAgentComponent {
   //   edit = edit.replace(/\\"(.*?)\\"/g, '<em>$1</em>');
   //   return edit;
   // }
-
   protected readonly ICON = ICON;
   protected readonly BUTTON = BUTTON;
 }

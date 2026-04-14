@@ -7,7 +7,9 @@
         <slnd-button class="close-button" (btnClick)="toggleAgent()" [icon]="ICON.CLOSE"
             iconWidth="1.2em"></slnd-button>
     </div>
+
     <slnd-chat-history></slnd-chat-history>
+
     <form (submit)="submitQuery()">
         <input #queryInput name="query" [disabled]="!online()" [(ngModel)]="query" type="text"
             placeholder="write a message" autocomplete="off">

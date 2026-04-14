@@ -4,4 +4,5 @@ export const WS_DATA = {
     'STATUS': 'STATUS',
     'ERROR': 'ERROR',
 } as const;
+
 export type WsData = typeof WS_DATA[keyof typeof WS_DATA];
