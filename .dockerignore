@@ -1,9 +1,9 @@
+node_modules/
 **/node_modules/
 
 **/.env
 **/.env.*
 
-**/dist/
-**/.git/
+.git/
 **/.angular/
-**/.shared/.tscache/
+**/shared/.tscache/

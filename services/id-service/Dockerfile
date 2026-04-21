@@ -21,9 +21,9 @@ COPY services/id-service/package*.json ./
 
 RUN npm install --omit=dev
 
-COPY --from=builder /app/services/id-service/dist/ ./
-COPY --from=builder /app/shared/dist/ ./shared/dist/
+COPY --from=builder /app/services/id-service/dist ./dist
+COPY --from=builder /app/shared/dist ./shared/dist
 
 EXPOSE 4601
 
-CMD ["node", "server.js"]
+CMD ["node", "dist/server.js"]

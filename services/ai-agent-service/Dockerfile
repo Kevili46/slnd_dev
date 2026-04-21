@@ -18,11 +18,12 @@ WORKDIR /app
 ENV NODE_ENV=production
 
 COPY services/ai-agent-service/package*.json ./
+COPY shared/package*.json ./shared/
 
 RUN npm install --omit=dev
 
-COPY --from=builder /app/services/ai-agent-service/dist/ ./
-COPY --from=builder /app/shared/dist/ ./shared/dist/
+COPY --from=builder /app/services/ai-agent-service/dist ./dist
+COPY --from=builder /app/shared/dist ./shared/dist
 COPY --from=builder /app/services/ai-agent-service/src/assets ./src/assets
 
 EXPOSE 4602
