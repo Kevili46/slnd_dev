@@ -8,7 +8,7 @@ import { UtilityService } from '@core/services/utility.service';
 import { ToggleButtonComponent } from "@shared/features/toggle-button/toggle-button.component";
 // import { ButtonComponent } from "#shared/features/button/button.component";
 import { BUTTON } from '@shared/features/button/models/button-type.model';
-import { UserData } from '@core/services/id/models/user-data.model';
+import { UserData } from '@slnd/shared';
 
 @Component({
   selector: 'slnd-consent',

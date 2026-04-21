@@ -1,8 +1,7 @@
 import { inject, Injectable, signal, Signal, WritableSignal } from '@angular/core';
 import { IdHttpService } from '@core/services/id/id-http.service';
 import { UtilityService } from '@core/services/utility.service';
-import { UserData } from '@core/services/id/models/user-data.model';
-import { IdResponse } from '@core/services/id/models/id-response.model';
+import { UserData, IdResponse } from '@slnd/shared';
 
 @Injectable({
   providedIn: 'root',

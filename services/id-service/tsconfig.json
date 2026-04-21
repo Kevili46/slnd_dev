@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
@@ -10,8 +11,39 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noUncheckedIndexedAccess": true,
+    "paths": {
+      "@slnd/shared": [
+        "../../shared/src/index.ts"
+      ],
+      "#assets/*": [
+        "src/assets/*"
+      ],
+      "#controllers/*": [
+        "src/controllers/*"
+      ],
+      "#interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "#models/*": [
+        "src/models/*"
+      ],
+      "#routes/*": [
+        "src/routes/*"
+      ],
+      "#services/*": [
+        "src/services/*"
+      ],
+      "#utils/*": [
+        "src/utils/*"
+      ],
+    }
   },
   "include": [
     "src/**/*"
   ],
+  "references": [
+    {
+      "path": "../../shared"
+    }
+  ]
 }

@@ -2,11 +2,7 @@ import { WebSocketServer, WebSocket } from 'ws';
 import { IncomingMessage } from 'http';
 import { createChatSession, sendMessage } from '#services/ai-agent-service';
 import { ChatSession } from '@google/generative-ai';
-import { ClientAgentRequest } from '#models/client-agent-request.model';
-import { WS_DATA } from '#models/ws-data-type.model';
-import { WS_STATUS } from '#models/ws-status.model';
-import { AgentClientResponse } from '#models/agent-client-response.model';
-
+import { ClientAgentRequest, AgentClientResponse, WS_STATUS, WS_DATA } from '@slnd/shared';
 export const setupWebSocket = (server: any) => {
     const wss = new WebSocketServer({ noServer: true });
 

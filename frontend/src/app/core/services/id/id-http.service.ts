@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '@environments/environment';
 import { Observable } from 'rxjs';
-import { IdResponse } from '@core/services/id/models/id-response.model';
+import { IdResponse } from '@slnd/shared';
 
 @Injectable({
   providedIn: 'root',

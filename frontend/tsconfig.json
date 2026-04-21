@@ -32,6 +32,9 @@
       "@environments/*": [
         "src/environments/*"
       ],
+      "@slnd/shared": [
+        "../shared/src/index.ts"
+      ],
     }
   },
   "angularCompilerOptions": {

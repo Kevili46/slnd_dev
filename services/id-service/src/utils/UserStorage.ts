@@ -1,4 +1,4 @@
-import { UserData } from '#models/user-data.model';
+import { UserData } from '@slnd/shared';
 import * as crypto from 'crypto';
 
 export const userStorage: Map<string, UserData> = new Map();
@@ -14,7 +14,8 @@ export const addNewUser: () => string = () => {
                 analytics: false,
             },
             theme: 'light',
-            lang: 'EN'
+            lang: 'EN',
+            projectsView: 'list'
         },
         createdAt: new Date(),
     }

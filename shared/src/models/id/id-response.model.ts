@@ -1,4 +1,4 @@
-import { UserData } from "@core/services/id/models/user-data.model";
+import { UserData } from "./user-data.model";
 
 
 export interface IdResponse {

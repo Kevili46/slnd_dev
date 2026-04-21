@@ -10,8 +10,18 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noUncheckedIndexedAccess": true,
+    "paths": {
+      "@slnd/shared": [
+        "../../shared/src/index.ts"
+      ],
+    }
   },
   "include": [
     "src/**/*"
+  ],
+  "references": [
+    {
+      "path": "../../shared"
+    }
   ]
 }

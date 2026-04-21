@@ -5,9 +5,7 @@ import { Chat } from '@features/ai-agent/models/chat.model';
 import { Message } from '@features/ai-agent/models/message.model';
 import { ROLE } from '@features/ai-agent/models/roles.model';
 import { Participant } from '@features/ai-agent/models/participant.model';
-import { AgentClientResponse } from '@features/ai-agent/models/agent-client-response.model';
-import { WS_DATA } from '@features/ai-agent/models/ws-data-type.model';
-import { WS_STATUS } from '@features/ai-agent/models/ws-status.model';
+import { AgentClientResponse, WS_DATA, WS_STATUS } from '@slnd/shared';
 
 @Injectable({ providedIn: 'root' })
 export class AiAgentService {

@@ -16,8 +16,8 @@ services:
 
   frontend:
     build:
-      context: ./frontend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: frontend/Dockerfile
     networks:
       - frontend-nw
     ports:
@@ -27,8 +27,8 @@ services:
 
   api-gateway:
     build:
-      context: ./services/api-gateway
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: services/api-gateway/Dockerfile
     networks:
       - frontend-nw
       - backend-nw
@@ -46,8 +46,8 @@ services:
 
   id-service:
     build:
-      context: ./services/id-service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: services/id-service/Dockerfile
     networks:
       - backend-nw
     ports:
@@ -62,8 +62,8 @@ services:
 
   ai-agent-service:
     build:
-      context: ./services/ai-agent-service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: services/ai-agent-service/Dockerfile
     networks:
       - backend-nw
     ports:

@@ -1,4 +1,4 @@
-import { Consent } from '@core/services/id/models/consent.model'
+import { Consent } from './consent.model'
 
 export interface UserData {
     userId: string,
