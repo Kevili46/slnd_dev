@@ -1,2 +1,2 @@
-export * from './ai-agent';
-export * from './id';
+export * from './ai-agent/index.js';
+export * from './id/index.js';

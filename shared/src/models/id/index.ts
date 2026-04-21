@@ -1,3 +1,3 @@
-export * from './consent.model';
-export * from './id-response.model';
-export * from './user-data.model';
+export * from './consent.model.js';
+export * from './id-response.model.js';
+export * from './user-data.model.js';
