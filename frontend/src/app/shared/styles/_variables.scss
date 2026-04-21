@@ -1,30 +1,34 @@
 @mixin light {
-    --clr-text: black;
+    --clr-text: #2e2e2e;
+    --clr-text-bold: black;
     --clr-bg: white;
     --clr-bg-2: #fafafa;
     --clr-blue: #00D5FF;
     --clr-blue-light: color-mix(in hsl, var(--clr-blue), transparent 80%);
     --clr-orange: #FF8C00;
-    --clr-orange-light: color-mix(in hsl, var(--clr-orange), transparent 20%);
+    --clr-orange-light: color-mix(in hsl, var(--clr-orange), transparent 30%);
     --clr-grad: linear-gradient(90deg, var(--clr-orange) 15%, var(--clr-blue) 85%);
     --clr-border: #eaeaea;
     --clr-shadow: #777777;
     --clr-online: #01c92c;
     --clr-offline: #ff5454;
     --border: 1px solid var(--clr-border);
-    --time-interact: 150ms;
+    --time-interact: 100ms;
     --time-interact-calm: 350ms;
     --time-interact-slow: 600ms;
     --time-interact-delay: 100ms;
-    --box-shadow: 0 0 15px var(--clr-shadow);
-    --font-primary: 'EB Garamond', serif;
-    --font-secondary: 'Geist', sans-serif;
+    --box-shadow: 0 0 10px -2px var(--clr-shadow);
+    --font-primary: 'Geist', sans-serif;
+    --font-secondary: 'EB Garamond', serif;
 }
 
 @mixin dark {
     --clr-text: #d7d7d7;
-    --clr-bg: #202020;
-    --clr-bg-2: #1a1a1a;
-    --clr-border: #000000;
+    --clr-text-bold: white;
+    --clr-blue: #0098b6;
+    --clr-orange: #d77600;
+    --clr-bg: #1d1d1d;
+    --clr-bg-2: #121212;
+    --clr-border: #3f3f3f;
     --clr-shadow: #111111;
 }

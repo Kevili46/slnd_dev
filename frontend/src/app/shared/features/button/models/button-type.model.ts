@@ -1,5 +1,5 @@
 export const BUTTON = {
-    'GHOST': 'GHOST',
+    'DEFAULT': 'DEFAULT',
     'RAISED': 'RAISED',
     'CTA': 'CTA'
 }

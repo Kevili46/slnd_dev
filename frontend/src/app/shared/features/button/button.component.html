@@ -1,6 +1,6 @@
-<button [disabled]="btnDisabled()" (click)="execute()" [attr.type]="btnType() ?? null">
+<button [disabled]="btnDisabled() || activeUrl()" (click)="execute()" [attr.type]="btnType() ?? null">
     @if(text(); as text) {
-    {{text}}
+    <span>{{text}}</span>
     }
     @if(icon(); as icon) {
     <slnd-icon [width]="inputIconWidth()" [icon]="icon"></slnd-icon>

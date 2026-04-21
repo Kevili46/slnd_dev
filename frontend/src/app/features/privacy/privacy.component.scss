@@ -24,7 +24,7 @@
 
 .privacy-item {
     width: 90%;
-    border-bottom: 2px solid var(--clr-text);
+    border-bottom: 1px solid var(--clr-border);
     padding: 0 1em;
 
     .privacy-head {
@@ -39,23 +39,9 @@
         h2 {
             position: relative;
             font-weight: 500;
-            font-size: 2em;
+            font-size: 1.7em;
             transition: scale var(--time-interact) ease;
             width: fit-content;
-
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                height: 2px;
-                width: 0;
-                background: var(--clr-grad);
-                transition:
-                    width var(--time-interact-slow) ease,
-                    left var(--time-interact-slow) ease,
-            }
         }
 
         .toggle-icon {
@@ -69,11 +55,6 @@
 
             h2 {
                 scale: 1.01;
-
-                &::after {
-                    left: 95%;
-                    width: 1em;
-                }
             }
 
             .toggle-icon {
@@ -94,11 +75,11 @@
             padding-left: 40px;
 
             li {
-                list-style: square;
+                list-style: disc;
                 margin-bottom: 10px;
 
                 span {
-                    font-weight: 600;
+                    font-weight: 400;
                 }
             }
         }

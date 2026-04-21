@@ -5,7 +5,6 @@ import { CATEGORY, CategoryType } from '@features/about/models/category.model';
 import { SkillCategory } from '@features/about/models/skill-category.model';
 import { Skill } from '@features/about/models/skill.model';
 import { skills } from '@features/about/ui/skills/data/skills.js';
-import { BUTTON } from '@shared/features/button/models/button-type.model';
 
 @Component({
   selector: 'slnd-skills',
@@ -103,7 +102,4 @@ export class SkillsComponent implements OnDestroy {
 
     return Array.from(skillCategories.values());
   }
-
-  protected readonly BUTTON = BUTTON;
-
 }

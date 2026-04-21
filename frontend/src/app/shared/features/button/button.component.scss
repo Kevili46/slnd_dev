@@ -2,50 +2,63 @@
     display: flex;
     position: relative;
     padding: 0;
-    background-color: color-mix(in hsl, var(--clr-bg-2), transparent 3%);
     corner-shape: squircle;
     width: fit-content;
-    transition: scale var(--time-interact) ease;
+
+    &.default {
+        transition: opacity var(--time-interact) ease;
+
+        &:not(&.disabled):hover {
+            opacity: .6;
+        }
+    }
 
     &.raised {
         border-radius: .8em;
         border: 1px solid var(--clr-border);
-        transition: scale var(--time-interact) ease, box-shadow var(--time-interact) ease;
+        transition: background-color var(--time-interact) ease;
 
         button {
             padding: .3em;
         }
 
-        &:hover {
+        &:not(&.disabled):hover {
             background-color: var(--clr-blue-light);
         }
     }
 
     &.cta {
-        font-family: var(--font-secondary);
-        color: var(--clr-bg);
-        font-weight: 700;
         border-radius: .8em;
         border: 1px solid var(--clr-orange);
         background-color: var(--clr-orange-light);
         background-size: 250% 400%;
         background-position: 50% 00%;
         background-repeat: no-repeat;
-        box-shadow: 0 0 .2em var(--clr-orange);
-        transition: scale var(--time-interact-slow) ease, box-shadow var(--time-interact-slow) ease;
+        transition: scale var(--time-interact-slow) ease;
 
         button {
             padding: .3em .5em;
+
+            span {
+                color: var(--clr-bg);
+                font-weight: 700;
+            }
         }
 
-        &:not(.disabled):hover {
+        &:not(&.disabled):hover {
             scale: 1.01;
-            box-shadow: 0 0 .4em var(--clr-orange);
             transition-duration: var(--time-interact);
         }
 
-        &:not(.disabled):active {
+        &:not(&.disabled):active {
             scale: .99;
+        }
+    }
+
+    &.disabled {
+        button {
+            cursor: default;
+            opacity: .3;
         }
     }
 }
@@ -56,15 +69,6 @@ button {
     font-family: inherit;
     color: inherit;
     font-weight: inherit;
-
-    .close-icon {
-        fill: var(--clr-text);
-    }
-
-    &:disabled {
-        cursor: default;
-        opacity: .3;
-    }
 }
 
 a {

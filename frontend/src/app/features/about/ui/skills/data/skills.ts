@@ -1,95 +1,96 @@
 import { Skill } from "@features/about/models/skill.model";
 import { CATEGORY } from "@features/about/models/category.model";
+import { TECH } from "@core/models/tech.model";
 
 
 export const skills: Skill[] = [
     {
-        name: "Angular",
+        name: TECH.ANGULAR,
         logo: "/assets/logos/angular.svg",
         category: CATEGORY.FRONTEND,
         core: true,
     },
     {
-        name: "CSS",
+        name: TECH.CSS,
         logo: "/assets/logos/css.svg",
         category: CATEGORY.FRONTEND,
     },
     {
-        name: "HTML",
+        name: TECH.HTML,
         logo: "/assets/logos/html.svg",
         category: CATEGORY.FRONTEND,
     },
     {
-        name: "Node.js",
+        name: TECH.NODE_JS,
         logo: "/assets/logos/nodejs.svg",
         category: CATEGORY.BACKEND,
         core: true,
     },
     {
-        name: "Express",
+        name: TECH.EXPRESS,
         logo: "/assets/logos/express.svg",
         category: CATEGORY.BACKEND,
         inverseLogo: true,
     },
     {
-        name: ".NET",
+        name: TECH.DOTNET,
         logo: "/assets/logos/dotnet.svg",
         category: CATEGORY.BACKEND,
     },
     {
-        name: "nginx",
+        name: TECH.NGINX,
         logo: "/assets/logos/nginx.svg",
         category: CATEGORY.BACKEND,
     },
     {
-        name: "PostgreSQL",
+        name: TECH.POSTGRES,
         logo: "/assets/logos/postgresql.svg",
         category: CATEGORY.DB,
         core: true,
     },
     {
-        name: "MySQL",
+        name: TECH.MY_SQL,
         logo: "/assets/logos/mysql.svg",
         category: CATEGORY.DB,
     },
     {
-        name: "MongoDB",
+        name: TECH.MONGO_DB,
         logo: "/assets/logos/mongodb.svg",
         category: CATEGORY.DB,
     },
     {
-        name: "JavaScript",
+        name: TECH.JAVASCRIPT,
         logo: "/assets/logos/javascript.svg",
         category: CATEGORY.LANGUAGE,
     },
     {
-        name: "TypeScript",
+        name: TECH.TYPESCRIPT,
         logo: "/assets/logos/typescript.svg",
         category: CATEGORY.LANGUAGE,
         core: true,
     },
     {
-        name: "Java",
+        name: TECH.JAVA,
         logo: "/assets/logos/java.svg",
         category: CATEGORY.LANGUAGE,
     },
     {
-        name: "C#",
+        name: TECH.C_SHARP,
         logo: "/assets/logos/csharp.svg",
         category: CATEGORY.LANGUAGE,
     },
     {
-        name: "Git",
+        name: TECH.GIT,
         logo: "/assets/logos/git.svg",
         category: CATEGORY.TOOL,
     },
     {
-        name: "Docker",
+        name: TECH.DOCKER,
         logo: "/assets/logos/docker.svg",
         category: CATEGORY.TOOL,
     },
     {
-        name: "Gemini API",
+        name: TECH.GEMINI_API,
         logo: "/assets/logos/gemini.svg",
         category: CATEGORY.TOOL,
     },

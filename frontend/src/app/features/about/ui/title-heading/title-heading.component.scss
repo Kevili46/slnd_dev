@@ -21,12 +21,11 @@ h1 {
         padding: .1em .25em .2em .25em;
         background-repeat: no-repeat;
         background-size: 0%;
-        font-family: var(--font-secondary);
         font-weight: 700;
         letter-spacing: -.02em;
         font-size: .8em;
 
-        animation: intro 900ms ease 200ms forwards;
+        animation: intro 1200ms ease 200ms forwards;
 
         >* {
             color: inherit;

@@ -8,11 +8,10 @@ article {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
-    gap: 1em;
+    gap: 2em;
 
     p {
         text-align: end;
-        padding: 0 0 0 2em;
     }
 }
 

@@ -35,6 +35,14 @@ export class AiAgentComponent {
 
   public toggleAgent(): void {
     this.agentService.toggleAgent();
+
+    if (this.agentOpen()) {
+      const el = this.agentEl().nativeElement;
+
+      el.addEventListener('transitionend', () => {
+        this.queryInput().nativeElement.focus();
+      }, { once: true });
+    }
   }
 
   public submitQuery() {
@@ -48,13 +56,6 @@ export class AiAgentComponent {
     el.nativeElement.scrollTo({ top: yScroll, left: 0, behavior: 'smooth' });
   }
 
-  // editResponse(res: string): string {
-  //   let edit = res.slice(1, -1);
-  //   edit = edit.replace(/\\n/g, '<br>');
-  //   edit = edit.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-  //   edit = edit.replace(/\\"(.*?)\\"/g, '<em>$1</em>');
-  //   return edit;
-  // }
   protected readonly ICON = ICON;
   protected readonly BUTTON = BUTTON;
 }

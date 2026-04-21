@@ -1,0 +1,24 @@
+<slnd-highlight-heading heading="Samples of my work." stringToHighlight="work."></slnd-highlight-heading>
+<section>
+  <div class="reference-controls">
+    <div class="view-settings">
+      @for(viewOption of viewOptions(); track $index) {
+      <slnd-button [class.active-view]="referenceView() == viewOption" (btnClick)="setReferenceView(viewOption)" raised
+        [icon]="viewOption"></slnd-button>
+      }
+    </div>
+    <div class="tag-filter">
+      @for (tag of sortedTags(); track $index) {
+      <slnd-reference-tag slndOmniClick [tag]="tag" filter></slnd-reference-tag>
+      }
+    </div>
+  </div>
+  <div class="references">
+    @if(referenceView() == REFERENCE_VIEW.TILE_VIEW) {
+    <slnd-reference-tile-view [references]="filteredReferences()"></slnd-reference-tile-view>
+    }
+    @if(referenceView() == REFERENCE_VIEW.LIST_VIEW) {
+    <slnd-reference-list-view [references]="filteredReferences()"></slnd-reference-list-view>
+    }
+  </div>
+</section>

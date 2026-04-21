@@ -1,7 +1,8 @@
+import { Tech } from "@core/models/tech.model";
 import { CategoryType } from "@features/about/models/category.model";
 
 export interface Skill {
-    name: string;
+    name: Tech;
     logo: string;
     category: CategoryType
     core?: boolean;

@@ -13,12 +13,26 @@ html {
     &::-webkit-scrollbar {
         scrollbar-width: none;
     }
+
+    &.theme-switch {
+        --time-interact: 0ms;
+        --time-intercat-slow: 0ms;
+        --time-interact-calm: 0ms;
+    }
 }
 
 
 * {
     color: var(--clr-text);
     font-family: var(--font-primary);
+
+    &::selection {
+        background-color: var(--clr-orange-light);
+    }
+
+    &:focus-visible {
+        outline: 2px groove var(--clr-orange);
+    }
 }
 
 h1 {
@@ -26,61 +40,64 @@ h1 {
     font-weight: 400;
     line-height: 1em;
     text-wrap: balance;
+    font-family: var(--font-secondary);
+    color: var(--clr-text-bold);
 }
 
 
 h2 {
     width: 100%;
-    font-size: clamp(3.5em, 10svw, 4.5em);
+    font-size: clamp(2.5em, 6svw, 3.5em);
     font-weight: 400;
     margin-bottom: .4em;
     hyphens: auto;
     text-wrap: balance;
+    font-family: var(--font-secondary);
+    color: var(--clr-text-bold);
 }
 
 h3 {
     font-size: 1.5em;
     line-height: 1.5em;
     font-weight: 600;
+    font-family: var(--font-secondary);
+    color: var(--clr-text-bold);
 }
 
-p {
-    font-size: max(1em, 1.2svw);
+p,
+span {
+    font-size: .8em;
     font-weight: 400;
-    line-height: 1.3em;
+    line-height: 1.6em;
+    letter-spacing: 0;
 }
 
 section {
-    width: min(1000px, 90%);
+    width: min(1000px, 95%);
     margin-bottom: 250px;
 }
 
 .slnd-link {
     position: relative;
-    color: var(--clr-text);
+    color: var(--clr-text-bold);
     transition: color var(--time-interact) ease;
-
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background-color: var(--clr-text);
-        width: 100%;
-        height: 1px;
-    }
+    font-weight: 600;
 
     &:hover {
+        color: var(--clr-orange);
+    }
+
+    &:focus-visible {
+        outline: none;
         color: var(--clr-orange);
     }
 }
 
 .slnd-bubble-back {
-    border: var(--border);
+    border: 1px solid var(--clr-border);
     border-radius: 3em;
     corner-shape: squircle;
-    padding: 1.5em;
+    padding: 1em;
     background-color: color-mix(in hsl, var(--clr-bg-2), transparent 3%);
     overflow: hidden;
     backdrop-filter: blur(5px);
@@ -93,7 +110,7 @@ section {
     }
 
     h2 {
-        font-size: max(4.5em, 4.5svw);
+        font-size: max(3.5em, 3.5svw);
     }
 
     .content {

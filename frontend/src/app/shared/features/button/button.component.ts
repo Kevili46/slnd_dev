@@ -1,4 +1,4 @@
-import { Component, computed, input, InputSignal, output, OutputEmitterRef, Signal } from '@angular/core';
+import { booleanAttribute, Component, computed, input, InputSignal, InputSignalWithTransform, output, OutputEmitterRef, Signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Icon } from '@shared/features/icon/models/icon.model';
 import { IconComponent } from '@shared/features/icon/icon.component';
@@ -11,14 +11,17 @@ import { ButtonType, BUTTON } from '@shared/features/button/models/button-type.m
   styleUrl: './button.component.scss',
   host: {
     '[class.disabled]': 'btnDisabled()',
-    '[class.cta]': 'relevance() == BUTTON.CTA',
-    '[class.raised]': 'relevance() == BUTTON.RAISED'
+    '[class.default]': '!cta() && !raised()',
+    '[class.cta]': 'cta()',
+    '[class.raised]': 'raised()'
   }
 })
 export class ButtonComponent {
 
 
-  public readonly relevance: InputSignal<ButtonType> = input(BUTTON.GHOST);
+  public readonly raised: InputSignalWithTransform<boolean, unknown> = input(false, { transform: booleanAttribute });
+  public readonly cta: InputSignalWithTransform<boolean, unknown> = input(false, { transform: booleanAttribute });
+
   public readonly url: InputSignal<string | undefined> = input();
   public readonly activeUrl: Signal<string | undefined> = computed(() => {
     return !this.btnDisabled() ? this.url() : undefined;
@@ -26,7 +29,7 @@ export class ButtonComponent {
   public readonly icon: InputSignal<Icon | undefined> = input();
   public readonly iconWidth: InputSignal<string | undefined> = input();
   public readonly inputIconWidth: Signal<string> = computed(() => {
-    return this.iconWidth() ?? '1em';
+    return this.iconWidth() ?? '1.2em';
   });
   public readonly text: InputSignal<string | undefined> = input();
 

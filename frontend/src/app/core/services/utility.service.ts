@@ -21,6 +21,8 @@ export class UtilityService {
   private _darkMode: WritableSignal<boolean> = signal(false);
   public readonly darkMode = this._darkMode.asReadonly();
 
+  private themeSwitchTimeout: NodeJS.Timeout | undefined;
+
   private _consentOpen: WritableSignal<boolean> = signal(true);
   public readonly consentOpen: Signal<boolean> = this._consentOpen.asReadonly();
 
@@ -29,11 +31,14 @@ export class UtilityService {
   constructor() {
     this.renderer = this.rendererFac.createRenderer(null, null);
     effect(() => {
-      if (this.darkMode()) {
-        this.renderer.setAttribute(this.document.documentElement, 'data-theme', 'DARK');
-        return;
+      this.renderer.setAttribute(this.document.documentElement, 'data-theme', this.darkMode() ? 'DARK' : 'LIGHT');
+      this.renderer.addClass(this.document.documentElement, 'theme-switch');
+      if (this.themeSwitchTimeout) {
+        clearTimeout(this.themeSwitchTimeout);
       }
-      this.renderer.setAttribute(this.document.documentElement, 'data-theme', 'LIGHT');
+      this.themeSwitchTimeout = setTimeout(() => {
+        this.renderer.removeClass(this.document.documentElement, 'theme-switch');
+      }, 50);
 
     })
   }

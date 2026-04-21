@@ -1,0 +1,60 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    width: min(1000px, 90%);
+    display: flex;
+    flex-flow: column nowrap;
+
+    .reference-controls {
+        position: sticky;
+        top: 70px;
+        z-index: 2;
+        padding: 1em 0;
+        border-bottom: 1px solid var(--clr-border);
+        background-color: var(--clr-bg);
+        display: flex;
+        gap: 1em;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        .view-settings {
+            display: flex;
+            gap: .5em;
+
+            .active-view {
+                pointer-events: none;
+                background-color: var(--clr-orange-light);
+                border-color: var(--clr-orange);
+            }
+        }
+
+        .tag-filter {
+            flex-flow: row wrap-reverse;
+            display: flex;
+            justify-content: flex-end;
+            gap: .2em;
+        }
+    }
+
+    .references {
+        padding: 4em 1em;
+    }
+}
+
+@media (min-width: 1025px) {
+    section {
+
+        .reference-controls {
+            top: 0px;
+        }
+
+        h1 {
+            text-align: start;
+            margin-top: 40svh;
+        }
+    }
+}

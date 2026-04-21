@@ -1,5 +1,7 @@
 <div class="actions">
-    <button class="toggle-dark-mode" (click)="toggleDarkMode()">
-        <p>Aa</p>
-    </button>
+    @if(darkMode()) {
+    <slnd-button raised [icon]="ICON.LIGHT" (btnClick)="toggleDarkMode()"></slnd-button>
+    } @else {
+    <slnd-button raised [icon]="ICON.DARK" (btnClick)="toggleDarkMode()"></slnd-button>
+    }
 </div>

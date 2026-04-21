@@ -1,30 +1,16 @@
 .nav-item {
     position: relative;
-    color: var(--clr-text);
-    font-size: 1.2em;
+    color: var(--clr-text-bold);
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    user-select: none;
 
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        background: var(--clr-text);
-        bottom: -.1em;
-        left: 50%;
-        translate: -50% 0;
-        height: 2px;
-        width: 0px;
-        transition: width var(--time-interact) ease;
-    }
+    padding: .3em;
 
     &:hover {
-        &::after {
-            width: 100%;
-        }
-    }
-
-    &.main-nav-item {
-        &::after {
-            background: var(--clr-grad);
+        span {
+            color: var(--clr-orange);
         }
     }
 }
@@ -32,7 +18,27 @@
 .active {
     pointer-events: none;
 
-    &::after {
-        width: 100%;
+    span {
+        color: var(--clr-text-bold);
+        font-weight: 500;
     }
+
+
+    .main-nav-marker {
+        width: 20px;
+    }
+}
+
+span {
+    transition: color var(--time-interact) ease;
+}
+
+
+.main-nav-marker {
+    display: inline-block;
+    height: 1px;
+    background-color: var(--clr-border);
+    width: 0;
+
+    transition: width var(--time-interact-calm) ease;
 }

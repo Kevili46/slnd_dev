@@ -1,7 +1,9 @@
+import { Tech } from "@core/models/tech.model";
+
 export type Reference = {
     name: string;
     description: string;
     img: string;
-    url: string;
-    tags: string[];
+    link: string;
+    tags: Tech[];
 }

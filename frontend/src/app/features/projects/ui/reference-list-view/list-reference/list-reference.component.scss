@@ -1,0 +1,54 @@
+:host {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--clr-border);
+    gap: 1em;
+
+    span,
+    a {
+        font-size: .65em;
+    }
+}
+
+.list-reference-cell {
+    padding: .5em;
+    overflow: hidden;
+
+    &.reference-name-cell {
+        flex: 0 0 92px;
+
+        h3 {
+            font-size: 1em;
+        }
+    }
+
+    &.reference-description-cell {
+        flex: 1 0 140px;
+    }
+
+    &.reference-tags-cell {
+        display: none;
+    }
+
+    &.reference-link-cell {
+        flex: 0 0 200px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .list-reference-cell {
+
+        &.reference-tags-cell {
+
+            flex: 1 0 100px;
+            display: block;
+
+            .reference-tags {
+                display: flex;
+                flex-flow: row wrap;
+                gap: .2em;
+            }
+        }
+    }
+}

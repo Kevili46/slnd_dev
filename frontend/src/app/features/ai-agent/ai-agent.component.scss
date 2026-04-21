@@ -1,4 +1,6 @@
 :host {
+    z-index: 2;
+
     &.active {
         .agent {
             translate: 0 0;
@@ -7,9 +9,7 @@
 }
 
 .agent {
-
     position: fixed;
-    z-index: 2;
     bottom: 5em;
     right: min(1em, 5svw);
     display: flex;
@@ -20,8 +20,9 @@
     height: 70svh;
     font-size: .8em;
     translate: 150% 0;
-    transition: translate var(--time-interact-slow) ease;
     box-shadow: var(--box-shadow);
+
+    transition: translate var(--time-interact-slow) ease;
 
     p {
         font-size: 1em;
@@ -34,36 +35,47 @@
         align-items: flex-start;
         gap: 1em;
 
-        .chat-info {
+        .chat-profile {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            gap: 1em;
 
-            .service-indicator {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                font-family: var(--font-secondary);
-                font-weight: 600;
-                font-size: .9em;
-
-                &::before {
-                    content: '';
-                    display: block;
-                    height: .7em;
-                    aspect-ratio: 1;
-                    background-color: var(--clr-offline);
-                }
-
-                &.online {
-                    &::before {
-                        background-color: var(--clr-online);
-                    }
-                }
+            .profile-img {
+                width: 4em;
+                border-radius: 1.4em;
+                corner-shape: squircle;
             }
 
-            .ai-agent-info {
-                font-size: .85em;
+            .chat-info {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                .service-indicator {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    font-weight: 600;
+                    font-size: .9em;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        height: .7em;
+                        aspect-ratio: 1;
+                        border-radius: 50%;
+                        background-color: var(--clr-offline);
+                    }
+
+                    &.online {
+                        &::before {
+                            background-color: var(--clr-online);
+                        }
+                    }
+                }
+
+                .ai-agent-info {
+                    font-size: .75em;
+                }
             }
         }
 
@@ -79,7 +91,7 @@
         gap: 1em;
 
         >* {
-            font-size: 1em;
+            font-size: .9em;
         }
 
         input[type="text"] {
@@ -90,7 +102,9 @@
             outline: none;
             border-color: var(--clr-text);
             border-radius: 0;
-            border: 1px solid var(--clr-text);
+            border: 1px solid var(--clr-border);
+            border-radius: 1em;
+            corner-shape: squircle;
 
 
             &:focus {

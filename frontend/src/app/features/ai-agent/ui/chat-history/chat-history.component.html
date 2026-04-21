@@ -1,14 +1,10 @@
 @for(message of history(); track $index) {
 <div class="chatline" [class.user]="message.author.role == ROLE.USER">
-    @if(message.author.img) {
-    <img class="author-img" [src]="message.author.img" alt="">
-    }
     <slnd-message [message]="message"></slnd-message>
 </div>
 }
 @if(typing()) {
 <div class="chatline typing">
-    <img class="author-img" src="/assets/img/kevin_portrait.jpg" alt="">
     <p>Typing <span>.</span><span>.</span><span>.</span></p>
 </div>
 }

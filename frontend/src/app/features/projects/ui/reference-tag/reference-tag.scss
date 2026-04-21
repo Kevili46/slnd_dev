@@ -1,0 +1,37 @@
+:host {
+    position: relative;
+    padding: .2em .5em;
+    font-size: .75em;
+    border: 1px solid var(--clr-border);
+    border-radius: 1em;
+    corner-shape: squircle;
+
+    transition: background-color var(--time-interact) ease, border var(--time-interact) ease;
+
+    &.filter {
+        font-size: .8em;
+        cursor: pointer;
+        user-select: none;
+        background-color: var(--clr-bg-2);
+
+        &:not(.filter-active, .filter-disabled) {
+            &:hover {
+                background-color: var(--clr-blue-light);
+            }
+        }
+    }
+
+    &.filter-match {
+        border-color: var(--clr-orange-light);
+    }
+
+    &.filter-active {
+        background-color: var(--clr-orange-light);
+        color: var(--clr-bg)
+    }
+
+    &[disabled] {
+        pointer-events: none;
+        opacity: .2;
+    }
+}

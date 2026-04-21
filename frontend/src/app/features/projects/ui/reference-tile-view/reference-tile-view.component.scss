@@ -1,0 +1,15 @@
+@use '_mixins' as shared;
+
+:host {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: 60px;
+
+    &:has(.reference:hover) {
+        .reference:not(:hover) {
+            @include shared.blurred;
+        }
+    }
+}

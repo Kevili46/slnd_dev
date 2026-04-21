@@ -46,7 +46,7 @@
         width: 100svw;
         background-color: var(--clr-bg);
         flex-flow: column nowrap;
-        gap: 20px;
+        gap: .5em;
         transition: translate var(--time-interact-calm) ease;
     }
 
@@ -93,13 +93,12 @@
 
         ul {
             display: flex;
+            align-items: flex-start;
             position: relative;
             translate: 0 0;
             height: auto;
             width: auto;
             transition: none;
-            border-left: 2px solid var(--clr-text);
-            padding: .5em .0 .5em 1em;
             background-color: unset;
         }
     }

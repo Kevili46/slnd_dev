@@ -11,7 +11,7 @@
 
             .message-text {
                 background-color: var(--clr-orange-light);
-                color: black;
+                border-radius: 1em 1em 0 1em;
             }
         }
     }
@@ -21,7 +21,7 @@
         padding-right: 15%;
 
         .message-text {
-            border: 1px solid var(--clr-blue-light);
+            background-color: var(--clr-blue-light);
         }
     }
 }
@@ -33,13 +33,14 @@
     .message-text {
         display: inline-block;
         overflow-wrap: break-word;
-        font-size: 1em;
+        font-size: .9em;
         padding: .3em .5em;
         hyphens: auto;
+        border-radius: 1em 1em 1em 0;
+        corner-shape: squircle;
     }
 
     .message-time {
-        font-family: var(--font-secondary);
         font-size: .6em;
     }
 }

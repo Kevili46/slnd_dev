@@ -1,2 +1,7 @@
 <a class="nav-item" [class.main-nav-item]="mainNav()" [routerLink]="navRoute().route" routerLinkActive="active"
-    [routerLinkActiveOptions]="{exact: true}">{{navRoute().text}}</a>
+    [routerLinkActiveOptions]="{exact: true}">
+    @if(mainNav()) {
+    <span class="main-nav-marker"></span>
+    }
+    <span>{{navRoute().text}}</span>
+</a>
