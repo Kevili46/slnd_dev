@@ -18,6 +18,11 @@
       "types": "./src/assets/*.ts",
       "default": "./dist/assets/*.js"
     },
+    "#config/*": {
+      "development": "./src/config/*.ts",
+      "types": "./src/config/*.ts",
+      "default": "./dist/config/*.js"
+    },
     "#controllers/*": {
       "development": "./src/controllers/*.ts",
       "types": "./src/controllers/*.ts",
@@ -27,6 +32,16 @@
       "development": "./src/interfaces/*.ts",
       "types": "./src/interfaces/*.ts",
       "default": "./dist/interfaces/*.js"
+    },
+    "#middleware/*": {
+      "development": "./src/middleware/*.ts",
+      "types": "./src/middleware/*.ts",
+      "default": "./dist/middleware/*.js"
+    },
+    "#repositories/*": {
+      "development": "./src/repositories/*.ts",
+      "types": "./src/repositories/*.ts",
+      "default": "./dist/repositories/*.js"
     },
     "#routes/*": {
       "development": "./src/routes/*.ts",
@@ -53,7 +68,8 @@
     "express": "^5.2.1",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.3",
-    "morgan": "^1.10.1"
+    "morgan": "^1.10.1",
+    "pg": "^8.20.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
@@ -61,6 +77,7 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/morgan": "^1.9.10",
     "@types/node": "^25.5.0",
+    "@types/pg": "^8.20.0",
     "nodemon": "^3.1.14",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"

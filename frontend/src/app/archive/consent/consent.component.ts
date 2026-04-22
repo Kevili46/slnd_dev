@@ -30,8 +30,8 @@ export class ConsentComponent {
   public readonly currentConsentSettings: Signal<ConsentSettings> = computed(() => {
     const userData: UserData | undefined = this.idService.userData();
     const consentSettings: ConsentSettings = {
-      functional: userData?.data.consent.functional ?? false,
-      analytics: userData?.data.consent.analytics ?? false,
+      functional: userData?.options.consent.functional ?? false,
+      analytics: userData?.options.consent.analytics ?? false,
     }
     return consentSettings;
   });

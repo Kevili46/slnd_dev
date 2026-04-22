@@ -1,4 +1,4 @@
-import { afterNextRender, Component, ElementRef, inject, Renderer2 } from '@angular/core';
+import { afterNextRender, Component, ElementRef, inject, Renderer2, Signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '@features/header/header.component';
@@ -20,7 +20,7 @@ export class AppComponent {
   private idService: IdService = inject(IdService);
   private elRef: ElementRef = inject(ElementRef);
 
-  public readonly darkMode = this.utilityService.darkMode;
+  public readonly darkMode: Signal<boolean> = this.utilityService.darkMode;
 
   private resizeObserver?: ResizeObserver;
   private cleanup?: () => void;

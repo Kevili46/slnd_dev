@@ -1,16 +1,20 @@
-import { computed, Injectable, signal, Signal, WritableSignal } from '@angular/core';
+import { computed, inject, Injectable, signal, Signal, WritableSignal } from '@angular/core';
 import { Reference } from '@features/projects/models/reference.model';
 import { references, github } from '@features/projects/data/references';
 import { Tech } from '@core/models/tech.model';
-import { REFERENCE_VIEW, ReferenceView } from '../models/reference-view.model';
+import { ReferenceView } from '@slnd/shared';
+import { UtilityService } from '@core/services/utility.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectService {
 
-  private _referenceView: WritableSignal<ReferenceView> = signal(REFERENCE_VIEW.TILE_VIEW);
-  public readonly referenceView: Signal<ReferenceView> = this._referenceView.asReadonly();
+  private utilityService: UtilityService = inject(UtilityService);
+
+  public readonly referenceView: Signal<ReferenceView> = computed(() => {
+    return this.utilityService.currentUIOptions().referenceView;
+  });
 
   public readonly references: Signal<Reference[]> = signal(references);
   public readonly availableTags = computed(() => {
@@ -56,7 +60,7 @@ export class ProjectService {
   })
 
   public setReferenceView(view: ReferenceView) {
-    this._referenceView.set(view);
+    this.utilityService.setReferenceView(view);
   }
 
   public toggleFilter(tag: Tech) {

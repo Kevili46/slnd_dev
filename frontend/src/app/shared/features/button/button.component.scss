@@ -16,6 +16,7 @@
     &.raised {
         border-radius: .8em;
         border: 1px solid var(--clr-border);
+        background-color: var(--clr-bg-2);
         transition: background-color var(--time-interact) ease;
 
         button {

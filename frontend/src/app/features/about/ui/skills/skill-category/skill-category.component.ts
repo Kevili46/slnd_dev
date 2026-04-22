@@ -1,4 +1,4 @@
-import { Component, InputSignal, inject, input } from '@angular/core';
+import { Component, InputSignal, Signal, inject, input } from '@angular/core';
 import { SkillCategory } from '@features/about/models/skill-category.model';
 import { UtilityService } from '@core/services/utility.service';
 import { CATEGORY } from '@features/about/models/category.model';
@@ -19,7 +19,7 @@ export class SkillCategoryComponent {
 
   public readonly skillCategory: InputSignal<SkillCategory> = input.required();
 
-  public readonly darkMode = this.utilityService.darkMode;
+  public readonly darkMode: Signal<boolean> = this.utilityService.darkMode;
 
   protected readonly CATEGORY = CATEGORY;
 

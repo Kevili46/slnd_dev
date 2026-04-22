@@ -3,7 +3,7 @@ import { ProjectService } from '@features/projects/services/project.service';
 import { Reference } from '@features/projects/models/reference.model';
 import { BUTTON } from '@shared/features/button/models/button-type.model';
 import { Tech } from '@core/models/tech.model';
-import { REFERENCE_VIEW, ReferenceView } from '@features/projects/models/reference-view.model';
+import { REFERENCE_VIEW, ReferenceView } from '@slnd/shared';
 import { HighlightHeadingComponent } from '@shared/features/highlight-heading/highlight-heading.component';
 import { ReferenceTag } from "@features/projects/ui/reference-tag/reference-tag";
 import { ReferenceTileViewComponent } from "@features/projects/ui/reference-tile-view/reference-tile-view.component";

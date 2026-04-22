@@ -17,12 +17,14 @@ FROM node:22-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
-COPY services/id-service/package*.json ./
+COPY --from=builder /app/shared /app/shared
 
+COPY services/id-service/package*.json ./services/id-service/
+
+WORKDIR /app/services/id-service
 RUN npm install --omit=dev
 
 COPY --from=builder /app/services/id-service/dist ./dist
-COPY --from=builder /app/shared/dist ./shared/dist
 
 EXPOSE 4601
 
