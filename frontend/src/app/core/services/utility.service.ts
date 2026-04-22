@@ -86,7 +86,6 @@ export class UtilityService {
     this._currentUIOptions.update(current => {
       return { ...current, theme: current.theme == 'DARK' ? 'LIGHT' : 'DARK' };
     });
-    console.log(this.currentUIOptions());
   }
 
   public setReferenceView(view: ReferenceView) {

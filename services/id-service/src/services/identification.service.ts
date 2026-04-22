@@ -23,7 +23,7 @@ export const identifyUser = async (token: string | undefined): Promise<IdRespons
         return null;
     }
 
-    const newToken = jwt.sign({ userId: userData.userId }, JWT_SECRET, { expiresIn: '1y' });
+    const newToken = jwt.sign({ userId: userData.userId }, JWT_SECRET, { expiresIn: '7d' });
 
     return {
         token: newToken,
