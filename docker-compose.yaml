@@ -57,7 +57,8 @@ services:
       - ./services/id-service/.env
     environment:
       - HOST=0.0.0.0
-      - DATABASE_URL="postgresql://slnd_admin:dev_password@db:5432/slnd_db"
+      - DB_HOST=postgres
+      - DB_PORT=5432
     depends_on:
       - db
 

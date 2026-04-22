@@ -1,5 +1,5 @@
-import { Consent } from './consent.model'
-import { REFERENCE_VIEW, ReferenceView } from './reference-view.model'
+import { Consent } from './consent.model.js'
+import { REFERENCE_VIEW, ReferenceView } from './reference-view.model.js'
 
 export interface UserData {
     userId: string,
