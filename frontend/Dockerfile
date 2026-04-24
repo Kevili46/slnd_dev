@@ -11,7 +11,7 @@ COPY shared/ ./shared/
 COPY frontend/ ./frontend/
 
 WORKDIR /app/frontend
-RUN npm run build
+RUN npm run build -- --configuration production
 
 FROM nginx:alpine AS runner
 

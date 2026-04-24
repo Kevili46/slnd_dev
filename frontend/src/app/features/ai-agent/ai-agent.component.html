@@ -1,4 +1,5 @@
-<div #agent class="agent slnd-bubble-back">
+<slnd-button class="toggle-button" raised [icon]="ICON.CHAT" (btnClick)="toggleAgent()"></slnd-button>
+<div #agent class="agent" [class.slnd-bubble-back]="!mobile()">
     <div class="chat-head">
         <div class="chat-profile">
             <img class="profile-img" src="/assets/img/kevin_portrait.jpg" alt="">
@@ -20,4 +21,3 @@
             [btnDisabled]="submitDisabled()"></slnd-button>
     </form>
 </div>
-<slnd-button class="toggle-button" raised iconWidth="1.2em" [icon]="ICON.CHAT" (btnClick)="toggleAgent()"></slnd-button>

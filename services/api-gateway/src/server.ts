@@ -10,9 +10,16 @@ const HOST = process.env.HOST || 'localhost';
 const ID_SERVICE_URL = process.env.ID_SERVICE_URL || 'http://localhost:3001';
 const AI_AGENT_SERVICE_URL = process.env.AI_AGENT_SERVICE_URL || 'http://localhost:3002';
 
+const allowedOrigins = ['https://slnd.dev', 'http://localhost:4200'];
 app.use(cors({
-    origin: 'http://localhost:4200',
-    credentials: true,
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('CORS Policy: Dieser Zugriff ist nicht erlaubt.'));
+        }
+    },
+    credentials: true
 }));
 
 app.use('/api/v1/id', createProxyMiddleware({

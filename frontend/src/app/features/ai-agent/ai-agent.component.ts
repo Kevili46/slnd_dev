@@ -6,6 +6,7 @@ import { ICON } from '@shared/features/icon/models/icon.model';
 import { BUTTON } from '@shared/features/button/models/button-type.model';
 import { AiAgentService } from './services/ai-agent.service';
 import { FormsModule } from '@angular/forms';
+import { UtilityService } from '@core/services/utility.service';
 
 @Component({
   selector: 'slnd-aiagent',
@@ -19,12 +20,14 @@ import { FormsModule } from '@angular/forms';
 export class AiAgentComponent {
 
   private agentService: AiAgentService = inject(AiAgentService);
+  private utilityService: UtilityService = inject(UtilityService);
 
   public agentEl: Signal<ElementRef> = viewChild.required('agent', { read: ElementRef });
   public queryInput: Signal<ElementRef> = viewChild.required('queryInput', { read: ElementRef });
 
   public query: WritableSignal<string> = signal<string>('');
 
+  public mobile: Signal<boolean> = this.utilityService.mobile;
   public readonly agentOpen: Signal<boolean> = this.agentService.agentOpen;
   public readonly online: Signal<boolean> = this.agentService.online;
   public readonly typing: Signal<boolean> = this.agentService.typing;

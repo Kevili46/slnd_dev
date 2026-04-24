@@ -22,6 +22,22 @@
     }
 }
 
+.reference-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+
+    h3 {
+        font-size: 1.2em;
+        transition: color var(--time-interact) ease;
+    }
+
+    span {
+        font-size: .8em;
+        padding-top: .5em;
+    }
+}
+
 img {
     width: min(200px, 80%);
     aspect-ratio: 2;
@@ -29,22 +45,6 @@ img {
     margin: 40px 0;
     filter: grayscale(1);
     transition: filter var(--time-interact-calm) ease;
-}
-
-.reference-info {
-    display: flex;
-    align-items: flex-start;
-    gap: 1em;
-
-    h3 {
-        font-size: 1em;
-        transition: color var(--time-interact) ease;
-    }
-
-    span {
-        font-size: .65em;
-        padding-top: .35em;
-    }
 }
 
 .reference-tags {

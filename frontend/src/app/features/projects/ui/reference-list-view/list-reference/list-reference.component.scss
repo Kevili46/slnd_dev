@@ -3,11 +3,11 @@
     display: flex;
     align-items: flex-start;
     border-bottom: 1px solid var(--clr-border);
-    gap: 1em;
+    gap: .5em;
 
     span,
     a {
-        font-size: .65em;
+        font-size: .9em;
     }
 }
 
@@ -19,12 +19,12 @@
         flex: 0 0 92px;
 
         h3 {
-            font-size: 1em;
+            font-size: 1.2em;
         }
     }
 
     &.reference-description-cell {
-        flex: 1 0 140px;
+        display: none;
     }
 
     &.reference-tags-cell {
@@ -33,6 +33,15 @@
 
     &.reference-link-cell {
         flex: 0 0 200px;
+    }
+}
+
+@media (min-width: 465px) {
+    .list-reference-cell {
+        &.reference-description-cell {
+            flex: 1 0 140px;
+            display: block;
+        }
     }
 }
 

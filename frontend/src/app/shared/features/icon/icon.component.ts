@@ -18,7 +18,7 @@ export class IconComponent {
   public sanititzer: DomSanitizer = inject(DomSanitizer);
 
   public readonly icon: InputSignal<Icon> = input.required();
-  public readonly width: InputSignal<string> = input('1.2em');
+  public readonly width: InputSignal<string> = input('1.5em');
 
   public readonly svg: Signal<SafeHtml | undefined> = computed(() => {
     return this.sanititzer.bypassSecurityTrustHtml(icons.get(this.icon()) ?? '');

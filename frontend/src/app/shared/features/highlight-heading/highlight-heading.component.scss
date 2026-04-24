@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90svh;
+    height: calc(90svh - 80px);
 
     @include animations;
 }
@@ -44,5 +44,11 @@
         width: 100%;
         height: max(.1em, 2px);
         background: var(--clr-grad);
+    }
+}
+
+@media (min-widht: 1025px) {
+    :host {
+        height: 90svh;
     }
 }

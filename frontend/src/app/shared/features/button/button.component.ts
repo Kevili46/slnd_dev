@@ -29,7 +29,7 @@ export class ButtonComponent {
   public readonly icon: InputSignal<Icon | undefined> = input();
   public readonly iconWidth: InputSignal<string | undefined> = input();
   public readonly inputIconWidth: Signal<string> = computed(() => {
-    return this.iconWidth() ?? '1.2em';
+    return this.iconWidth() ?? '1.5em';
   });
   public readonly text: InputSignal<string | undefined> = input();
 

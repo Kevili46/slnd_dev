@@ -1,5 +1,5 @@
 :host {
-    z-index: 2;
+    z-index: 10;
 
     &.active {
         .agent {
@@ -10,17 +10,18 @@
 
 .agent {
     position: fixed;
-    bottom: 5em;
-    right: min(1em, 5svw);
     display: flex;
+    bottom: 0;
+    right: 0;
     flex-direction: column;
     justify-content: space-between;
     gap: .8em;
-    width: min(90svw, 500px);
-    height: 70svh;
-    font-size: .8em;
+    width: min(100svw, 500px);
+    height: 100svh;
     translate: 150% 0;
-    box-shadow: var(--box-shadow);
+    padding: 1em;
+    background-color: color-mix(in hsl, var(--clr-bg-2), transparent 3%);
+    backdrop-filter: blur(5px);
 
     transition: translate var(--time-interact-slow) ease;
 
@@ -37,6 +38,7 @@
 
         .chat-profile {
             display: flex;
+            align-items: flex-start;
             gap: 1em;
 
             .profile-img {
@@ -126,6 +128,9 @@
 
 @media (min-width: 1025px) {
     .agent {
+        bottom: 5em;
+        right: min(1em, 5svw);
         height: 80svh;
+        box-shadow: var(--box-shadow);
     }
 }
