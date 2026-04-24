@@ -4,7 +4,7 @@ node_modules/
 # --- Environment & Secrets
 .env
 .env*
-.docker-compose.yaml
+docker-compose.yaml
 
 # --- Build & Output
 dist/
