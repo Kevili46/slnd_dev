@@ -3,7 +3,7 @@
 :host {
     display: flex;
     flex-flow: row wrap;
-    gap: 2em;
+    gap: 3em;
 
     transition:
         opacity var(--time-interact-calm) ease,
@@ -13,8 +13,9 @@
     &.core-category {
         h3 {
             padding: 0 .3em;
+            color: transparent;
             background: var(--clr-grad);
-            color: var(--clr-bg);
+            background-clip: text;
         }
     }
 

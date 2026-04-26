@@ -1,7 +1,7 @@
-import { Injectable, WritableSignal, Signal, signal, computed, effect, inject } from '@angular/core';
+import { Injectable, WritableSignal, Signal, signal, computed, effect, inject, DOCUMENT, RendererFactory2, Renderer2 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AiAgentWSService } from '@features/ai-agent/services/ai-agent-ws.service';
-import { Chat } from '@features/ai-agent/models/chat.model';
+import { Chat } from '@features/ai-agent/models/chat';
 import { Message } from '@features/ai-agent/models/message.model';
 import { ROLE } from '@features/ai-agent/models/roles.model';
 import { Participant } from '@features/ai-agent/models/participant.model';
@@ -9,7 +9,10 @@ import { AgentClientResponse, WS_DATA, WS_STATUS } from '@slnd/shared';
 
 @Injectable({ providedIn: 'root' })
 export class AiAgentService {
-  private aiAgentWSService = inject(AiAgentWSService);
+
+  private aiAgentWSService: AiAgentWSService = inject(AiAgentWSService);
+  private rendererFac: RendererFactory2 = inject(RendererFactory2);
+  private document = inject(DOCUMENT);
 
   private _chat: WritableSignal<Chat | undefined> = signal(undefined);
   private _agentOpen: WritableSignal<boolean> = signal(false);
@@ -20,6 +23,8 @@ export class AiAgentService {
   public readonly online: Signal<boolean> = this.aiAgentWSService.online;
   public readonly history: Signal<Message[] | undefined> = computed(() => this._chat()?.history);
   public readonly participants: Signal<Participant[] | undefined> = computed(() => this._chat()?.participants);
+
+  private renderer: Renderer2;
 
   constructor() {
     this.initChat();
@@ -43,6 +48,15 @@ export class AiAgentService {
       if (this.agentOpen() && !this.online()) {
         this.aiAgentWSService.connect();
       }
+    });
+
+    this.renderer = this.rendererFac.createRenderer(null, null);
+    effect(() => {
+      if (this.agentOpen()) {
+        this.renderer.addClass(this.document.body, 'no-scroll');
+        return;
+      }
+      this.renderer.removeClass(this.document.body, 'no-scroll');
     });
   }
 

@@ -13,6 +13,10 @@
             color: var(--clr-orange);
         }
     }
+
+    &.main-nav-item {
+        font-size: 2em;
+    }
 }
 
 .active {
@@ -41,4 +45,12 @@ span {
     width: 0;
 
     transition: width var(--time-interact-calm) ease;
+}
+
+@media (min-width: 1025px) {
+    .nav-item {
+        &.main-nav-item {
+            font-size: 1.1em;
+        }
+    }
 }

@@ -1,11 +1,11 @@
 import { afterNextRender, Component, ElementRef, inject, Renderer2, Signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '@features/header/header.component';
+import { IdService } from '@core/services/id/id.service';
 import { UtilityService } from '@core/services/utility.service';
+import { HeaderComponent } from '@features/header/header.component';
 import { FooterComponent } from '@features/footer/footer.component';
 import { AiAgentComponent } from '@features/ai-agent/ai-agent.component';
-import { IdService } from '@core/services/id/id.service';
 
 @Component({
   selector: 'slnd',
@@ -18,12 +18,14 @@ export class AppComponent {
   private renderer: Renderer2 = inject(Renderer2);
   private utilityService: UtilityService = inject(UtilityService);
   private idService: IdService = inject(IdService);
+
   private elRef: ElementRef = inject(ElementRef);
 
   public readonly darkMode: Signal<boolean> = this.utilityService.darkMode;
 
   private resizeObserver?: ResizeObserver;
-  private cleanup?: () => void;
+  private scrollCleanup?: () => void;
+  private loadCleanup?: () => void;
 
   constructor() {
     afterNextRender(() => {
@@ -31,9 +33,12 @@ export class AppComponent {
 
       this.initResizeObserver();
 
-      window.addEventListener('load', this.elRef.nativeElement.classList.remove('load'));
+      this.loadCleanup = this.renderer.listen('window', 'load', () => {
+        this.elRef.nativeElement.classList.remove('load');
+        this.loadCleanup!();
+      });
 
-      this.cleanup = this.renderer.listen('window', 'scroll', () => {
+      this.scrollCleanup = this.renderer.listen('window', 'scroll', () => {
         this.utilityService.scrollUpdate();
       });
     });
@@ -58,8 +63,11 @@ export class AppComponent {
   }
 
   ngOnDestroy() {
-    if (this.cleanup) {
-      this.cleanup();
+    if (this.scrollCleanup) {
+      this.scrollCleanup();
+    }
+    if (this.loadCleanup) {
+      this.loadCleanup();
     }
   }
 

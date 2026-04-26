@@ -10,6 +10,7 @@ import { UtilityService } from '@core/services/utility.service';
   styleUrl: './nav-item.component.scss',
   host: {
     '(click)': 'toggleMenu()',
+    '[class.main-nav-item]': 'mainNav()',
   }
 })
 export class NavItemComponent {
@@ -20,7 +21,9 @@ export class NavItemComponent {
   public readonly mainNav: InputSignal<boolean> = input(false);
 
   public toggleMenu() {
-    this.utilityService.toggleMenu();
+    if (this.mainNav()) {
+      this.utilityService.toggleMenu();
+    }
   }
 
 }

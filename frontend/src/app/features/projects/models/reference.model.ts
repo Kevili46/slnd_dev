@@ -6,4 +6,5 @@ export type Reference = {
     img: string;
     link: string;
     tags: Tech[];
+    hasInverse?: boolean;
 }

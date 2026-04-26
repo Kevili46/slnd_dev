@@ -1,9 +1,11 @@
 :host {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     border-bottom: 1px solid var(--clr-border);
     gap: .5em;
+    padding-bottom: 2em;
 
     span,
     a {
@@ -24,7 +26,8 @@
     }
 
     &.reference-description-cell {
-        display: none;
+        flex: 1 0 140px;
+        display: block;
     }
 
     &.reference-tags-cell {
@@ -32,16 +35,7 @@
     }
 
     &.reference-link-cell {
-        flex: 0 0 200px;
-    }
-}
-
-@media (min-width: 465px) {
-    .list-reference-cell {
-        &.reference-description-cell {
-            flex: 1 0 140px;
-            display: block;
-        }
+        flex: 0 0 210px;
     }
 }
 

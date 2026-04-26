@@ -2,7 +2,7 @@
     <h3>{{reference().name}}</h3>
     <span>{{reference().description}}</span>
 </div>
-<img [src]="reference().img" alt="Logo of the website of {{reference().name}}">
+<img [src]="reference().img | modeAware: reference().hasInverse" alt="Logo of the website of {{reference().name}}">
 <div class="reference-tags">
     @for (tag of reference().tags; track $index) {
     <slnd-reference-tag [tag]="tag"></slnd-reference-tag>

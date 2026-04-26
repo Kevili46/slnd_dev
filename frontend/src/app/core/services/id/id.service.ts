@@ -43,7 +43,7 @@ export class IdService {
 
   private readonly TOKEN_KEY = 'SLND.Token';
 
-  public initializeUser() {
+  public async initializeUser() {
     this.idHttpService.initializeUser().subscribe({
       next: (response: IdResponse) => {
         this._userData.set(response.userData);

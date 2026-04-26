@@ -51,7 +51,9 @@ export class AiAgentComponent {
   public submitQuery() {
     this.agentService.sendMessage(this.query());
     this.query.set('');
-    this.queryInput().nativeElement.focus();
+    if (!this.mobile()) {
+      this.queryInput().nativeElement.focus();
+    }
   }
 
   scrollToBottom(el: ElementRef) {

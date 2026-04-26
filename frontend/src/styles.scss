@@ -22,6 +22,10 @@ html {
     }
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 
 * {
     color: var(--clr-text);
@@ -55,10 +59,11 @@ h2 {
     text-wrap: balance;
     font-family: var(--font-secondary);
     color: var(--clr-text-bold);
+    line-height: 1em;
 }
 
 h3 {
-    font-size: 2.5em;
+    font-size: 2em;
     line-height: 1.5em;
     font-weight: 600;
     font-family: var(--font-secondary);
@@ -98,7 +103,7 @@ section {
     border: 1px solid var(--clr-border);
     border-radius: 3em;
     corner-shape: squircle;
-    padding: 1em;
+    padding: 2em;
     background-color: color-mix(in hsl, var(--clr-bg-2), transparent 3%);
     overflow: hidden;
     backdrop-filter: blur(5px);
@@ -111,7 +116,7 @@ section {
     }
 
     h2 {
-        font-size: max(3.5em, 3.5svw);
+        font-size: max(4em, 4svw);
     }
 
     .content {

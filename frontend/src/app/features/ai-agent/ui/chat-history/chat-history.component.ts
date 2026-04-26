@@ -1,4 +1,4 @@
-import { Component, Signal, inject, ElementRef, afterEveryRender, effect } from '@angular/core';
+import { Component, Signal, inject, ElementRef, afterEveryRender } from '@angular/core';
 import { AiAgentService } from '@features/ai-agent/services/ai-agent.service';
 import { Message } from '@features/ai-agent/models/message.model';
 import { MessageComponent } from '@features/ai-agent/ui/message/message.component';
