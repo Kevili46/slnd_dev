@@ -23,9 +23,4 @@ export class FooterComponent {
   constructor() {
     this._year.set(new Date().getFullYear());
   }
-
-  public openConsentBanner() {
-    this.utilityService.toggleConsentBanner();
-  }
-
 }

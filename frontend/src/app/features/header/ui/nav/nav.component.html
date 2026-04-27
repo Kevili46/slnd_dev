@@ -1,9 +1,6 @@
 <nav id="main-nav" [class.open]="menuOpen()">
-    <div (click)="toggleMenu()" class="toggle-menu">
-        <span class="menu-icon-bar"></span>
-        <span class="menu-icon-bar"></span>
-        <span class="menu-icon-bar"></span>
-    </div>
+    <slnd-button raised [icon]="!menuOpen() ? ICON.MENU : ICON.CLOSE" (btnClick)="toggleMenu()"
+        class="toggle-menu"></slnd-button>
     <ul>
         @for(navRoute of mainNavRoutes(); track $index) {
         <slnd-nav-item [mainNav]="true" [navRoute]="navRoute"></slnd-nav-item>

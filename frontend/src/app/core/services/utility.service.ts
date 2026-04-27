@@ -27,9 +27,6 @@ export class UtilityService {
   private _menuOpen: WritableSignal<boolean> = signal(false);
   public readonly menuOpen = this._menuOpen.asReadonly();
 
-  private _consentOpen: WritableSignal<boolean> = signal(true);
-  public readonly consentOpen: Signal<boolean> = this._consentOpen.asReadonly();
-
   private renderer: Renderer2;
   private themeSwitchTimeout: NodeJS.Timeout | undefined;
 
@@ -44,8 +41,14 @@ export class UtilityService {
       this.themeSwitchTimeout = setTimeout(() => {
         this.renderer.removeClass(this.document.documentElement, 'theme-switch');
       }, 50);
-
-    })
+    });
+    effect(() => {
+      if (this.menuOpen()) {
+        this.renderer.addClass(this.document.body, 'no-scroll');
+        return;
+      }
+      this.renderer.removeClass(this.document.body, 'no-scroll');
+    });
   }
 
 
@@ -63,6 +66,9 @@ export class UtilityService {
 
   public resizeUpdate(resizedEl: ElementRef) {
     this._mobile.set(resizedEl.nativeElement.clientWidth <= 1024);
+    if (!this.mobile()) {
+      this._menuOpen.set(false);
+    }
   }
 
   public sleep(time: number) {
@@ -92,10 +98,6 @@ export class UtilityService {
     this._currentUIOptions.update(current => {
       return { ...current, referenceView: view };
     });
-  }
-
-  public toggleConsentBanner() {
-    this._consentOpen.update(current => !current);
   }
 
   public updateUIOptions(options: UserData['options']) {

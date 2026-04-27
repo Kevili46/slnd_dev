@@ -1,5 +1,6 @@
 export const ICON = {
     "LOGO": "LOGO",
+    "MENU": "MENU",
     "LIGHT": "LIGHT",
     "DARK": "DARK",
     "CLOSE": "CLOSE",

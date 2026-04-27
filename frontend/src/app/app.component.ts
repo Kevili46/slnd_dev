@@ -1,4 +1,4 @@
-import { afterNextRender, Component, ElementRef, inject, Renderer2, Signal } from '@angular/core';
+import { afterNextRender, Component, DOCUMENT, ElementRef, inject, Renderer2, Signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { IdService } from '@core/services/id/id.service';
@@ -18,6 +18,7 @@ export class AppComponent {
   private renderer: Renderer2 = inject(Renderer2);
   private utilityService: UtilityService = inject(UtilityService);
   private idService: IdService = inject(IdService);
+  private document = inject(DOCUMENT);
 
   private elRef: ElementRef = inject(ElementRef);
 
@@ -41,6 +42,14 @@ export class AppComponent {
       this.scrollCleanup = this.renderer.listen('window', 'scroll', () => {
         this.utilityService.scrollUpdate();
       });
+
+      if (this.document.readyState === 'complete') {
+        this.elRef.nativeElement.classList.remove('load');
+      } else {
+        this.loadCleanup = this.renderer.listen('window', 'load', () => {
+          this.elRef.nativeElement.classList.remove('load');
+        });
+      }
     });
   }
 

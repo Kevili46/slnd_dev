@@ -36,7 +36,7 @@ export class ConsentComponent {
     return consentSettings;
   });
 
-  public readonly consentOpen: Signal<boolean> = this.utilityService.consentOpen;
+  // public readonly consentOpen: Signal<boolean> = this.utilityService.consentOpen;
 
   constructor() {
     effect(() => {
@@ -55,7 +55,7 @@ export class ConsentComponent {
   }
 
   public toggleConsentBanner() {
-    this.utilityService.toggleConsentBanner();
+    // this.utilityService.toggleConsentBanner();
   }
 
   // public saveConsentSettings() {

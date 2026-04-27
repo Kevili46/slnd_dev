@@ -16,7 +16,7 @@ app.use(cors({
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
-            callback(new Error('CORS Policy: Dieser Zugriff ist nicht erlaubt.'));
+            callback(new Error('CORS Policy: unauthorized origin.'));
         }
     },
     credentials: true
