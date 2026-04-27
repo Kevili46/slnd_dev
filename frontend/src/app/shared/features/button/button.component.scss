@@ -4,6 +4,7 @@
     padding: 0;
     corner-shape: squircle;
     width: fit-content;
+    touch-action: manipulation;
 
     &.default {
         transition: opacity var(--time-interact) ease;

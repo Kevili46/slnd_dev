@@ -6,11 +6,13 @@ import { Message } from '@features/ai-agent/models/message.model';
 import { ROLE } from '@features/ai-agent/models/roles.model';
 import { Participant } from '@features/ai-agent/models/participant.model';
 import { AgentClientResponse, WS_DATA, WS_STATUS } from '@slnd/shared';
+import { UtilityService } from '@core/services/utility.service';
 
 @Injectable({ providedIn: 'root' })
 export class AiAgentService {
 
   private aiAgentWSService: AiAgentWSService = inject(AiAgentWSService);
+  private utilityService: UtilityService = inject(UtilityService);
   private rendererFac: RendererFactory2 = inject(RendererFactory2);
   private document = inject(DOCUMENT);
 
@@ -18,6 +20,7 @@ export class AiAgentService {
   private _agentOpen: WritableSignal<boolean> = signal(false);
   public readonly agentOpen: Signal<boolean> = this._agentOpen.asReadonly();
   private _typing: WritableSignal<boolean> = signal(false);
+  public readonly mobile: Signal<boolean> = this.utilityService.mobile;
   public readonly typing: Signal<boolean> = this._typing.asReadonly();
 
   public readonly online: Signal<boolean> = this.aiAgentWSService.online;
@@ -52,7 +55,7 @@ export class AiAgentService {
 
     this.renderer = this.rendererFac.createRenderer(null, null);
     effect(() => {
-      if (this.agentOpen()) {
+      if (this.agentOpen() && this.mobile()) {
         this.renderer.addClass(this.document.body, 'no-scroll');
         return;
       }

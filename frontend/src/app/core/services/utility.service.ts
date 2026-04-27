@@ -43,7 +43,7 @@ export class UtilityService {
       }, 50);
     });
     effect(() => {
-      if (this.menuOpen()) {
+      if (this.menuOpen() && this.mobile()) {
         this.renderer.addClass(this.document.body, 'no-scroll');
         return;
       }

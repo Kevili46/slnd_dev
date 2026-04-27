@@ -24,7 +24,7 @@ const systemPrompt: Content = {
 }
 
 const model = genAI.getGenerativeModel({
-    model: "gemini-3.1-flash-lite-preview",
+    model: "gemini-2.5-flash",
     generationConfig: {
         temperature: 0.2,
         topP: 0.1,
@@ -42,6 +42,6 @@ export const sendMessage = async (session: ChatSession, query: string): Promise<
         const result = await session.sendMessage(query);
         return result.response.text() || "I cannot answer that.";
     } catch (error) {
-        return 'Sorry, I am having trouble right now.';
+        return "Sorry, as this service runs on free tier, your request wasn't processed :(";
     }
 };

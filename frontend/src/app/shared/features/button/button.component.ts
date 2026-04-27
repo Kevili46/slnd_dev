@@ -2,7 +2,7 @@ import { booleanAttribute, Component, computed, input, InputSignal, InputSignalW
 import { RouterLink } from '@angular/router';
 import { Icon } from '@shared/features/icon/models/icon.model';
 import { IconComponent } from '@shared/features/icon/icon.component';
-import { ButtonType, BUTTON } from '@shared/features/button/models/button-type.model';
+import { BUTTON } from '@shared/features/button/models/button-type.model';
 
 @Component({
   selector: 'slnd-button',

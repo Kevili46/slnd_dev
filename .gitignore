@@ -15,7 +15,7 @@ build/
 .angular/
 
 # --- IDEs & System
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/extensions.json
 .DS_Store
