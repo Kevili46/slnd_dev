@@ -24,7 +24,7 @@ const systemPrompt: Content = {
 }
 
 const model = genAI.getGenerativeModel({
-    model: "gemini-2.5-flash",
+    model: "gemini-3.1-flash-lite-preview",
     generationConfig: {
         temperature: 0.2,
         topP: 0.1,
@@ -42,6 +42,13 @@ export const sendMessage = async (session: ChatSession, query: string): Promise<
         const result = await session.sendMessage(query);
         return result.response.text() || "I cannot answer that.";
     } catch (error) {
-        return "Sorry, as this service runs on free tier, your request wasn't processed :(";
+        if ((error as any).status == 429) {
+            console.log(error);
+            return "Sorry, as this service runs on free tier, the daily quota reached the limit :(";
+        }
+        if ((error as any).status.status == 503) {
+            return "Sorry, as this service runs on free tier, your request wasn't processed due to high traffic :(";
+        }
+        return "Sorry, something unexpected happened :(";
     }
 };

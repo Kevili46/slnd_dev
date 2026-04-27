@@ -1,4 +1,4 @@
-import { Injectable, WritableSignal, Signal, signal, computed, effect, inject, DOCUMENT, RendererFactory2, Renderer2 } from '@angular/core';
+import { Injectable, WritableSignal, Signal, signal, computed, effect, inject, DOCUMENT, RendererFactory2, Renderer2, untracked } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AiAgentWSService } from '@features/ai-agent/services/ai-agent-ws.service';
 import { Chat } from '@features/ai-agent/models/chat';
@@ -48,7 +48,7 @@ export class AiAgentService {
       });
 
     effect(() => {
-      if (this.agentOpen() && !this.online()) {
+      if (this.agentOpen() && !untracked(this.online)) {
         this.aiAgentWSService.connect();
       }
     });
