@@ -9,24 +9,41 @@ section {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    translate: 0 -30svh;
+    margin: 0;
 
     .contacts {
         display: flex;
-        gap: 20px;
+        gap: 3em;
 
         .contact {
+            padding: .1em;
             position: relative;
-            flex: 0 0 80px;
+            width: 3.5em;
             display: flex;
+            gap: .5em;
             flex-direction: column;
             align-items: center;
+            filter: grayscale(1);
+            transition: filter var(--time-interact) ease;
+
+            &:hover {
+                filter: grayscale(0);
+
+                .contact-img {
+                    translate: 0 -4%;
+                    opacity: 1;
+                }
+            }
 
             .contact-img {
-                width: 80%;
+                width: 100%;
                 aspect-ratio: 1;
+                opacity: .8;
+                transition: translate var(--time-interact) ease, opacity var(--time-interact) ease;
 
                 &.inverse-logo {
-                    filter: invert(1);
+                    filter: invert(.81);
                 }
             }
 
